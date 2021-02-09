@@ -25,7 +25,7 @@ class ShopperButton extends StatelessWidget {
             //   color: button1,
             // )
         ),
-        color: buttonColor1.withOpacity(0.7),
+        color: buttonColor2,
         textColor: Colors.white,
         padding: EdgeInsets.all(8.0),
         onPressed: onPressed,

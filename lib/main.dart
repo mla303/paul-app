@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Views/homePage.dart';
 import 'Views/signIn.dart';
 import 'Views/splash.dart';
 import 'Views/walkthrough.dart';
@@ -10,6 +11,7 @@ void main() {
 var routes = <String, WidgetBuilder>{
   "/walkthrough": (BuildContext context) => WalkThrough(),
   "/login": (BuildContext context) => SignInScreen(),
+  "/home": (BuildContext context) => homePage(),
   // "/forgetPassword": (BuildContext context) => forgotPasswordScreen(),
   // "/lanuageSelect": (BuildContext context) => LanguageSelector(),
   // "/bottomNavigation": (BuildContext context) => navigationBar(),

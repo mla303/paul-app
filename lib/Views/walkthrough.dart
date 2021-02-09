@@ -48,17 +48,17 @@ class WalkThroughState extends State<WalkThrough> {
                 myWalkthrough(
                   title: "Plan Your Trip",
                   content: "Book one of our unique hotel to \n escape the ordinary",
-                  image: "images/walkthrough1.png",
+                  // image: "images/walkthrough1.png",
                 ),
                 myWalkthrough(
                   title: "Find Best Deal",
                   content: "Find deals for any season from cosy \n country home to city flats",
-                  image: "images/walkthrough2.png",
+                  // image: "images/walkthrough2.png",
                 ),
                 myWalkthrough(
                   title: "User Privacy",
                   content: "Book one of our unique hotel to \n escape the ordinary",
-                  image: "images/walkthrough1.png",
+                  // image: "images/walkthrough1.png",
                 ),
               ],
               controller: controller,

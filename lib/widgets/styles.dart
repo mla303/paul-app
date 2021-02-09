@@ -8,14 +8,14 @@ class CustomTextStyle {
   static TextStyle buttontitle(BuildContext context) {
     return TextStyle(
         color: Colors.white,
-        fontSize: MediaQuery.of(context).size.height / 44,
-        fontWeight: FontWeight.w600);
+        fontSize: MediaQuery.of(context).size.height / 48,
+        fontWeight: FontWeight.w500);
   }
 
   static TextStyle headig(BuildContext context) {
     return TextStyle(
         color: basicColorShopper,
-        fontSize: MediaQuery.of(context).size.height / 20,
+        fontSize: MediaQuery.of(context).size.height / 22,
         fontWeight: FontWeight.w600);
   }
 
@@ -32,7 +32,16 @@ class CustomTextStyle {
         fontSize: MediaQuery.of(context).size.height / 54,
         fontWeight: FontWeight.w400);
   }
+  static TextStyle normaltext3(BuildContext context) {
+    return TextStyle(
+        color: Colors.white,
+        fontSize: MediaQuery.of(context).size.height / 54,
+        fontWeight: FontWeight.w400);
+  }
 
   
   
 }
+
+
+
