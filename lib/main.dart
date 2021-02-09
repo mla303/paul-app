@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/billingAddress.dart';
+import 'package:paul_app/Views/forgotPassword.dart';
+import 'package:paul_app/Views/signUp.dart';
 import 'Views/signIn.dart';
 import 'Views/splash.dart';
 import 'Views/walkthrough.dart';
@@ -10,6 +13,10 @@ void main() {
 var routes = <String, WidgetBuilder>{
   "/walkthrough": (BuildContext context) => WalkThrough(),
   "/login": (BuildContext context) => SignInScreen(),
+  "/signUp": (BuildContext context) => SignUpScreen(),
+  "/forgotPassword": (BuildContext context) => forgotPassword(),
+  "/billingAddress": (BuildContext context) => BillingAddress(),
+
   // "/forgetPassword": (BuildContext context) => forgotPasswordScreen(),
   // "/lanuageSelect": (BuildContext context) => LanguageSelector(),
   // "/bottomNavigation": (BuildContext context) => navigationBar(),

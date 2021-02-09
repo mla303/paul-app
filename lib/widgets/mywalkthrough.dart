@@ -60,14 +60,14 @@ class WalkthroughState extends State<myWalkthrough>
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
 
-            Transform(
-              transform:
-              new Matrix4.translationValues(0, 2.0, 6.0),
-              child: new Image(
-                image: AssetImage(widget.image),
-                height: MediaQuery.of(context).size.height/3,
-              ),
-            ),
+            // Transform(
+            //   transform:
+            //   new Matrix4.translationValues(0, 2.0, 6.0),
+            //   child: new Image(
+            //     image: AssetImage(widget.image),
+            //     height: MediaQuery.of(context).size.height/3,
+            //   ),
+            // ),
 
             SizedBox(height: 30,),
 

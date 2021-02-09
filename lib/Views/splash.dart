@@ -23,20 +23,20 @@ class _splashScreenState extends State<splashScreen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(color: const Color(0xff7c94b6),
-          image: DecorationImage(
-            image: AssetImage("assets/images/background.png"),
-            fit: BoxFit.cover,
-            colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.dstATop),
-          )
+          // image: DecorationImage(
+          //   image: AssetImage("assets/images/background.png"),
+          //   fit: BoxFit.cover,
+          //   colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.dstATop),
+          // )
         ),
 
-        child: Center(
-          child: Image(
-            image:  AssetImage("assets/images/logo-half.png"),
-            height: height/4,
-
-          ),
-        ),
+        // child: Center(
+        //   child: Image(
+        //     image:  AssetImage("assets/images/logo-half.png"),
+        //     height: height/4,
+        //
+        //   ),
+        // ),
       ),
     );
   }
