@@ -117,7 +117,7 @@ class _logInState extends State<SignInScreen> {
                             text: Text("Sign In",
                               style: CustomTextStyle.buttontitle(context),),
                               onPressed: (){
-                              // Navigator.pushNamed(context, "/signUp");
+                              // Navigator.pushNamed(context, "/bottomNavigation");
                               },
                             focusColor: buttonColor2,
                             disbaleColor: buttonColor2,
@@ -128,7 +128,7 @@ class _logInState extends State<SignInScreen> {
                           InkWell(
                             onTap: ()
                             {
-                              Navigator.pushNamed(context, "/forgotPassword");
+                              // Navigator.pushNamed(context, "/forgetPassword");
                             },
                             child: Align(
                                 alignment: Alignment.center,
@@ -146,7 +146,7 @@ class _logInState extends State<SignInScreen> {
                             text: Text("Join as a shopper",
                               style: CustomTextStyle.buttontitle(context),),
                             onPressed: (){
-                              Navigator.pushNamed(context, "/signUp");
+                              // Navigator.pushNamed(context, "/bottomNavigation");
                             },
                             focusColor: buttonColor2,
                             disbaleColor: buttonColor2,

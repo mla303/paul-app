@@ -32,12 +32,6 @@ class CustomTextStyle {
         fontSize: MediaQuery.of(context).size.height / 54,
         fontWeight: FontWeight.w400);
   }
-  static TextStyle normaltext3(BuildContext context) {
-    return TextStyle(
-        color: Color(0xff1d1c1c),
-        fontSize: MediaQuery.of(context).size.height / 45,
-        fontWeight: FontWeight.w400);
-  }
 
   
   
