@@ -117,7 +117,7 @@ class _logInState extends State<SignInScreen> {
                             text: Text("Sign In",
                               style: CustomTextStyle.buttontitle(context),),
                               onPressed: (){
-                              Navigator.pushNamed(context, "/home");
+                              Navigator.pushNamed(context, "/naviga");
                               },
                             focusColor: buttonColor2,
                             disbaleColor: buttonColor2,

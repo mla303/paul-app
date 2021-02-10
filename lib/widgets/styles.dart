@@ -20,6 +20,12 @@ class CustomTextStyle {
   }
 
 
+  static TextStyle title(BuildContext context) {
+    return TextStyle(
+        color: Colors.white,
+        fontSize: MediaQuery.of(context).size.height / 40,
+        fontWeight: FontWeight.w400);
+  }
   static TextStyle normaltext1(BuildContext context) {
     return TextStyle(
         color: basicColorShopper,

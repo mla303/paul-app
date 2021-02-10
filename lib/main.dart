@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'Views/allCategories.dart';
+import 'Views/bottomNavigation.dart';
 import 'Views/homePage.dart';
 import 'Views/signIn.dart';
 import 'Views/splash.dart';
@@ -12,12 +14,9 @@ var routes = <String, WidgetBuilder>{
   "/walkthrough": (BuildContext context) => WalkThrough(),
   "/login": (BuildContext context) => SignInScreen(),
   "/home": (BuildContext context) => homePage(),
-  // "/forgetPassword": (BuildContext context) => forgotPasswordScreen(),
-  // "/lanuageSelect": (BuildContext context) => LanguageSelector(),
-  // "/bottomNavigation": (BuildContext context) => navigationBar(),
-  // "/notifi": (BuildContext context) =>  notifications(),
-  // "/mygrades": (BuildContext context) =>  myGrades(),
-  // "/contactus": (BuildContext context) =>  contactUsWithOutSignIn(),
+  "/allCatorgry": (BuildContext context) => allCatorgies(),
+  "/naviga": (BuildContext context) => bottomNavigation(),
+
 };
 
 
