@@ -37,6 +37,12 @@ class _SignUpState extends State<SignUpScreen> {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+
+          backgroundColor: Colors.white,
+          title: Center(child: Text('Forgot Password', style: TextStyle(color: Colors.black),)),
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
         // backgroundColor: Color(0xfff7f7f7),
 
         // appBar: customAppBar1("Sign In"),

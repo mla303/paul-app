@@ -42,6 +42,7 @@ class _forgotPasswordState extends State<forgotPassword> {
 
          backgroundColor: Colors.white,
           title: Center(child: Text('Forgot Password', style: TextStyle(color: Colors.black),)),
+          iconTheme: IconThemeData(color: Colors.black),
         ),
         // backgroundColor: Color(0xfff7f7f7),
 
@@ -102,7 +103,7 @@ class _forgotPasswordState extends State<forgotPassword> {
                           text: Text("Send",
                             style: CustomTextStyle.buttontitle(context),),
                           onPressed: (){
-                            Navigator.pushNamed(context, "/billingAddress");
+                            Navigator.pushNamed(context, "/checkout");
                           },
                           focusColor: buttonColor1,
                           disbaleColor: buttonColor1,

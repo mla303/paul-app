@@ -6,10 +6,10 @@ import 'colors.dart';
 class ShopperButton extends StatelessWidget {
 
 
-  ShopperButton({@required this.onPressed, this.text,this.focusColor,this.disbaleColor});
+  ShopperButton({@required this.onPressed, this.text,this.focusColor,this.disbaleColor,this.color});
   final GestureTapCallback onPressed;
   final Text text;
-  final Color focusColor, disbaleColor;
+  final Color focusColor, disbaleColor,color;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ShopperButton extends StatelessWidget {
             //   color: button1,
             // )
         ),
-        color: buttonColor2,
+        color: color,
         textColor: Colors.white,
         padding: EdgeInsets.all(8.0),
         onPressed: onPressed,

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
+import 'package:paul_app/widgets/Lists.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/styles.dart';
 
@@ -9,32 +10,23 @@ import 'package:paul_app/widgets/styles.dart';
 
 
 
-class BillingAddress extends StatefulWidget {
+class shopperAddress extends StatefulWidget {
   @override
-  _BillingAddressState createState() => new _BillingAddressState();
+  _shopperAddresstState createState() => new _shopperAddresstState();
 }
 
 
 
 
-class _BillingAddressState extends State<BillingAddress> {
+class _shopperAddresstState extends State<shopperAddress> {
 
-
-  bool _obscureText = true;
-  void _toggle() {
-    setState(() {
-      _obscureText = !_obscureText;
-    });
-  }
-
-
-
+  double orderPrice = 125445;
   @override
   Widget build(BuildContext context) {
 
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-
+    // double orderPrice =
     return SafeArea(
       child: Scaffold(
         // backgroundColor: Color(0xfff7f7f7),
@@ -161,7 +153,7 @@ class _BillingAddressState extends State<BillingAddress> {
                               obscureText: false,
                               textInputType: TextInputType.emailAddress,
                             ),
-                           
+
                             CustomTextField
                               (
                               hinttext: "Town & City",
@@ -193,9 +185,20 @@ class _BillingAddressState extends State<BillingAddress> {
                           ],
                         ),
 
+
+
+
                         SizedBox(height: 16,),
-
-
+                        ShopperButton(
+                          text: Text("Save all of this",
+                            style: CustomTextStyle.buttontitle(context),),
+                          onPressed: (){
+                            Navigator.pushNamed(context, "/dynamicItemFilter");
+                          },
+                          color: basicColorShopper,
+                          focusColor: buttonColor2,
+                          disbaleColor: buttonColor2,
+                        ),
                         //login button
 
 

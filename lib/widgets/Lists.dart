@@ -78,3 +78,75 @@ List latestItemList = [
     iconss: Icon(Icons.favorite,color: Colors.red,)
   ),
 ];
+
+
+// ***************************************************************
+
+
+
+
+
+class OrderDetail{
+  String itemname;
+  String price;
+
+  OrderDetail({
+    this.itemname,
+    this.price,
+  });
+}
+
+
+List OderList = [
+
+  OrderDetail(
+    itemname: "Bracelet x 1",
+    price: "\$85"
+  ),
+
+  OrderDetail(
+    itemname: "Watch",
+    price: "\$5"
+  ),
+  OrderDetail(
+    itemname: "Rings",
+    price: "\$23"
+  ),
+
+
+];
+// ***************************************************************
+
+
+
+
+
+class reviewDetail{
+  String comment;
+  int rating;
+
+  reviewDetail({
+    this.comment,
+    this.rating,
+  });
+}
+
+
+List reviewsList = [
+
+  reviewDetail(
+      comment: "Really good",
+      rating: 4
+  ),
+
+  reviewDetail(
+      comment: "feeling happy with 99 others at sector J street 22 house 29 DHA phase 2",
+      rating: 3
+  ),
+  reviewDetail(
+      comment: "really bad",
+      rating: 2
+  ),
+
+
+];

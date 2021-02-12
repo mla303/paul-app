@@ -30,6 +30,9 @@ dependencies:
   cupertino_icons: ^1.0.0
   dots_indicator: any
   persistent_bottom_nav_bar: any
+  smooth_star_rating: 1.1.1
+  checkbox_grouped: ^0.8.1
+  dotted_border: ^1.0.7
 
 dev_dependencies:
   flutter_test:
