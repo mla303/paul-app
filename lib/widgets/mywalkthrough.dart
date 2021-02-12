@@ -48,10 +48,10 @@ class WalkthroughState extends State<myWalkthrough>
   @override
   Widget build(BuildContext context) {
     return new Container(
-      color: Colors.white,
+      color: Colors.transparent,
       padding: const EdgeInsets.all(20.0),
       child: new Material(
-        color: Colors.white,
+        color: Colors.transparent,
         animationDuration: new Duration(milliseconds: 800),
         elevation: 0.0,
         borderRadius: new BorderRadius.all(Radius.circular(5.0)),
@@ -79,7 +79,7 @@ class WalkthroughState extends State<myWalkthrough>
                 style: new TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
-                    color: basicColorShopper),
+                    color: Colors.white),
               ),
             ),
 
@@ -93,7 +93,7 @@ class WalkthroughState extends State<myWalkthrough>
                   style: new TextStyle(
                       fontWeight: FontWeight.normal,
                       fontSize: 15.0,
-                      color: Colors.grey)),
+                      color: Colors.white)),
             ),
 
           ],

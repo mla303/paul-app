@@ -71,6 +71,40 @@ class CustomerButton extends StatelessWidget {
     );
   }
 }
+class NextButton extends StatelessWidget {
+
+
+  NextButton({@required this.onPressed, this.text,this.focusColor,this.disbaleColor,this.colorss});
+  final GestureTapCallback onPressed;
+  final Text text;
+  final Color focusColor, disbaleColor,colorss;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width/1.3,
+      height: MediaQuery.of(context).size.height/16,
+      child: RaisedButton(
+
+        focusColor: focusColor,
+        disabledColor: disbaleColor,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            // side: BorderSide(
+            //   color: button1,
+            // )
+        ),
+        color: buttonColor1.withOpacity(0.7),
+        textColor: colorss,
+        padding: EdgeInsets.all(8.0),
+        onPressed: onPressed,
+
+
+        child: text,
+      ),
+    );
+  }
+}
 
 
 

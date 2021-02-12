@@ -33,7 +33,9 @@ class WalkThroughState extends State<WalkThrough> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: currentPage == 0
+      ? Colors.red
+      : Colors.yellow,
       padding: EdgeInsets.all(10.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -47,6 +49,7 @@ class WalkThroughState extends State<WalkThrough> {
             child: PageView(
               children: <Widget>[
                 myWalkthrough(
+
                   title: "Plan Your Trip",
                   content: "Book one of our unique hotel to \n escape the ordinary",
                   // image: "images/walkthrough1.png",
@@ -73,7 +76,7 @@ class WalkThroughState extends State<WalkThrough> {
               dotsCount: 3,
               decorator: DotsDecorator(
 
-                activeColor: basicColorShopper, color: Colors.grey,
+                activeColor: Colors.white, color: Colors.grey,
                 activeSize: Size(14, 14),
                 activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
               ),
@@ -101,12 +104,11 @@ class WalkThroughState extends State<WalkThrough> {
                 //   onPressed: () =>
                 //   lastPage ? null : Navigator.pushNamed(context, "/login"),
                 // ),
-                CustomerButton(
-                  text: Text(lastPage ? "Lovely.. On we go…" : "NEXT",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0)),
+                NextButton(
+                  text: Text(lastPage ? "Lovely.. On we go…" : "NEXT",),
+                    colorss: Colors.white,
+                  focusColor: Colors.white,
+                  disbaleColor: Colors.white,
                   onPressed: () => lastPage
                       ? Navigator.pushNamed(context, "/login")
                       : controller.nextPage(
