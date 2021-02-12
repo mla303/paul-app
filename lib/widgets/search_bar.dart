@@ -6,9 +6,9 @@ class searchBar extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      margin: EdgeInsets.all(15.0),
+      margin: EdgeInsets.symmetric(horizontal: 8,vertical: 8),
       height: 61,
-      width: MediaQuery.of(context).size.width/1.4,
+      width: MediaQuery.of(context).size.width/1.3,
       child: Row(
         children: <Widget>[
           Expanded(

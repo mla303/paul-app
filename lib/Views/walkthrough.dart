@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/mywalkthrough.dart';
 
@@ -32,7 +33,9 @@ class WalkThroughState extends State<WalkThrough> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: currentPage == 0
+      ? Colors.red
+      : Colors.yellow,
       padding: EdgeInsets.all(10.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -46,6 +49,7 @@ class WalkThroughState extends State<WalkThrough> {
             child: PageView(
               children: <Widget>[
                 myWalkthrough(
+
                   title: "Plan Your Trip",
                   content: "Book one of our unique hotel to \n escape the ordinary",
                   // image: "images/walkthrough1.png",
@@ -72,7 +76,7 @@ class WalkThroughState extends State<WalkThrough> {
               dotsCount: 3,
               decorator: DotsDecorator(
 
-                activeColor: basicColorShopper, color: Colors.grey,
+                activeColor: Colors.white, color: Colors.grey,
                 activeSize: Size(14, 14),
                 activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
               ),
@@ -86,26 +90,25 @@ class WalkThroughState extends State<WalkThrough> {
           Expanded(
             flex: 1,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
 
 
-                FlatButton(
-                  child: Text(lastPage ? "" : "SKIP",
-                      style: TextStyle(
-                          color: basicColorShopper,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0)),
-                  onPressed: () =>
-                  lastPage ? null : Navigator.pushNamed(context, "/login"),
-                ),
-                FlatButton(
-                  child: Text(lastPage ? "Lovely.. On we go…" : "NEXT",
-                      style: TextStyle(
-                          color: basicColorShopper,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0)),
+                // FlatButton(
+                //   child: Text(lastPage ? "" : "SKIP",
+                //       style: TextStyle(
+                //           color: basicColorShopper,
+                //           fontWeight: FontWeight.bold,
+                //           fontSize: 16.0)),
+                //   onPressed: () =>
+                //   lastPage ? null : Navigator.pushNamed(context, "/login"),
+                // ),
+                NextButton(
+                  text: Text(lastPage ? "Lovely.. On we go…" : "NEXT",),
+                    colorss: Colors.white,
+                  focusColor: Colors.white,
+                  disbaleColor: Colors.white,
                   onPressed: () => lastPage
                       ? Navigator.pushNamed(context, "/login")
                       : controller.nextPage(

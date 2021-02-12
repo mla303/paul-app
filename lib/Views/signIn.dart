@@ -117,7 +117,7 @@ class _logInState extends State<SignInScreen> {
                             text: Text("Sign In",
                               style: CustomTextStyle.buttontitle(context),),
                               onPressed: (){
-                              // Navigator.pushNamed(context, "/bottomNavigation");
+                              Navigator.pushNamed(context, "/naviga");
                               },
                             color: basicColorcustomer,
                             focusColor: buttonColor2,
@@ -142,7 +142,7 @@ class _logInState extends State<SignInScreen> {
 
 
 
-                          //login button
+
                           ShopperButton(
                             text: Text("Join as a shopper",
                               style: CustomTextStyle.buttontitle(context),),
@@ -155,7 +155,7 @@ class _logInState extends State<SignInScreen> {
                           ),
                           SizedBox(height: height/60,),
 
-                          //login button
+
                           CustomerButton(
                             text: Text("Open a shop",
                               style: CustomTextStyle.buttontitle(context),),
