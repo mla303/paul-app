@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/mywalkthrough.dart';
 
@@ -86,24 +87,24 @@ class WalkThroughState extends State<WalkThrough> {
           Expanded(
             flex: 1,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
 
 
-                FlatButton(
-                  child: Text(lastPage ? "" : "SKIP",
+                // FlatButton(
+                //   child: Text(lastPage ? "" : "SKIP",
+                //       style: TextStyle(
+                //           color: basicColorShopper,
+                //           fontWeight: FontWeight.bold,
+                //           fontSize: 16.0)),
+                //   onPressed: () =>
+                //   lastPage ? null : Navigator.pushNamed(context, "/login"),
+                // ),
+                CustomerButton(
+                  text: Text(lastPage ? "Lovely.. On we go…" : "NEXT",
                       style: TextStyle(
-                          color: basicColorShopper,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0)),
-                  onPressed: () =>
-                  lastPage ? null : Navigator.pushNamed(context, "/login"),
-                ),
-                FlatButton(
-                  child: Text(lastPage ? "Lovely.. On we go…" : "NEXT",
-                      style: TextStyle(
-                          color: basicColorShopper,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 16.0)),
                   onPressed: () => lastPage

@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/basket.dart';
+import 'package:paul_app/Views/notification.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/Lists.dart';
@@ -8,6 +10,7 @@ import 'package:paul_app/widgets/search_bar.dart';
 import 'package:paul_app/widgets/styles.dart';
 
 import 'allCategories.dart';
+import 'following.dart';
 
 
 
@@ -60,32 +63,38 @@ class _homePageState extends State<homePage> {
                             searchBar(),
 
                             //notification icon with badge
-                            Stack(
-                              children: <Widget>[
-                                new Icon(Icons.notifications,size: 26,),
-                                new Positioned(
-                                  right: 0,
-                                  child: new Container(
-                                    padding: EdgeInsets.all(1),
-                                    decoration: new BoxDecoration(
-                                      color: Colors.red,
-                                      borderRadius: BorderRadius.circular(6),
-                                    ),
-                                    constraints: BoxConstraints(
-                                      minWidth: 12,
-                                      minHeight: 12,
-                                    ),
-                                    child: new Text(
-                                      '$_counter',
-                                      style: new TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 8,
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (Context) => notification()));
+                              },
+                              child: Stack(
+                                children: <Widget>[
+                                  new Icon(Icons.notifications,size: 26,),
+                                  new Positioned(
+                                    right: 0,
+                                    child: new Container(
+                                      padding: EdgeInsets.all(1),
+                                      decoration: new BoxDecoration(
+                                        color: Colors.red,
+                                        borderRadius: BorderRadius.circular(6),
                                       ),
-                                      textAlign: TextAlign.center,
+                                      constraints: BoxConstraints(
+                                        minWidth: 12,
+                                        minHeight: 12,
+                                      ),
+                                      child: new Text(
+                                        '$_counter',
+                                        style: new TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 8,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
                                     ),
-                                  ),
-                                )
-                              ],
+                                  )
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -235,6 +244,8 @@ class _homePageState extends State<homePage> {
                                         return GestureDetector(
                                           onTap: ()
                                           {
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(builder: (Context) => following()));
                                           },
                                           child: Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -361,6 +372,8 @@ class _homePageState extends State<homePage> {
                                         return GestureDetector(
                                           onTap: ()
                                           {
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(builder: (Context) => basket()));
                                           },
                                           child: Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4),

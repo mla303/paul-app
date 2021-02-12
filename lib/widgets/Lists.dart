@@ -357,3 +357,96 @@ List<Map<String, dynamic>> messages = [
     'time' : '08:45 AM'
   },
 ];
+
+
+// ****************************************************
+
+
+
+class followingDetails {
+  String title;
+  String profile;
+  String city;
+  String followType;
+
+  followingDetails({
+    this.title,
+    this.profile,
+    this.city,
+    this.followType
+});
+
+}
+
+List followingList = [
+
+  followingDetails(
+    title: "Little Fancy",
+    city: "Morocco",
+    profile: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg',
+    followType: "Following"
+  ),
+
+  followingDetails(
+    title: "Marry Fino",
+    city: "New York",
+    profile: 'https://cdn.pixabay.com/photo/2019/11/03/20/11/portrait-4599553_960_720.jpg',
+    followType: "Fallow"
+  ),
+
+
+];
+
+
+
+
+// ***********************************************************
+
+
+
+
+class purchaseDetail{
+  String name;
+  String price;
+  String img;
+  int num;
+
+
+  purchaseDetail({
+    this.name,
+    this.price,
+    this.img,
+    this.num
+
+  });
+}
+
+
+List PurchasesDetailList = [
+
+  purchaseDetail(
+      name:"Bracelets",
+      img: "images/jewellary.png",
+      price: "400 ",
+      num: 2
+  ),
+  purchaseDetail(
+      name:"Toys",
+      img: "images/toys.png",
+      price: "200 ",
+      num: 1
+  ),
+
+];
+
+List SalesDetailList = [
+
+  purchaseDetail(
+      name:"Bracelets",
+      img: "images/jewellary.png",
+      price: "400 ",
+      num: 2
+  ),
+
+];
+

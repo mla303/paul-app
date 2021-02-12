@@ -4,7 +4,11 @@ import 'Views/bottomNavigation.dart';
 import 'Views/homePage.dart';
 import 'Views/signIn.dart';
 import 'Views/splash.dart';
+import 'Views/test.dart';
+import 'Views/vendorProfile.dart';
+import 'Views/yourItem.dart';
 import 'Views/walkthrough.dart';
+import 'Views/wishList.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:paul_app/Views/search.dart';
+import 'package:paul_app/Views/wishList.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/fab_bottom_app_bar.dart';
 
@@ -27,7 +28,7 @@ class _bottomNavigationState extends State<bottomNavigation> with TickerProvider
     messages(),
     orderPage(),
     searchPage(),
-    null,
+
 
 
     // user_home(),
@@ -61,6 +62,7 @@ class _bottomNavigationState extends State<bottomNavigation> with TickerProvider
           FABBottomAppBarItem(iconData: Icons.messenger, text: 'Messages'),
           FABBottomAppBarItem(iconData: Icons.shopping_cart, text: 'Orders'),
           FABBottomAppBarItem(iconData: Icons.person_outline, text: 'Account'),
+
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

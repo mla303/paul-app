@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paul_app/Views/purchaseContainer.dart';
+import 'package:paul_app/Views/purchaseDetail.dart';
+import 'package:paul_app/Views/salesDetail.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/Lists.dart';
@@ -77,13 +79,23 @@ class _orderPageState extends State<orderPage> {
                             child: Container(
                               child: TabBarView(
                                 children: <Widget>[
-                                  Container(
-//                              color: Colors.red,
-                                    child: purchaseContainer(),
-                                  ),
-                                  Container(
-                                    child: mySalesContainer()
-                                  ),
+
+                                    GestureDetector(
+                                        onTap: ()
+                                        {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(builder: (Context) => purchaseDetial()));
+
+                                        },
+                                        child: purchaseContainer()),
+
+                                  GestureDetector( onTap: ()
+                                  {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(builder: (Context) => salesDetial()));
+
+                                  },
+                                      child: mySalesContainer()),
 
                                 ],
                               ),

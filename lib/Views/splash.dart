@@ -22,7 +22,7 @@ class _splashScreenState extends State<splashScreen> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(color: const Color(0xff7c94b6),
+        decoration: BoxDecoration(color: const Color(0xff7c94b6).withOpacity(0.2),
           // image: DecorationImage(
           //   image: AssetImage("assets/images/background.png"),
           //   fit: BoxFit.cover,
@@ -30,13 +30,13 @@ class _splashScreenState extends State<splashScreen> {
           // )
         ),
 
-        // child: Center(
-        //   child: Image(
-        //     image:  AssetImage("assets/images/logo-half.png"),
-        //     height: height/4,
-        //
-        //   ),
-        // ),
+        child: Center(
+          child: Image(
+            image:  AssetImage("images/logo.png"),
+            height: height/4,
+
+          ),
+        ),
       ),
     );
   }

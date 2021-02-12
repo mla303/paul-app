@@ -30,6 +30,9 @@ dependencies:
   cupertino_icons: ^1.0.0
   dots_indicator: any
   persistent_bottom_nav_bar: any
+  carousel_slider: any
+  cached_network_image: ^2.4.1
+  smooth_star_rating: any
 
 dev_dependencies:
   flutter_test:
