@@ -32,6 +32,12 @@ class _ShopperAccountState extends State<ShopperAccount> {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.white,
+
+          iconTheme: IconThemeData(color: basicColorShopper),
+        ),
         // backgroundColor: Color(0xfff7f7f7),
 
         // appBar: customAppBar1("Sign In"),

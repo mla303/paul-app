@@ -1,10 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/addProductDone.dart';
 import 'package:paul_app/Views/search.dart';
+import 'package:paul_app/Views/vendorAccount.dart';
 import 'package:paul_app/Views/wishList.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/fab_bottom_app_bar.dart';
 
+import 'AddProduct.dart';
 import 'allCategories.dart';
 import 'allMessages.dart';
 import 'chatScreen.dart';
@@ -27,7 +30,7 @@ class _bottomNavigationState extends State<bottomNavigation> with TickerProvider
     homePage(),
     messages(),
     orderPage(),
-    searchPage(),
+    VendorAccount(),
 
 
 
@@ -75,9 +78,8 @@ class _bottomNavigationState extends State<bottomNavigation> with TickerProvider
       backgroundColor: basicColorcustomer,
       onPressed: ()
       {
-        setState(() {
-          _selectedTab ;
-        });
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (Context) => AddProduct()));
       },
       tooltip: 'Increment',
       child: Icon(Icons.camera_alt),

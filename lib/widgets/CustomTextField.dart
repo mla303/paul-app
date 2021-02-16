@@ -40,7 +40,7 @@ class CustomTextField extends StatelessWidget {
       width: width/1.2,
       child: TextFormField(
         style: TextStyle(
-            color: basicColorShopper,
+            color: blackColor,
             fontSize: 14
         ),
 
@@ -48,7 +48,7 @@ class CustomTextField extends StatelessWidget {
         keyboardType: textInputType,
         obscureText: obscureText == null ? false : obscureText,
         onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
-        cursorColor: basicColorShopper,
+        cursorColor: blackColor,
         decoration: new InputDecoration(
             contentPadding: new EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
 
@@ -161,7 +161,7 @@ class customtextField extends StatelessWidget {
             filled: true,
             hintStyle: new TextStyle(color: Colors.grey[800].withOpacity(0.5),fontSize: 14),
             hintText: hinttext,
-            fillColor: grayColor
+            fillColor: textFieldFilledColor,
         ),
       ),
     );

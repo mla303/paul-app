@@ -2,8 +2,10 @@
 import 'package:checkbox_grouped/checkbox_grouped.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/addProductDone.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
+import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/styles.dart';
 
@@ -35,7 +37,12 @@ class _AddProductState extends State<AddProduct> {
       child: Scaffold(
         // backgroundColor: Color(0xfff7f7f7),
 
-        // appBar: customAppBar1("Sign In"),
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          title: Text('Your items', style: TextStyle(color: Colors.black), textAlign: TextAlign.center),
+          iconTheme: IconThemeData(color:  Colors.black),
+        ),
 
         body: Container(
           height: height,
@@ -52,8 +59,8 @@ class _AddProductState extends State<AddProduct> {
 
                   SizedBox(height: height/30,),
 
-                  Container(height: height/20,
-                    width: width/2.2,
+                  Container(height: height/30,
+                    width: width/2.4,
 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -74,7 +81,7 @@ class _AddProductState extends State<AddProduct> {
                     ), ),
                   //SizedBox(height: height/70,),
                   Container(height: height/30,
-                    width: width/2.7,
+                    width: width/2.5,
 
 
                     child:Center(
@@ -95,7 +102,7 @@ class _AddProductState extends State<AddProduct> {
 
                       child: DottedBorder(
                         color: basicColorShopper,//color of dotted/dash line
-                        strokeWidth: 2, //thickness of dash/dots
+                        strokeWidth: 1.5, //thickness of dash/dots
                         dashPattern: [10,6],
                         child: Container(
                           height: height/10,
@@ -130,7 +137,7 @@ class _AddProductState extends State<AddProduct> {
 
                       child: DottedBorder(
                         color: basicColorShopper,//color of dotted/dash line
-                        strokeWidth: 2, //thickness of dash/dots
+                        strokeWidth: 1.5, //thickness of dash/dots
                         dashPattern: [10,6],
                         child: Container(
                           height: height/10,
@@ -165,7 +172,7 @@ class _AddProductState extends State<AddProduct> {
 
                       child: DottedBorder(
                         color: basicColorShopper,//color of dotted/dash line
-                        strokeWidth: 2, //thickness of dash/dots
+                        strokeWidth: 1.5, //thickness of dash/dots
                         dashPattern: [10,6],
                         child: Container(
                           height: height/10,
@@ -196,21 +203,18 @@ class _AddProductState extends State<AddProduct> {
                       // ),
                     ),
                   ],),
-                  SizedBox(height: height/50,),
+                  SizedBox(height: height/80,),
                   Container(height: height/30,
-                    width: width/1.9,
+                    width: width/1.7,
 
 
-                    child:Center(
-                      child: Text(
-                        'Top tip! Try to take photos in natural day light ',
-                        style: TextStyle(
+                    child:Text(
+                      'Top tip! Try to take photos in natural day light ',
+                      style: TextStyle(
 
-                            color: Colors.grey,
-                            fontSize: height / 70,
-                            fontWeight: FontWeight.w400),
-
-                      ),
+                          color: Colors.grey,
+                          fontSize: height / 70,
+                          fontWeight: FontWeight.w400),
 
                     ), ),
                   SizedBox(height: height/70,),
@@ -552,7 +556,8 @@ class _AddProductState extends State<AddProduct> {
                       text: Text("List item",
                         style: CustomTextStyle.buttontitle(context),),
                       onPressed: (){
-                        // Navigator.pushNamed(context, "/dynamicItemFilter");
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (Context) => addProductDone()));
                       },
                       color: basicColorShopper,
                       focusColor: buttonColor2,

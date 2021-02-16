@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/bottomNavigation.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/colors.dart';
@@ -62,7 +63,8 @@ class _DoneState extends State<Done> {
                   text: Text("Take me home...",
                     style: CustomTextStyle.buttontitle1(context),),
                   onPressed: (){
-                    Navigator.pushNamed(context, "/addProductDone");
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (Context) => bottomNavigation()));
                   },
                   focusColor: Colors.white,
                   disbaleColor:Colors.white,

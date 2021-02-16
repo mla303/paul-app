@@ -1,7 +1,9 @@
 import 'package:checkbox_grouped/checkbox_grouped.dart';
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/shopperAddress.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
+import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/styles.dart';
 
@@ -31,7 +33,7 @@ class _ShopperSettingsState extends State<ShopperSettings> {
       child: Scaffold(
         // backgroundColor: Color(0xfff7f7f7),
 
-        // appBar: customAppBar1("Sign In"),
+        appBar: customAppBar1("Shopper Setting"),
 
         body: Container(
           height: height,
@@ -53,13 +55,19 @@ class _ShopperSettingsState extends State<ShopperSettings> {
                             fontSize: height / 40,
                             fontWeight: FontWeight.w400))),
                 SizedBox(height: height/25,),
-                Container(
-                   // width: width / wi,
-                    child: Text("$billingAddress",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: height / 50,
-                            fontWeight: FontWeight.w400))),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (Context) => shopperAddress()));
+                  },
+                  child: Container(
+                     // width: width / wi,
+                      child: Text("$billingAddress",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: height / 50,
+                              fontWeight: FontWeight.w400))),
+                ),
                 SizedBox(height: height/70,),
                 Divider(color: Colors.grey,),
                 SizedBox(height: height/70,),

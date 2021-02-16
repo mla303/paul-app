@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/Lists.dart';
+import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/styles.dart';
 
@@ -31,7 +32,7 @@ class _shopperAddresstState extends State<shopperAddress> {
       child: Scaffold(
         // backgroundColor: Color(0xfff7f7f7),
 
-        // appBar: customAppBar1("Sign In"),
+        appBar: customAppBar1("Shopper Adress"),
 
         body: Container(
           // color: whiteColor,

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/following.dart';
 import 'package:paul_app/Views/purchaseContainer.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/tabBar.dart';
@@ -9,8 +10,13 @@ import 'itemsContainer.dart';
 import 'mySales.dart';
 
 
-class vendorProfile extends StatelessWidget {
+class vendorProfile extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _vendorProfileState createState() => _vendorProfileState();
+}
+
+class _vendorProfileState extends State<vendorProfile> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -107,17 +113,23 @@ class _ProfileFirstState extends State<ProfileFirst> {
                                 image: NetworkImage("https://cdn.pixabay.com/photo/2015/09/02/13/24/girl-919048_960_720.jpg"))
                         ),
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white60),
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text("Follow shop", style: TextStyle(
-                              color: Colors.white60,
-                              fontSize: 1.8 * SizeConfig.textMultiplier
-                          ),),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (Context) => following()));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white60),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text("Follow shop", style: TextStyle(
+                                color: Colors.white60,
+                                fontSize: 1.8 * SizeConfig.textMultiplier
+                            ),),
+                          ),
                         ),
                       ),
                     ],

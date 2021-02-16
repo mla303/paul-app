@@ -1,10 +1,14 @@
 
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/paymentScreen.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/Lists.dart';
+import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/styles.dart';
+
+import 'done.dart';
 
 
 
@@ -31,7 +35,7 @@ double orderPrice = 125445;
       child: Scaffold(
         // backgroundColor: Color(0xfff7f7f7),
 
-        // appBar: customAppBar1("Sign In"),
+
 
         body: Container(
           // color: whiteColor,
@@ -153,7 +157,7 @@ double orderPrice = 125445;
                               obscureText: false,
                               textInputType: TextInputType.emailAddress,
                             ),
-                           
+
                             CustomTextField
                               (
                               hinttext: "Town & City",
@@ -242,7 +246,8 @@ double orderPrice = 125445;
                           text: Text("Buy",
                             style: CustomTextStyle.buttontitle(context),),
                           onPressed: (){
-                            Navigator.pushNamed(context, "/done");
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (Context) => PaymentScreen()));
                           },
                           color: basicColorShopper,
                           focusColor: buttonColor2,

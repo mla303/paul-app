@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:paul_app/Views/basket.dart';
 import 'package:paul_app/Views/notification.dart';
+import 'package:paul_app/Views/viewItems.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/Lists.dart';
@@ -101,7 +102,7 @@ class _homePageState extends State<homePage> {
 
 
                         Container(
-                            width:width/1.2,
+                            width:width/1.1,
                             child: Text("Your Club Home", style: CustomTextStyle.headig(context))),
 
                       ],
@@ -131,44 +132,48 @@ class _homePageState extends State<homePage> {
                                 //Catergory
                                 Container(
                                   width:width/1.1,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "Popular Categories",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                      InkWell(
-                                        onTap: (){
-
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(builder: (Context) => allCatorgies()));
-
-                                        },
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "See all",
-                                              style: TextStyle(
-                                                  color: Colors.grey,
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w500),
-                                            ),
-                                            const SizedBox(width: 3,),
-                                            Icon(Icons.arrow_forward_ios,size: 13,color: Colors.grey,)
-                                          ],
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left:9.0),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "Categories",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500),
                                         ),
-                                      ),
-                                    ],
+                                        InkWell(
+                                          onTap: (){
+
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(builder: (Context) => allCatorgies()));
+
+                                          },
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                "See all",
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w500),
+                                              ),
+                                              const SizedBox(width: 3,),
+                                              Icon(Icons.arrow_forward_ios,size: 13,color: Colors.grey,)
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
+                                SizedBox(height: height/70,),
                                 Container(
                                   // color: Colors.redAccent,
-                                  padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 0.0),
+                                  padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0.0),
                                   height: MediaQuery.of(context).size.height /14,
                                   width: width,
 
@@ -221,12 +226,15 @@ class _homePageState extends State<homePage> {
 
 
                                 //Latest items
-                                Text(
-                                  "Latest items",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500),
+                                Padding(
+                                  padding: const EdgeInsets.only(left:9.0),
+                                  child: Text(
+                                    "Latest items",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500),
+                                  ),
                                 ),
 
                                 Container(
@@ -245,7 +253,7 @@ class _homePageState extends State<homePage> {
                                           onTap: ()
                                           {
                                             Navigator.of(context).push(
-                                                MaterialPageRoute(builder: (Context) => following()));
+                                                MaterialPageRoute(builder: (Context) => viewItems()));
                                           },
                                           child: Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -349,12 +357,15 @@ class _homePageState extends State<homePage> {
 
 
                                 //Recently viewed.
-                                Text(
-                                  "Recently viewed",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500),
+                                Padding(
+                                  padding: const EdgeInsets.only(left:9.0),
+                                  child: Text(
+                                    "Recently viewed",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500),
+                                  ),
                                 ),
 
                                 Container(
@@ -373,7 +384,7 @@ class _homePageState extends State<homePage> {
                                           onTap: ()
                                           {
                                             Navigator.of(context).push(
-                                                MaterialPageRoute(builder: (Context) => basket()));
+                                                MaterialPageRoute(builder: (Context) => viewItems()));
                                           },
                                           child: Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 4),

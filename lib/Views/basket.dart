@@ -5,6 +5,7 @@ import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/styles.dart';
 
+import 'checkout.dart';
 import 'mySales.dart';
 
 class basket extends StatefulWidget {
@@ -103,8 +104,11 @@ class _basketState extends State<basket> {
                           text: Text("Go-to checkout",
                             style: CustomTextStyle.buttontitle(context),),
                           onPressed: (){
-                            // Navigator.pushNamed(context, "/bottomNavigation");
-                          },
+
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (Context) => Checkout()));
+
+                            },
                           colors: basicColorcustomer,
                         ),
                       ),

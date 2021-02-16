@@ -7,6 +7,8 @@ import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/search_bar.dart';
 import 'package:paul_app/widgets/styles.dart';
 
+import 'dynamicItemFilter.dart';
+
 class itemPage extends StatefulWidget {
   @override
   _itemPageState createState() => new _itemPageState();
@@ -49,41 +51,53 @@ class _itemPageState extends State<itemPage> {
                       Row(
                         children: [
                           Expanded( flex:1,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: grayColor,
-                                  border: Border.all(color: basicColorShopper.withOpacity(0.2))
-                                ),
-                                height: 34,
-                                // color: Colors.red,
-                              child: Wrap(
-                                spacing: 3,
-                                runAlignment: WrapAlignment.center,
-                                alignment: WrapAlignment.center,
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.of(context).push(
+                                      MaterialPageRoute(builder: (Context) => DynamicItemFilter()));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: grayColor,
+                                    border: Border.all(color: basicColorShopper.withOpacity(0.2))
+                                  ),
+                                  height: 34,
+                                  // color: Colors.red,
+                                child: Wrap(
+                                  spacing: 3,
+                                  runAlignment: WrapAlignment.center,
+                                  alignment: WrapAlignment.center,
 
-                                children: <Widget>[
-                                  Icon(Icons.sort,size: 20,color: Colors.grey,),
-                                  Text("Sort",style: CustomTextStyle.normaltext1(context),)
-                                ],
-                              ),
+                                  children: <Widget>[
+                                    Icon(Icons.sort,size: 20,color: Colors.grey,),
+                                    Text("Sort",style: CustomTextStyle.normaltext1(context),)
+                                  ],
+                                ),
+                                ),
                               )),
 
                           Expanded( flex:1,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: grayColor,
-                                    border: Border.all(color: basicColorShopper.withOpacity(0.2))
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.of(context).push(
+                                      MaterialPageRoute(builder: (Context) => DynamicItemFilter()));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: grayColor,
+                                      border: Border.all(color: basicColorShopper.withOpacity(0.2))
+                                  ),
+                                  height: 34,
+                                child: Wrap(
+                                  spacing: 3,
+                                  runAlignment: WrapAlignment.center,
+                                  alignment: WrapAlignment.center,
+                                  children: <Widget>[
+                                    Icon(Icons.filter_alt_rounded,size: 20,color: Colors.grey,),
+                                    Text("Narrow that down",style: CustomTextStyle.normaltext1(context),)
+                                  ],
                                 ),
-                                height: 34,
-                              child: Wrap(
-                                spacing: 3,
-                                runAlignment: WrapAlignment.center,
-                                alignment: WrapAlignment.center,
-                                children: <Widget>[
-                                  Icon(Icons.filter_alt_rounded,size: 20,color: Colors.grey,),
-                                  Text("Narrow that down",style: CustomTextStyle.normaltext1(context),)
-                                ],
-                              ),
+                                ),
                               )),
                         ],
                       )

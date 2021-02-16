@@ -2,9 +2,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:paul_app/Views/basket.dart';
+import 'package:paul_app/Views/bottomNavigation.dart';
 import 'package:paul_app/Views/purchaseContainer.dart';
+import 'package:paul_app/Views/reviews.dart';
+import 'package:paul_app/Views/vendorProfile.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
+import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/mycircleavatar.dart';
 import 'package:paul_app/widgets/styles.dart';
@@ -69,6 +73,7 @@ class _ProfileFirstState extends State<detailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: customAppBar1("Your Item"),
       backgroundColor: Color(0xffF8F8FA),
       body: SingleChildScrollView(
         child: Wrap(
@@ -198,8 +203,14 @@ class _ProfileFirstState extends State<detailPage> {
 
                                Row(
                                  children: [
-                                   MyCircleAvatar(
-                                     imgUrl: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg',
+                                   GestureDetector(
+                                     onTap: (){
+                                       Navigator.of(context).push(
+                                           MaterialPageRoute(builder: (Context) => vendorProfile()));
+                                     },
+                                     child: MyCircleAvatar(
+                                       imgUrl: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg',
+                                     ),
                                    ),
                                    SizedBox(width: 1 * SizeConfig.heightMultiplier,),
                                    Column(
@@ -245,36 +256,49 @@ class _ProfileFirstState extends State<detailPage> {
                                            // print("rating value dd -> ${value.truncate()}");
                                          },
                                        ),
-                                       Text("View / Leave review",style:TextStyle(
-                                         fontSize: 12,
-                                         fontWeight: FontWeight.w600,
-                                         color: Colors.grey
-                                       ),),
+                                       GestureDetector(
+                                         onTap: (){
+                                           Navigator.of(context).push(
+                                               MaterialPageRoute(builder: (Context) => Reviews()));
+
+                                         },
+                                         child: Text("View / Leave review",style:TextStyle(
+                                           fontSize: 12,
+                                           fontWeight: FontWeight.w600,
+                                           color: Colors.grey
+                                         ),),
+                                       ),
                                      ],
                                    ),
 
-                                   Row(
-                                     children: [
-                                       Container(
-                                         height: 40,
-                                           width: 40,
-                                         decoration: BoxDecoration(
-                                           borderRadius: BorderRadius.circular(6),
-                                           color: Colors.white,
+                                   GestureDetector(
+                                     onTap: (){
+                                       Navigator.of(context).push(
+                                           MaterialPageRoute(builder: (Context) => itemPage()));
+                                     },
+                                     child: Row(
+                                       children: [
+                                         Container(
+                                           height: 40,
+                                             width: 40,
+                                           decoration: BoxDecoration(
+                                             borderRadius: BorderRadius.circular(6),
+                                             color: Colors.white,
+                                           ),
+                                         child: Center(child: Icon(Icons.message_outlined,color: Colors.blue,size: 16,)),
                                          ),
-                                       child: Center(child: Icon(Icons.message_outlined,color: Colors.blue,size: 16,)),
-                                       ),
-                                       SizedBox(width: 1 * SizeConfig.heightMultiplier,),
-                                       Container(
-                                         height: 40,
-                                           width: 40,
-                                         decoration: BoxDecoration(
-                                           borderRadius: BorderRadius.circular(6),
-                                           color: Colors.white,
+                                         SizedBox(width: 1 * SizeConfig.heightMultiplier,),
+                                         Container(
+                                           height: 40,
+                                             width: 40,
+                                           decoration: BoxDecoration(
+                                             borderRadius: BorderRadius.circular(6),
+                                             color: Colors.white,
+                                           ),
+                                         child: Center(child: Icon(Icons.favorite,color: Colors.red,size: 18,)),
                                          ),
-                                       child: Center(child: Icon(Icons.favorite,color: Colors.red,size: 18,)),
-                                       ),
-                                     ],
+                                       ],
+                                     ),
                                    ),
 
                                  ],
@@ -462,7 +486,10 @@ class _ProfileFirstState extends State<detailPage> {
                         child: CustomerButton(
                           text: Text("Love it! Add to basket",style: CustomTextStyle.normaltext3(context),),
                             disbaleColor: basicColorShopper,
-                            onPressed: null),
+                            onPressed: (){
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (Context) => basket()));
+                            }),
                       )
                     ],
                   ),

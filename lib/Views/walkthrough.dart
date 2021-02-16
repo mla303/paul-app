@@ -33,17 +33,18 @@ class WalkThroughState extends State<WalkThrough> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: currentPage == 0
-      ? Colors.red
-      : Colors.yellow,
+      color: currentPage == 0 || currentPage == 2
+      ? Color(0xffFFC25D)
+      : basicColorShopper,
       padding: EdgeInsets.all(10.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: Container(),
-          ),
+          // Expanded(
+          //   flex: 1,
+          //   child: Container(),
+          // ),
+          SizedBox(height: 50,),
           Expanded(
             flex: 3,
             child: PageView(
@@ -76,7 +77,7 @@ class WalkThroughState extends State<WalkThrough> {
               dotsCount: 3,
               decorator: DotsDecorator(
 
-                activeColor: Colors.white, color: Colors.grey,
+                activeColor: Colors.white, color: Colors.white,
                 activeSize: Size(14, 14),
                 activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
               ),
@@ -87,37 +88,19 @@ class WalkThroughState extends State<WalkThrough> {
 //
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-
-
-                // FlatButton(
-                //   child: Text(lastPage ? "" : "SKIP",
-                //       style: TextStyle(
-                //           color: basicColorShopper,
-                //           fontWeight: FontWeight.bold,
-                //           fontSize: 16.0)),
-                //   onPressed: () =>
-                //   lastPage ? null : Navigator.pushNamed(context, "/login"),
-                // ),
-                NextButton(
-                  text: Text(lastPage ? "Lovely.. On we go…" : "NEXT",),
-                    colorss: Colors.white,
-                  focusColor: Colors.white,
-                  disbaleColor: Colors.white,
-                  onPressed: () => lastPage
-                      ? Navigator.pushNamed(context, "/login")
-                      : controller.nextPage(
-                      duration: Duration(milliseconds: 300),
-                      curve: Curves.easeIn),
-                ),
-              ],
-            ),
-          )
+          SizedBox(height: 40,),
+          NextButton(
+            text: Text(lastPage ? "Lovely.. On we go…" : "NEXT",),
+              colorss: Colors.black,
+            focusColor: basicColorShopper,
+            disbaleColor: Colors.white,
+            onPressed: () => lastPage
+                ? Navigator.pushNamed(context, "/login")
+                : controller.nextPage(
+                duration: Duration(milliseconds: 300),
+                curve: Curves.easeIn),
+          ),
+          SizedBox(height: 60,),
         ],
       ),
     );

@@ -1,8 +1,10 @@
 import 'package:checkbox_grouped/checkbox_grouped.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/vendorAccount.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
+import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/styles.dart';
 
@@ -23,7 +25,12 @@ class _VendorSettingtState extends State<VendorSetting> {
       child: Scaffold(
         // backgroundColor: Color(0xfff7f7f7),
 
-        // appBar: customAppBar1("Sign In"),
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          title: Text('Shopper setting', style: TextStyle(color: Colors.black,), textAlign: TextAlign.center),
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
 
         body: Container(
           height: height,
@@ -380,7 +387,8 @@ class _VendorSettingtState extends State<VendorSetting> {
                         style: CustomTextStyle.buttontitle(context),
                       ),
                       onPressed: () {
-                        // Navigator.pushNamed(context, "/dynamicItemFilter");
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (Context) => VendorAccount()));
                       },
                       color: basicColorShopper,
                       focusColor: buttonColor2,

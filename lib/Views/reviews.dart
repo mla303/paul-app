@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/Lists.dart';
+import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/styles.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
@@ -21,7 +22,12 @@ class _ReviewsState extends State<Reviews> {
       child: Scaffold(
         backgroundColor: Colors.white,
 
-        // appBar: customAppBar1("Sign In"),
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          title: Text('Reviews', style: TextStyle(color: Colors.black,), textAlign: TextAlign.center),
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
 
         body: Container(
           // color: whiteColor,
@@ -32,35 +38,8 @@ class _ReviewsState extends State<Reviews> {
                 //mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                 Row(
-                   // crossAxisAlignment: CrossAxisAlignment.start,
-                   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                   children: [
-                     InkWell(
-                       onTap: ()
-                       {
-                         // Navigator.pushNamed(context, "/forgetPassword");
-                       },
-                       child: Align(
-                         alignment: Alignment.centerLeft,
-                         child: Text("Cancel",
-                             style:CustomTextStyle.normaltext3(context)),
-                       ),
-                     ),
-                     SizedBox(width: width/3.5,),
-                     Center(
-                       child: Text(
-                         'Reviews',
-                         style: TextStyle(
-                             color: Colors.black,
-                             fontSize: height / 50,
-                             fontWeight: FontWeight.w500),
 
-                       ),
-                     ),
-                   ],
-                 ),
-                  SizedBox(height: height/20,),
+
                   Container(
                     // color: Colors.redAccent,
                     padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 0.0),
@@ -77,14 +56,14 @@ class _ReviewsState extends State<Reviews> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(reviewsList[index].comment,
-                                style: CustomTextStyle.normaltext3(context),
+                                style: CustomTextStyle.normaltext2(context),
                               ),
                               SmoothStarRating(
                                   allowHalfRating: true,
                                   onRated: (v) {
                                   },
                                   // starCount: reviewsList[index].rating,
-                                  rating: reviewsList[index].rating,
+                                  rating: 4,
                                   // rating: rating,
                                   size: height/40,
                                   isReadOnly:true,
@@ -161,7 +140,7 @@ SizedBox(height: height/60,),
                       text: Text("Submit",
                         style: CustomTextStyle.buttonTextWhite(context),),
                       onPressed: (){
-                        Navigator.pushNamed(context, "/ShopperAddress");
+                        // Navigator.pushNamed(context, "/ShopperAddress");
                       },
                       focusColor: Colors.white,
                       disbaleColor:Colors.white,

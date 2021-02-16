@@ -60,7 +60,7 @@ class CustomerButton extends StatelessWidget {
             //   color: button1,
             // )
         ),
-        color: buttonColor1.withOpacity(0.7),
+        color: basicColorShopper.withOpacity(0.7),
         textColor: Colors.white,
         padding: EdgeInsets.all(8.0),
         onPressed: onPressed,
@@ -94,7 +94,7 @@ class NextButton extends StatelessWidget {
             //   color: button1,
             // )
         ),
-        color: buttonColor1.withOpacity(0.7),
+        color: buttonColor1,
         textColor: colorss,
         padding: EdgeInsets.all(8.0),
         onPressed: onPressed,

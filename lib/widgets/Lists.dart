@@ -123,7 +123,7 @@ List OderList = [
 
 class reviewDetail{
   String comment;
-  int rating;
+  String rating;
 
   reviewDetail({
     this.comment,
@@ -136,16 +136,16 @@ List reviewsList = [
 
   reviewDetail(
       comment: "Really good",
-      rating: 4
+      rating: "4"
   ),
 
   reviewDetail(
       comment: "feeling happy with 99 others at sector J street 22 house 29 DHA phase 2",
-      rating: 3
+      rating: "3"
   ),
   reviewDetail(
       comment: "really bad",
-      rating: 2
+      rating: "2"
   ),
 
 

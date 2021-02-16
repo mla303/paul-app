@@ -27,7 +27,7 @@ class CustomTextStyle {
 
   static TextStyle headig(BuildContext context) {
     return TextStyle(
-        color: basicColorShopper,
+        color: blackColor,
         fontSize: MediaQuery.of(context).size.height / 20,
         fontWeight: FontWeight.w600);
   }

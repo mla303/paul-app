@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/bottomNavigation.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/colors.dart';
@@ -57,12 +58,13 @@ class _AddProductDoneState extends State<addProductDone> {
                       fontWeight: FontWeight.w400),
 
                 ),
-                SizedBox(height: height/5,),
+                SizedBox(height: height/10,),
                 ShopperButton(
                   text: Text("I'm finished here...",
                     style: CustomTextStyle.buttonTextWhite(context),),
                   onPressed: (){
-                    Navigator.pushNamed(context, "/reviews");
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (Context) => bottomNavigation()));
                   },
                   focusColor: Colors.white,
                   disbaleColor:Colors.white,

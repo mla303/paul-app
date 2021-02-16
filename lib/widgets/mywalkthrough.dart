@@ -83,7 +83,7 @@ class WalkthroughState extends State<myWalkthrough>
               ),
             ),
 
-            SizedBox(height: 10,),
+            SizedBox(height: 20,),
             new Transform(
               transform:
               new Matrix4.translationValues(animation.value, 0.0, 0.0),

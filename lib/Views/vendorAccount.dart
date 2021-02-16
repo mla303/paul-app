@@ -1,10 +1,17 @@
 
 import 'package:checkbox_grouped/checkbox_grouped.dart';
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/ShopperSettings.dart';
+import 'package:paul_app/Views/following.dart';
+import 'package:paul_app/Views/orders.dart';
+import 'package:paul_app/Views/vendorSetting.dart';
+import 'package:paul_app/Views/wishList.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/styles.dart';
+
+import 'AddProduct.dart';
 
 
 
@@ -32,6 +39,12 @@ class _VendorAccountState extends State<VendorAccount> {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.white,
+       
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
         // backgroundColor: Color(0xfff7f7f7),
 
         // appBar: customAppBar1("Sign In"),
@@ -83,7 +96,8 @@ class _VendorAccountState extends State<VendorAccount> {
                     InkWell(
                       onTap: ()
                       {
-                        // Navigator.pushNamed(context, "/forgetPassword");
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (Context) => AddProduct()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -127,7 +141,8 @@ class _VendorAccountState extends State<VendorAccount> {
                     InkWell(
                       onTap: ()
                       {
-                        // Navigator.pushNamed(context, "/forgetPassword");
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (Context) => orderPage()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -149,7 +164,8 @@ class _VendorAccountState extends State<VendorAccount> {
                     InkWell(
                       onTap: ()
                       {
-                        // Navigator.pushNamed(context, "/forgetPassword");
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (Context) => VendorSetting()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -193,7 +209,8 @@ class _VendorAccountState extends State<VendorAccount> {
                     InkWell(
                       onTap: ()
                       {
-                        // Navigator.pushNamed(context, "/forgetPassword");
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (Context) => ShopperSettings()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -215,7 +232,8 @@ class _VendorAccountState extends State<VendorAccount> {
                     InkWell(
                       onTap: ()
                       {
-                        // Navigator.pushNamed(context, "/forgetPassword");
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (Context) => wishList()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -237,7 +255,8 @@ class _VendorAccountState extends State<VendorAccount> {
                     InkWell(
                       onTap: ()
                       {
-                        // Navigator.pushNamed(context, "/forgetPassword");
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (Context) => following()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

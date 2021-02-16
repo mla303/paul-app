@@ -52,7 +52,10 @@ class _orderPageState extends State<orderPage> {
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                             width: width / 1.2,
-                            child: Text("Your purchases",
+                            child: Text(
+                                tabBarlabel() == "Purchases"
+                                            ? "Your purchases"
+                            : "Your Sales",
                                 style: CustomTextStyle.headig(context))),
                       ),
                     ],
@@ -72,6 +75,8 @@ class _orderPageState extends State<orderPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
+
+
                           Container(
                             child: tabBarlabel(),
                           ),
