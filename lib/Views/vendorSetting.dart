@@ -1,4 +1,4 @@
-import 'package:checkbox_grouped/checkbox_grouped.dart';
+  import 'package:checkbox_grouped/checkbox_grouped.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:paul_app/Views/vendorAccount.dart';
@@ -26,9 +26,10 @@ class _VendorSettingtState extends State<VendorSetting> {
         // backgroundColor: Color(0xfff7f7f7),
 
         appBar: AppBar(
+          elevation: 0,
           centerTitle: true,
           backgroundColor: Colors.white,
-          title: Text('Shopper setting', style: TextStyle(color: Colors.black,), textAlign: TextAlign.center),
+          title: Text('Shop setting', style: TextStyle(color: Colors.black,), textAlign: TextAlign.center),
           iconTheme: IconThemeData(color: Colors.black),
         ),
 
@@ -48,8 +49,8 @@ class _VendorSettingtState extends State<VendorSetting> {
                   ),
 
                   Container(
-                    height: height / 20,
-                    width: width / 2.2,
+                    height: height / 28,
+                    width: width / 2.4,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: basicColorShopper,
@@ -67,7 +68,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                   //SizedBox(height: height/70,),
                   //Upload up to 6 photos here
                   Container(
-                    height: height / 30,
+                    height: height / 35,
                     width: width / 3,
                     child: Center(
                       child: Text(
@@ -178,7 +179,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                   ),
                   Container(
                     height: height / 30,
-                    width: width / 2.4,
+                    width: width / 1.9,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: basicColorShopper,
@@ -230,7 +231,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                   SizedBox(height: height/70,),
                   Container(
                     height: height / 30,
-                    width: width / 3,
+                    width: width / 2.8,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: basicColorShopper,
@@ -245,7 +246,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                       ),
                     ),
                   ),
-                  SizedBox(height: height/70,),
+
 
                   Container(
                     height: height / 15,
@@ -300,7 +301,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                   ),
                   SizedBox(height: height/60,),
                   Container(
-                    height: height / 30,
+                    height: height / 35,
                     width: width / 4,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -317,9 +318,9 @@ class _VendorSettingtState extends State<VendorSetting> {
                     ),
                   ),
 
-                  SizedBox(height: height/70,),
+
                   Container(
-                    height: height / 15,
+                    height: height / 20,
                     width: width / 1.3,
                     child: Center(
                       child: Text(
@@ -347,7 +348,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                   SizedBox(height: height/60,),
                   Container(
                     height: height / 30,
-                    width: width / 3.5,
+                    width: width / 2.8,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: basicColorShopper,

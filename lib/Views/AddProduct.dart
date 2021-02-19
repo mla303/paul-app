@@ -38,6 +38,7 @@ class _AddProductState extends State<AddProduct> {
         // backgroundColor: Color(0xfff7f7f7),
 
         appBar: AppBar(
+          elevation: 0,
           centerTitle: true,
           backgroundColor: Colors.white,
           title: Text('Your items', style: TextStyle(color: Colors.black), textAlign: TextAlign.center),
@@ -81,7 +82,7 @@ class _AddProductState extends State<AddProduct> {
                     ), ),
                   //SizedBox(height: height/70,),
                   Container(height: height/30,
-                    width: width/2.5,
+                    width: width/2.1,
 
 
                     child:Center(
@@ -205,7 +206,7 @@ class _AddProductState extends State<AddProduct> {
                   ],),
                   SizedBox(height: height/80,),
                   Container(height: height/30,
-                    width: width/1.7,
+                    width: width/1.5,
 
 
                     child:Text(
@@ -254,7 +255,7 @@ class _AddProductState extends State<AddProduct> {
                   ),
                   SizedBox(height: height/70,),
                   Container(height: height/35,
-                    width: width/2.5,
+                    width: width/2.1,
 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -275,7 +276,7 @@ class _AddProductState extends State<AddProduct> {
                     ), ),
                  // SizedBox(height: height/70,),
                   Container(height: height/30,
-                    width: width/2.7,
+                    width: width/2.3,
 
 
                     child:Center(
@@ -338,7 +339,7 @@ class _AddProductState extends State<AddProduct> {
                   ],),),
                   SizedBox(height: height/50,),
                   Container(height: height/35,
-                    width: width/3.5,
+                    width: width/3.4,
 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -358,7 +359,7 @@ class _AddProductState extends State<AddProduct> {
 
                     ), ),
                   Container(height: height/30,
-                    width: width/2.7,
+                    width: width/2.3,
 
 
                     child:Center(
@@ -465,92 +466,16 @@ class _AddProductState extends State<AddProduct> {
                     Divider(color: Colors.grey,),
                     SizedBox(height: height/70,),
                   ],),),
-                  Container(height: height/35,
-                    width: width/2.5,
-
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: basicColorShopper,
-
-                    ),
-                    child:Center(
-                      child: Text(
-                        'Add Personalisations',
-                        style: TextStyle(
-
-                            color: Colors.white,
-                            fontSize: height / 60,
-                            fontWeight: FontWeight.w400),
-
-                      ),
-
-                    ), ),
-
-                  Container(height: height/30,
-                    width: width/2,
 
 
-                    child:Center(
-                      child: Text(
-                        'Do you offer custom text or extras',
-                        style: TextStyle(
 
-                            color: Colors.grey,
-                            fontSize: height / 60,
-                            fontWeight: FontWeight.w400),
-
-                      ),
-
-                    ), ),
-                  SizedBox(height: height/50,),
                   Container(child: Column(children: [
 
-                    InkWell(
-                      onTap: ()
-                      {
-                        // Navigator.pushNamed(context, "/forgetPassword");
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Custom text',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: height / 40,
-                                fontWeight: FontWeight.w400),
 
-                          ),
-                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
-                        ],),
-                    ),
-                    SizedBox(height: height/70,),
-                    Divider(color: Colors.grey,),
-                    SizedBox(height: height/70,),
-                    InkWell(
-                      onTap: ()
-                      {
-                        // Navigator.pushNamed(context, "/forgetPassword");
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Choises',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: height / 40,
-                                fontWeight: FontWeight.w400),
-
-                          ),
-                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
-                        ],),
-                    ),
-                    SizedBox(height: height/70,),
 
 
                   ],),),
-                  SizedBox(height: height/10,),
+                  SizedBox(height: height/25,),
                   Center(
                     child: ShopperButton(
                       text: Text("List item",

@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:paul_app/Views/following.dart';
 import 'package:paul_app/Views/purchaseContainer.dart';
+import 'package:paul_app/Views/reviews.dart';
 import 'package:paul_app/widgets/colors.dart';
+import 'package:paul_app/widgets/reviewsContainer.dart';
 import 'package:paul_app/widgets/tabBar.dart';
 
 import 'itemPage.dart';
@@ -76,12 +78,14 @@ class _ProfileFirstState extends State<ProfileFirst> {
                     children: <Widget>[
                       Text("Little Fancy", style: TextStyle(
                           color: Colors.white,
+                          fontFamily: "workSans",
                           fontSize: 3 * SizeConfig.textMultiplier,
                           fontWeight: FontWeight.bold
                       ),),
                       SizedBox(height: 1 * SizeConfig.heightMultiplier,),
                       Text("Your story about what you do..", style: TextStyle(
                         color: Colors.white60,
+                        fontFamily: "workSans",
                         fontSize: 1.5 * SizeConfig.textMultiplier,
                       ),)
                     ],
@@ -94,11 +98,13 @@ class _ProfileFirstState extends State<ProfileFirst> {
                         children: <Widget>[
                           Text("543", style: TextStyle(
                               color: Colors.white,
+                              fontFamily: "workSans",
                               fontSize: 3 * SizeConfig.textMultiplier,
                               fontWeight: FontWeight.bold
                           ),),
                           Text("Following", style: TextStyle(
                             color: Colors.white70,
+                            fontFamily: "workSans",
                             fontSize: 1.9 * SizeConfig.textMultiplier,
                           ),),
                         ],
@@ -120,13 +126,15 @@ class _ProfileFirstState extends State<ProfileFirst> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
+                            color: Colors.white,
                             border: Border.all(color: Colors.white60),
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text("Follow shop", style: TextStyle(
-                                color: Colors.white60,
+                                color: Colors.black,
+                                fontFamily: "workSans",
                                 fontSize: 1.8 * SizeConfig.textMultiplier
                             ),),
                           ),
@@ -164,6 +172,7 @@ class _ProfileFirstState extends State<ProfileFirst> {
                         Icon(Icons.star,color: basicColorcustomer,size: 18,),
                         Text("4.9", style: TextStyle(
                             color: Colors.black,
+                            fontFamily: "workSans",
                             fontWeight: FontWeight.bold,
                             fontSize: 2.2 * SizeConfig.textMultiplier
                         ),),
@@ -200,7 +209,7 @@ class _ProfileFirstState extends State<ProfileFirst> {
                                 {
 
                                 },
-                                    child: mySalesContainer()),
+                                    child: ReviewsContainer()),
 
                               ],
                             ),

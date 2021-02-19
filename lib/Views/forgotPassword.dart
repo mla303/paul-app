@@ -39,6 +39,7 @@ class _forgotPasswordState extends State<forgotPassword> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          elevation: 0,
        centerTitle: true,
          backgroundColor: Colors.white,
           title: Text('Forgot Password', style: TextStyle(color: Colors.black,), textAlign: TextAlign.center),

@@ -23,6 +23,7 @@ class _ReviewsState extends State<Reviews> {
         backgroundColor: Colors.white,
 
         appBar: AppBar(
+          elevation: 0,
           centerTitle: true,
           backgroundColor: Colors.white,
           title: Text('Reviews', style: TextStyle(color: Colors.black,), textAlign: TextAlign.center),

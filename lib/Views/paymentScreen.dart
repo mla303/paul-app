@@ -25,6 +25,7 @@ double amount= 2566.0;
         backgroundColor: Colors.white,
 
         appBar: AppBar(
+          elevation: 0,
           centerTitle: true,
           backgroundColor: Colors.white,
           title: Text('Payment Invoice', style: TextStyle(color: Colors.black,), textAlign: TextAlign.center),

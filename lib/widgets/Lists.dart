@@ -60,7 +60,7 @@ List latestItemList = [
     img: "images/jewellary.png",
     type: "Pink Rose",
     price: "\$220",
-    iconss: Icon(Icons.favorite_border,color: Colors.red,)
+    iconss: Icon(Icons.favorite_border,color: Colors.red,size: 14,)
   ),
 
   itemDetail(
@@ -68,14 +68,14 @@ List latestItemList = [
     img: "images/rings.png",
     type: "Pure Gold",
     price: "\$420",
-    iconss: Icon(Icons.favorite,color: Colors.red,)
+    iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
   ),
   itemDetail(
     name:"Toys",
     img: "images/toys.png",
     type: "Cloths Toys",
     price: "\$120",
-    iconss: Icon(Icons.favorite,color: Colors.red,)
+    iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
   ),
 ];
 
@@ -164,7 +164,7 @@ List recentViewList = [
     img: "images/jewellary.png",
     type: "Pink Rose",
     price: "\$220",
-    iconss: Icon(Icons.favorite_border,color: Colors.red,)
+    iconss: Icon(Icons.favorite_border,color: Colors.red,size: 14,)
   ),
 
   itemDetail(
@@ -172,14 +172,14 @@ List recentViewList = [
     img: "images/rings.png",
     type: "Pure Gold",
     price: "\$420",
-    iconss: Icon(Icons.favorite,color: Colors.red,)
+    iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
   ),
   itemDetail(
     name:"Toys",
     img: "images/toys.png",
     type: "Cloths Toys",
     price: "\$120",
-    iconss: Icon(Icons.favorite,color: Colors.red,)
+    iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
   ),
 ];
 
@@ -207,19 +207,19 @@ List CatogeryList = [
 
   CatorgeryDetail(
       name:"Jewelry",
-      img: "images/jewellary.png",
+      img: "images/jewellary.jpg",
       Titems: "493 ",
   ),
 
   CatorgeryDetail(
       name:"Toys",
-      img: "images/toys.png",
+      img: "images/toys.jpg",
       Titems: "300 ",
   ),
 
   CatorgeryDetail(
       name:"Rings",
-      img: "images/rings.png",
+      img: "images/rings.jpg",
       Titems: "200 ",
   ),
   //

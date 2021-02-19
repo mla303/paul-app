@@ -33,6 +33,13 @@ double orderPrice = 125445;
         // double orderPrice =
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          centerTitle: true,
+          backgroundColor: Colors.white,
+
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
         // backgroundColor: Color(0xfff7f7f7),
 
 
@@ -54,7 +61,7 @@ double orderPrice = 125445;
                       SizedBox(height:20,),
                       Container(
                           width:width/1.4,
-                          child: Text("Billing Address", style: CustomTextStyle.normaltext3(context))),
+                          child: Text("Billing Address", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: height/40), )),
                       SizedBox(height:10,),
 
 

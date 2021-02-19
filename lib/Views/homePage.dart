@@ -38,7 +38,7 @@ class _homePageState extends State<homePage> {
 
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Color(0xfff7f7f7),
+        backgroundColor: Colors.white,
 
           // appBar: customAppBar1("Sign In"),
 
@@ -263,9 +263,9 @@ class _homePageState extends State<homePage> {
 
                                               // decoration: ,
                                               child: Card(
-                                                elevation: 2,
-                                                shadowColor: Colors.grey,
-                                                color: Colors.grey[200],
+                                                elevation: 0,
+                                                shadowColor: Colors.white,
+                                                color: Colors.white,
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius: BorderRadius.circular(12.0),
                                                   // side: BorderSide(width: 1,color: Colors.grey[200])
@@ -277,15 +277,16 @@ class _homePageState extends State<homePage> {
                                                     Stack(
                                                       children: <Widget>[
 
-                                                        ClipRRect(
-                                                          borderRadius: BorderRadius.only(
-                                                            topLeft: Radius.circular(12),
-                                                            topRight: Radius.circular(12),
+                                                        Container(
+
+                                                          decoration: BoxDecoration(
+                                                            color: Colors.grey[100],
+                                                            borderRadius: BorderRadius.all(Radius.circular(5)),
                                                           ),
                                                           child: Image.asset(
                                                             latestItemList[index].img,
                                                             height: MediaQuery.of(context).size.height *
-                                                                0.14,
+                                                                0.15,
                                                             width: MediaQuery.of(context).size.width,
                                                             fit: BoxFit.cover,
                                                           ),
@@ -293,7 +294,15 @@ class _homePageState extends State<homePage> {
                                                         Positioned(
                                                           right: 5,
                                                           top: 5,
-                                                          child: latestItemList[index].iconss,
+                                                          child: Container(
+
+                                                            height: 25,
+                                                              width: 25,
+                                                              decoration: new BoxDecoration(
+                                                                shape: BoxShape.circle,// You can use like this way or like the below line
+                                                                color: Colors.white,
+                                                              ),
+                                                              child: latestItemList[index].iconss),
 
                                                         )
 
@@ -308,8 +317,8 @@ class _homePageState extends State<homePage> {
                                                       child: Text(
                                                         latestItemList[index].name,
                                                         style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: height / 56,
+                                                            color: Colors.grey,
+                                                            fontSize: height / 60,
                                                             fontWeight: FontWeight.w500),
                                                       ),
                                                     ),
@@ -320,19 +329,19 @@ class _homePageState extends State<homePage> {
                                                       child: Text(
                                                         latestItemList[index].type,
                                                         style: TextStyle(
-                                                            color: Colors.grey,
-                                                            fontSize: height / 66,
+                                                            color: Colors.black,
+                                                            fontSize: height / 56,
                                                             fontWeight: FontWeight.w400),
                                                       ),
                                                     ),
                                                     Padding(
                                                       padding:
-                                                      const EdgeInsets.only(left: 8.0, top: 5),
+                                                      const EdgeInsets.only(left: 8.0, top: 0),
                                                       child: Text(
                                                         latestItemList[index].price,
                                                         style: TextStyle(
-                                                            color: basicColorShopper,
-                                                            fontSize: height / 60,
+                                                            color: Colors.grey,
+                                                            fontSize: height /60,
                                                             fontWeight: FontWeight.w600),
                                                       ),
                                                     ),
@@ -394,9 +403,9 @@ class _homePageState extends State<homePage> {
 
                                               // decoration: ,
                                               child: Card(
-                                                elevation: 2,
-                                                shadowColor: Colors.grey,
-                                                color: Colors.grey[200],
+                                                elevation: 0,
+                                                shadowColor: Colors.white,
+                                                color: Colors.white,
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius: BorderRadius.circular(12.0),
                                                   // side: BorderSide(width: 1,color: Colors.grey[200])
@@ -408,15 +417,16 @@ class _homePageState extends State<homePage> {
                                                     Stack(
                                                       children: <Widget>[
 
-                                                        ClipRRect(
-                                                          borderRadius: BorderRadius.only(
-                                                            topLeft: Radius.circular(12),
-                                                            topRight: Radius.circular(12),
+                                                        Container(
+
+                                                          decoration: BoxDecoration(
+                                                            color: Colors.grey[100],
+                                                            borderRadius: BorderRadius.all(Radius.circular(5)),
                                                           ),
                                                           child: Image.asset(
                                                             recentViewList[index].img,
                                                             height: MediaQuery.of(context).size.height *
-                                                                0.14,
+                                                                0.15,
                                                             width: MediaQuery.of(context).size.width,
                                                             fit: BoxFit.cover,
                                                           ),
@@ -424,7 +434,15 @@ class _homePageState extends State<homePage> {
                                                         Positioned(
                                                           right: 5,
                                                           top: 5,
-                                                          child: recentViewList[index].iconss,
+                                                          child: Container(
+
+                                                              height: 25,
+                                                              width: 25,
+                                                              decoration: new BoxDecoration(
+                                                                shape: BoxShape.circle,// You can use like this way or like the below line
+                                                                color: Colors.white,
+                                                              ),
+                                                              child: recentViewList[index].iconss),
 
                                                         )
 
@@ -439,8 +457,8 @@ class _homePageState extends State<homePage> {
                                                       child: Text(
                                                         recentViewList[index].name,
                                                         style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: height / 56,
+                                                            color: Colors.grey,
+                                                            fontSize: height / 60,
                                                             fontWeight: FontWeight.w500),
                                                       ),
                                                     ),
@@ -451,19 +469,19 @@ class _homePageState extends State<homePage> {
                                                       child: Text(
                                                         recentViewList[index].type,
                                                         style: TextStyle(
-                                                            color: Colors.grey,
-                                                            fontSize: height / 66,
+                                                            color: Colors.black,
+                                                            fontSize: height / 56,
                                                             fontWeight: FontWeight.w400),
                                                       ),
                                                     ),
                                                     Padding(
                                                       padding:
-                                                      const EdgeInsets.only(left: 8.0, top: 5),
+                                                      const EdgeInsets.only(left: 8.0, top: 0),
                                                       child: Text(
                                                         recentViewList[index].price,
                                                         style: TextStyle(
-                                                            color: basicColorShopper,
-                                                            fontSize: height / 60,
+                                                            color: Colors.grey,
+                                                            fontSize: height /60,
                                                             fontWeight: FontWeight.w600),
                                                       ),
                                                     ),

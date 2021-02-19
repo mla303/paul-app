@@ -40,6 +40,7 @@ class _VendorAccountState extends State<VendorAccount> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           centerTitle: true,
           backgroundColor: Colors.white,
        
@@ -71,11 +72,11 @@ class _VendorAccountState extends State<VendorAccount> {
                   ),
                   SizedBox(height: height/30,),
                   Container(height: height/20,
-                    width: width/2.5,
+                    width: width/2.2,
 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: basicColorcustomer,
+                      color: basicColorShopper,
 
                     ),
                     child:Center(

@@ -43,23 +43,47 @@ class NotificationCircleAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
-      height: 50,
+      width: 45,
+      height: 45,
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
+        borderRadius: BorderRadius.all(Radius.circular(8)),
         border: Border.all(
           color: Colors.white,
           width: 0,
         ),
-        boxShadow: [
-          BoxShadow(
-              color: Colors.grey.withOpacity(.3),
-              offset: Offset(0, 2),
-              blurRadius: 5)
-        ],
+        image: DecorationImage(
+          image: NetworkImage("$imgUrl"),
+          fit: BoxFit.cover
+
+        )
       ),
-      child: CircleAvatar(
-        backgroundImage: NetworkImage("$imgUrl"),
+    );
+  }
+}
+
+class MessagesCircleAvatar extends StatelessWidget {
+  final String imgUrl;
+  const MessagesCircleAvatar({
+    Key key,
+    @required this.imgUrl,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        border: Border.all(
+          color: Colors.white,
+          width: 0,
+        ),
+        image: DecorationImage(
+          image: NetworkImage("$imgUrl"),
+          fit: BoxFit.cover
+
+        )
       ),
     );
   }

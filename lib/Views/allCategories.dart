@@ -24,7 +24,7 @@ class _allCatorgiesState extends State<allCatorgies> {
 
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Color(0xfff7f7f7),
+        backgroundColor: Colors.white,
 
         appBar: customAppBar1("Categories"),
 
@@ -69,7 +69,8 @@ class _allCatorgiesState extends State<allCatorgies> {
 
                       child: GridView.count(
                         crossAxisCount: 2,
-
+                        crossAxisSpacing: 12,
+                        mainAxisSpacing: 12,
                         childAspectRatio: (3 / 3),
                         controller: new ScrollController(keepScrollOffset: false),
                         shrinkWrap: true,
@@ -84,59 +85,53 @@ class _allCatorgiesState extends State<allCatorgies> {
                                   MaterialPageRoute(builder: (Context) => itemPage()));
                             },
 
-                            child: Card(
-                              elevation: 0,
-                              shadowColor: Colors.grey,
-                              color: Colors.grey[200],
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.circular(12.0),
-                                // side: BorderSide(width: 1,color: Colors.grey[200])
-                              ),
-                              child: Stack(
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(12),
-                                      topRight: Radius.circular(12),
-                                    ),
-
-                                    child: Image.asset(CatogeryList[index].img,
-                                      height: MediaQuery.of(context).size.height * 0.14,
-                                      width: MediaQuery.of(context).size.width,
-                                      fit: BoxFit.cover,
-                                    ),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                                    image: DecorationImage(
+                                      image: AssetImage(CatogeryList[index].img,),
+                                      colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.9), BlendMode.dstATop),
+                                      fit: BoxFit.cover
+                                    )
                                   ),
+                                  // child: Image.asset(CatogeryList[index].img,
+                                  //   // height: MediaQuery.of(context).size.height * 0.14,
+                                  //   width: MediaQuery.of(context).size.width,
+                                  //   fit: BoxFit.cover,
+                                  // ),
+                                ),
 
 
-                                  Positioned(
-                                    bottom: 18,
-                                    left:10,
-                                    child: Text(
-                                      CatogeryList[index].name,
-                                      style: TextStyle(
-                                          color: basicColorShopper,
-                                          fontSize: height / 50,
-                                          fontWeight:
-                                              FontWeight.w500),
-                                    ),
+                                Positioned(
+                                  bottom: 18,
+                                  left:10,
+                                  child: Text(
+                                    CatogeryList[index].name,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: height / 50,
+                                        fontWeight:
+                                            FontWeight.w500),
                                   ),
+                                ),
 
-                                  Positioned(
-                                    bottom:4,
-                                    left:12,
-                                    child: Text(
-                                      CatogeryList[index].Titems + "items",
-                                      style: TextStyle(
-                                          color:
-                                              basicColorShopper,
-                                          fontSize: height / 66,
-                                          fontWeight:
-                                              FontWeight.w400),
-                                    ),
+                                Positioned(
+                                  bottom:4,
+                                  left:12,
+                                  child: Text(
+                                    CatogeryList[index].Titems + "items",
+                                    style: TextStyle(
+                                        color:
+                                            Colors.white,
+                                        fontSize: height / 66,
+                                        fontWeight:
+                                            FontWeight.w400),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           );
                         }).toList(),

@@ -45,7 +45,7 @@ class _DynamicItemFilterState extends State<DynamicItemFilter> {
             width: width,
             // color: Colors.red,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal:30,vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal:0,vertical: 15),
               child: Column(
 
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -61,26 +61,29 @@ class _DynamicItemFilterState extends State<DynamicItemFilter> {
 
                     ),
                   ),
-                  SizedBox(height: height/30,),
-                  Container(height: height/20,
-                    width: width/4,
+                  SizedBox(height: height/35,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Container(height: height/30,
+                      width: width/4,
 
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: basicColorShopper,
-
-                    ),
-                    child:Center(
-                      child: Text(
-                        'Sort by...',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: height / 40,
-                            fontWeight: FontWeight.w400),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: basicColorShopper,
 
                       ),
+                      child:Center(
+                        child: Text(
+                          'Sort by...',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: height / 40,
+                              fontWeight: FontWeight.w400),
 
-                    ), ),
+                        ),
+
+                      ), ),
+                  ),
 
 SimpleGroupedCheckbox<int>(
   controller: controller,
@@ -93,86 +96,59 @@ SimpleGroupedCheckbox<int>(
 
 ),
                   SizedBox(height: height/30,),
-                  Container(height: height/20,
-                    width: width/2.5,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Container(height: height/30,
+                      width: width/2.1,
 
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: basicColorShopper,
-
-                    ),
-                    child:Center(
-                      child: Text(
-                        'Narrow down by...',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: height / 40,
-                            fontWeight: FontWeight.w400),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: basicColorShopper,
 
                       ),
+                      child:Center(
+                        child: Text(
+                          'Narrow down by...',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: height / 40,
+                              fontWeight: FontWeight.w400),
 
-                    ), ),
+                        ),
+
+                      ), ),
+                  ),
                   SizedBox(height: height/15,),
 
-Container(child: Column(children: [
-  Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Text(
-          'Brand',
-          style: TextStyle(
-              color: Colors.black,
-              fontSize: height / 40,
-              fontWeight: FontWeight.w400),
-
-      ),
-      Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
-  ],),
-  SizedBox(height: height/70,),
-  Divider(color: Colors.grey,),
-  SizedBox(height: height/70,),
-  Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Text(
-          'Size',
-          style: TextStyle(
-              color: Colors.black,
-              fontSize: height / 40,
-              fontWeight: FontWeight.w400),
-
-      ),
-      Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
-    ],),
-  SizedBox(height: height/70,),
-  Divider(color: Colors.grey,),
-  SizedBox(height: height/70,),
-  Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Text(
-          'Style',
-          style: TextStyle(
-              color: Colors.black,
-              fontSize: height / 40,
-              fontWeight: FontWeight.w400),
-
-      ),
-      Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
-    ],),
-  SizedBox(height: height/70,),
-  Divider(color: Colors.grey,),
-  SizedBox(height: height/70,),
-  GestureDetector(
-    onTap: (){
-      Navigator.of(context).push(
-          MaterialPageRoute(builder: (Context) => DynamicColor()));
-    },
+Container(
+  child:
+  Column(children: [
+  Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 30),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-            'Color',
+            'Brand',
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: height / 40,
+                fontWeight: FontWeight.w400),
+
+        ),
+        Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
+    ],),
+  ),
+  SizedBox(height: height/70,),
+  Divider(color: Colors.grey,),
+  SizedBox(height: height/70,),
+  Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 30),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+            'Size',
             style: TextStyle(
                 color: Colors.black,
                 fontSize: height / 40,
@@ -181,6 +157,50 @@ Container(child: Column(children: [
         ),
         Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
       ],),
+  ),
+  SizedBox(height: height/70,),
+  Divider(color: Colors.grey,),
+  SizedBox(height: height/70,),
+  Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 30),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+            'Style',
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: height / 40,
+                fontWeight: FontWeight.w400),
+
+        ),
+        Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
+      ],),
+  ),
+  SizedBox(height: height/70,),
+  Divider(color: Colors.grey,),
+  SizedBox(height: height/70,),
+  GestureDetector(
+    onTap: (){
+      Navigator.of(context).push(
+          MaterialPageRoute(builder: (Context) => DynamicColor()));
+    },
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+              'Color',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: height / 40,
+                  fontWeight: FontWeight.w400),
+
+          ),
+          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
+        ],),
+    ),
   ),
   SizedBox(height: height/70,),
   Divider(color: Colors.grey,),
