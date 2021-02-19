@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:paul_app/widgets/Lists.dart';
 import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
+import 'package:paul_app/widgets/mycircleavatar.dart';
 
 import 'chatScreen.dart';
 
@@ -26,11 +27,10 @@ class _messagesState extends State<messages> {
   @override
   Widget build(BuildContext context) {
 
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+
 
     return Scaffold(
-      // backgroundColor: Color(0xfff7f7f7),
+      backgroundColor: Colors.white,
 
       appBar: customAppBar1("Messages"),
 
@@ -51,26 +51,19 @@ class _messagesState extends State<messages> {
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
-                        shape: BoxShape.circle,
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                        image: DecorationImage(
+                          image: NetworkImage(friendsList[i]['imgUrl']),
+                          fit: BoxFit.cover
+                        ),
                         border: Border.all(
                           color: Colors.white,
                           width: 3,
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey.withOpacity(.3),
-                              offset: Offset(0, 5),
-                              blurRadius: 25)
-                        ],
                       ),
                       child: Stack(
                         children: <Widget>[
-                          Positioned.fill(
-                            child: CircleAvatar(
-                              backgroundImage:
-                              NetworkImage(friendsList[i]['imgUrl']),
-                            ),
-                          ),
+
                           friendsList[i]['isOnline']
                               ? Align(
                             alignment: Alignment.topRight,
@@ -109,13 +102,15 @@ class _messagesState extends State<messages> {
                     ),
                     trailing: Container(
                       width: 60,
-                      child: Wrap(
+                      // height: 80,
+                      child: Column(
                         // crossAxisAlignment: CrossAxisAlignment.end,
-                        // crossAxisAlignment: WrapCrossAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         // runAlignment: WrapAlignment.start,
-                        direction: Axis.horizontal,
-                        // spacing: ,
-                        alignment: WrapAlignment.end,
+                        // direction: Axis.horizontal,
+                        // // spacing: ,
+                        // alignment: WrapAlignment.start,
                         children: <Widget>[
                           Wrap(
                             // mainAxisSize: MainAxisSize.min,
@@ -127,8 +122,8 @@ class _messagesState extends State<messages> {
                                 Icons.check,
                                 size: 15,
                               )
-                                  : Container(height: 15, width: 15),
-                              Text("${friendsList[i]['lastMsgTime']}",style: TextStyle(fontSize: 10),),
+                                  : Container(),
+                              Text("${friendsList[i]['lastMsgTime']}",style: TextStyle(fontSize: 8),),
                             ],
                           ),
                           SizedBox(
@@ -137,20 +132,20 @@ class _messagesState extends State<messages> {
                           friendsList[i]['hasUnSeenMsgs']
                               ? Container(
                             alignment: Alignment.center,
-                            height: 25,
-                            width: 25,
+                            height: 18,
+                            width: 18,
                             decoration: BoxDecoration(
                               color: myGreen,
                               shape: BoxShape.circle,
                             ),
                             child: Text(
                               "${friendsList[i]['unseenCount']}",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.white,fontSize: 12),
                             ),
                           )
                               : Container(
-                            height: 25,
-                            width: 25,
+                            // height: 20,
+                            // width: 20,
                           ),
                         ],
                       ),

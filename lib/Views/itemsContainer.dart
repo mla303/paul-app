@@ -37,26 +37,40 @@ class itemConatiner extends StatelessWidget {
                   ),
                   child: Stack(
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          topRight: Radius.circular(12),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(12),
+                            topRight: Radius.circular(12),
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage(recentViewList[index].img)
+                          )
                         ),
 
-                        child: Image.asset(recentViewList[index].img,
-                          height: MediaQuery.of(context).size.height * 0.14,
-                          width: MediaQuery.of(context).size.width,
-                          fit: BoxFit.cover,
-                        ),
+
+                        // child: Image.asset(recentViewList[index].img,
+                        //   height: MediaQuery.of(context).size.height * 0.14,
+                        //   width: MediaQuery.of(context).size.width,
+                        //   fit: BoxFit.cover,
+                        // ),
                       ),
 
 
                       Positioned(
                         right: 5,
                         top: 5,
-                        child: latestItemList[index].iconss,
+                        child: Container(
+                            height: 25,
+                            width: 25,
+                            decoration: new BoxDecoration(
+                              shape: BoxShape.circle,// You can use like this way or like the below line
+                              color: Colors.white,
+                            ),
+                            child: latestItemList[index].iconss),
 
                       ),
+
 
 
                       Positioned(
@@ -65,7 +79,8 @@ class itemConatiner extends StatelessWidget {
                         child: Text(
                           recentViewList[index].name,
                           style: TextStyle(
-                              color: basicColorShopper,
+                            fontFamily: "workSans",
+                              color: Colors.grey,
                               fontSize: height / 50,
                               fontWeight:
                               FontWeight.w500),
@@ -78,7 +93,8 @@ class itemConatiner extends StatelessWidget {
                         child: Text(
                           recentViewList[index].type,
                           style: TextStyle(
-                              color: basicColorShopper,
+                              fontFamily: "workSans",
+                              color: Colors.black,
                               fontSize: height / 56,
                               fontWeight:
                               FontWeight.w500),
@@ -91,8 +107,9 @@ class itemConatiner extends StatelessWidget {
                         child: Text(
                           recentViewList[index].price ,
                           style: TextStyle(
+                              fontFamily: "workSans",
                               color:
-                              basicColorShopper,
+                              Colors.grey,
                               fontSize: height / 66,
                               fontWeight:
                               FontWeight.w400),

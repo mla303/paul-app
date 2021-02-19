@@ -24,9 +24,9 @@ class _ChatScreenState extends State<ChatScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         // automaticallyImplyLeading: false,
-        backgroundColor: basicColorShopper,
-        iconTheme: IconThemeData(color: Colors.white),
-
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: basicColorShopper),
+        elevation: 0,
         titleSpacing: 0,
         title: Row(
           mainAxisSize: MainAxisSize.min,
@@ -43,7 +43,7 @@ class _ChatScreenState extends State<ChatScreen> {
               children: <Widget>[
                 Text(
                   "Ali Talib",
-                  style: TextStyle(color: Colors.white,fontSize: height/44),
+                  style: TextStyle(color: Colors.black,fontSize: height/44),
                   overflow: TextOverflow.clip,
                 ),
               ],

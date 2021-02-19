@@ -33,6 +33,7 @@ class _ShopperAccountState extends State<ShopperAccount> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           centerTitle: true,
           backgroundColor: Colors.white,
 

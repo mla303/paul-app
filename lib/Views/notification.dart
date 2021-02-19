@@ -42,33 +42,37 @@ class notificationState extends State<notification> {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
+
        appBar: customAppBar1("Notification"),
 
         body: Scrollbar(
           thickness: 2,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 0,vertical: 20),
             child: ListView.separated(
 
               itemCount: listdata.length,
               itemBuilder: (context, index) {
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      width: width/1.4,
-                      child: Text(
-                          listdata[index].message,
-                          style: CustomTextStyle.normaltext1(context),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20,),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        width: width/1.4,
+                        child: Text(
+                            listdata[index].message,
+                            style: CustomTextStyle.normaltext1(context),
 
+                        ),
                       ),
-                    ),
 
-                    NotificationCircleAvatar(
-                      imgUrl: listdata[index].imageUrl,
-                    ),
+                      NotificationCircleAvatar(
+                        imgUrl: listdata[index].imageUrl,
+                      ),
 
-                  ],
+                    ],
+                  ),
                 );
               },
                 separatorBuilder: (BuildContext context, int index) {

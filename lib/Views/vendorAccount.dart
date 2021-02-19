@@ -69,15 +69,12 @@ class _VendorAccountState extends State<VendorAccount> {
                         fontWeight: FontWeight.w400),
 
                   ),
-                ),
-                SizedBox(height: height/30,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 0),
-                  child: Container(height: height/20,
+                  SizedBox(height: height/30,),
+                  Container(height: height/20,
                     width: width/2.5,
 
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(10),
                       color: basicColorcustomer,
 
                     ),
@@ -92,14 +89,11 @@ class _VendorAccountState extends State<VendorAccount> {
                       ),
 
                     ), ),
-                ),
 
 
-                SizedBox(height: height/30,),
-                Container(child: Column(children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left:15.0, right: 15),
-                    child: InkWell(
+                  SizedBox(height: height/30,),
+                  Container(child: Column(children: [
+                    InkWell(
                       onTap: ()
                       {
                         Navigator.of(context).push(
@@ -116,16 +110,13 @@ class _VendorAccountState extends State<VendorAccount> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey, )
+                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
                         ],),
                     ),
-                  ),
-                  SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
-                  SizedBox(height: height/70,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:15.0, right: 15),
-                    child: InkWell(
+                    SizedBox(height: height/70,),
+                    Divider(color: Colors.grey,),
+                    SizedBox(height: height/70,),
+                    InkWell(
                       onTap: ()
                       {
                         // Navigator.pushNamed(context, "/forgetPassword");
@@ -141,16 +132,13 @@ class _VendorAccountState extends State<VendorAccount> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey, )
+                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
                         ],),
                     ),
-                  ),
-                  SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
-                  SizedBox(height: height/70,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:15.0, right: 15),
-                    child: InkWell(
+                    SizedBox(height: height/70,),
+                    Divider(color: Colors.grey,),
+                    SizedBox(height: height/70,),
+                    InkWell(
                       onTap: ()
                       {
                         Navigator.of(context).push(
@@ -167,16 +155,13 @@ class _VendorAccountState extends State<VendorAccount> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey, )
+                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
                         ],),
                     ),
-                  ),
-                  SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
-                  SizedBox(height: height/70,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:15.0, right: 15),
-                    child: InkWell(
+                    SizedBox(height: height/70,),
+                    Divider(color: Colors.grey,),
+                    SizedBox(height: height/70,),
+                    InkWell(
                       onTap: ()
                       {
                         Navigator.of(context).push(
@@ -193,21 +178,18 @@ class _VendorAccountState extends State<VendorAccount> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey,)
+                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
                         ],),
                     ),
-                  ),
-                  SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
-                ],),),
-                SizedBox(height: height/50,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15),
-                  child: Container(height: height/20,
+                    SizedBox(height: height/70,),
+                    Divider(color: Colors.grey,),
+                  ],),),
+                  SizedBox(height: height/50,),
+                  Container(height: height/20,
                     width: width/2.5,
 
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(10),
                       color: basicColorShopper,
 
                     ),
@@ -222,12 +204,9 @@ class _VendorAccountState extends State<VendorAccount> {
                       ),
 
                     ), ),
-                ),
-                SizedBox(height: height/15,),
-                Container(child: Column(children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left:15.0, right: 15),
-                    child: InkWell(
+                  SizedBox(height: height/15,),
+                  Container(child: Column(children: [
+                    InkWell(
                       onTap: ()
                       {
                         Navigator.of(context).push(
@@ -244,16 +223,13 @@ class _VendorAccountState extends State<VendorAccount> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey, )
+                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
                         ],),
                     ),
-                  ),
-                  SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
-                  SizedBox(height: height/70,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:15.0, right: 15),
-                    child: InkWell(
+                    SizedBox(height: height/70,),
+                    Divider(color: Colors.grey,),
+                    SizedBox(height: height/70,),
+                    InkWell(
                       onTap: ()
                       {
                         Navigator.of(context).push(
@@ -270,16 +246,13 @@ class _VendorAccountState extends State<VendorAccount> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey, )
+                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
                         ],),
                     ),
-                  ),
-                  SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
-                  SizedBox(height: height/70,),
-                  Padding(
-                    padding: const EdgeInsets.only(left:15.0, right: 15),
-                    child: InkWell(
+                    SizedBox(height: height/70,),
+                    Divider(color: Colors.grey,),
+                    SizedBox(height: height/70,),
+                    InkWell(
                       onTap: ()
                       {
                         Navigator.of(context).push(
@@ -296,15 +269,12 @@ class _VendorAccountState extends State<VendorAccount> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey, )
+                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
                         ],),
                     ),
-                  ),
-                  SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
-                  SizedBox(height: height/70,),
 
-                ],),),
+
+                  ],),),
 
 
 
@@ -313,7 +283,8 @@ class _VendorAccountState extends State<VendorAccount> {
 
 
 
-              ],
+                ],
+              ),
             ),
           ),
         ),

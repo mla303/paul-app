@@ -17,6 +17,7 @@ class ShopperButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width/1.3,
       height: MediaQuery.of(context).size.height/16,
       child: RaisedButton(
+        elevation: 0,
         focusColor: focusColor,
         disabledColor: disbaleColor,
         shape: RoundedRectangleBorder(
@@ -52,6 +53,7 @@ class CustomerButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width/1.3,
       height: MediaQuery.of(context).size.height/16,
       child: RaisedButton(
+        elevation: 0,
         focusColor: focusColor,
         disabledColor: disbaleColor,
         shape: RoundedRectangleBorder(
@@ -85,7 +87,7 @@ class NextButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width/1.3,
       height: MediaQuery.of(context).size.height/16,
       child: RaisedButton(
-
+        elevation: 0,
         focusColor: focusColor,
         disabledColor: disbaleColor,
         shape: RoundedRectangleBorder(

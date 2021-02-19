@@ -90,7 +90,7 @@ class WalkThroughState extends State<WalkThrough> {
           ),
           SizedBox(height: 40,),
           NextButton(
-            text: Text(lastPage ? "Lovely.. On we go…" : "NEXT",),
+            text: Text(lastPage ? "Lovely.. On we go…" : "NEXT",style: TextStyle(fontSize: 16),),
               colorss: Colors.black,
             focusColor: basicColorShopper,
             disbaleColor: Colors.white,

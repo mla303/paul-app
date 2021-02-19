@@ -14,6 +14,7 @@ class customAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0,
         centerTitle: true,
         backgroundColor: basicColorShopper,
         title: Text(appbarText,style: CustomTextStyle.title(context),),
@@ -39,6 +40,7 @@ class customAppBar1 extends StatelessWidget implements PreferredSizeWidget {
   final String appbarText;
   customAppBar1(
       this.appbarText,
+
       );
 
   Size get preferredSize => const Size.fromHeight(50);

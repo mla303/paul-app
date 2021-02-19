@@ -80,26 +80,40 @@ class _wishListState extends State<wishList> {
                               ),
                               child: Stack(
                                 children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(12),
-                                      topRight: Radius.circular(12),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                                        image: DecorationImage(
+                                            image: AssetImage(CatogeryList[index].img,),
+                                            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.9), BlendMode.dstATop),
+                                            fit: BoxFit.cover
+                                        )
                                     ),
-
-                                    child: Image.asset(recentViewList[index].img,
-                                      height: MediaQuery.of(context).size.height * 0.14,
-                                      width: MediaQuery.of(context).size.width,
-                                      fit: BoxFit.cover,
-                                    ),
+                                    // child: Image.asset(CatogeryList[index].img,
+                                    //   // height: MediaQuery.of(context).size.height * 0.14,
+                                    //   width: MediaQuery.of(context).size.width,
+                                    //   fit: BoxFit.cover,
+                                    // ),
                                   ),
-
-
                                   Positioned(
                                     right: 5,
                                     top: 5,
-                                    child: latestItemList[index].iconss,
+                                    child: Container(
+
+                                        height: 25,
+                                        width: 25,
+                                        decoration: new BoxDecoration(
+                                          shape: BoxShape.circle,// You can use like this way or like the below line
+                                          color: Colors.white,
+                                        ),
+                                        child: recentViewList[index].iconss),
 
                                   ),
+
+
+
+
 
 
                                   Positioned(
@@ -108,7 +122,7 @@ class _wishListState extends State<wishList> {
                                     child: Text(
                                       recentViewList[index].name,
                                       style: TextStyle(
-                                          color: basicColorShopper,
+                                          color: Colors.white,
                                           fontSize: height / 50,
                                           fontWeight:
                                               FontWeight.w500),
@@ -121,7 +135,7 @@ class _wishListState extends State<wishList> {
                                     child: Text(
                                       recentViewList[index].type,
                                       style: TextStyle(
-                                          color: basicColorShopper,
+                                          color: Colors.white,
                                           fontSize: height / 56,
                                           fontWeight:
                                               FontWeight.w400),
@@ -135,7 +149,7 @@ class _wishListState extends State<wishList> {
                                         recentViewList[index].price ,
                                       style: TextStyle(
                                           color:
-                                              basicColorShopper,
+                                              Colors.white,
                                           fontSize: height / 66,
                                           fontWeight:
                                               FontWeight.w300),

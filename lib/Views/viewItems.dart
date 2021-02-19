@@ -1,5 +1,6 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:paul_app/Views/basket.dart';
 import 'package:paul_app/Views/bottomNavigation.dart';
@@ -22,6 +23,7 @@ import 'mySales.dart';
 
 class viewItems extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -57,6 +59,19 @@ class detailPage extends StatefulWidget {
 }
 
 class _ProfileFirstState extends State<detailPage> {
+String brand = 'topshop';
+String color = 'Blue';
+String condition = 'Great';
+String size = 'Small';
+String postageCost = '322';
+
+int currentPage = 0;
+
+void _onPageChanged(int page) {
+  setState(() {
+    currentPage = page;
+  });
+}
 
   bool _isExpanded = false;
 
@@ -72,437 +87,524 @@ class _ProfileFirstState extends State<detailPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: customAppBar1("Your Item"),
-      backgroundColor: Color(0xffF8F8FA),
-      body: SingleChildScrollView(
-        child: Wrap(
-          spacing: -30,
-          direction: Axis.vertical,
-          // overflow: Overflow.visible,
-          children: <Widget>[
-
-
-            Container(
-              height: 300,
-              width: SizeConfig._screenWidth,
-              child: CarouselSlider(
-                  options: CarouselOptions(
-                    height: MediaQuery.of(context).size.height,
-                    aspectRatio: 16 / 9,
-                    scrollPhysics: NeverScrollableScrollPhysics(),
-                    viewportFraction: 1.0,
-                    initialPage: 0,
-                    enableInfiniteScroll: true,
-                    reverse: false,
-                    autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 6),
-                    autoPlayAnimationDuration:
-                    Duration(milliseconds: 2000),
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    enlargeCenterPage: true,
-                    //onPageChanged: callbackFunction,
-                    scrollDirection: Axis.horizontal,
-                  ),
-                  items: imgList.map((item) {
-                    return Container(
-                      margin: EdgeInsets.all(5.0),
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width,
-                      child: CachedNetworkImage(
-                        imageUrl: item,
-                        placeholder: (context, url) =>
-                            Center(child: CircularProgressIndicator()),
-                        errorWidget: (context, url, error) =>
-                            Icon(Icons.error),
-                      ),
-                    );
-                  }).toList()),
-            ),
+    return SafeArea(
+      child: Scaffold(
+        // appBar: customAppBar1("Your Item"),
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Wrap(
+            spacing: -30,
+            direction: Axis.vertical,
+            // overflow: Overflow.visible,
+            children: <Widget>[
 
 
 
+              Container(
+                height: 380,
+                width: SizeConfig._screenWidth,
+                child: Stack(
+                  children: [
 
-            Container(
-              height: 63 * SizeConfig.heightMultiplier,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20.0),
-                    topLeft: Radius.circular(20.0),
-                  )
+
+                    CarouselSlider(
+                        options: CarouselOptions(
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                currentPage = index;
+                              });
+                          },
+                          height: MediaQuery.of(context).size.height,
+                          aspectRatio: 16 / 9,
+                          // scrollPhysics: NeverScrollableScrollPhysics(),
+                          viewportFraction: 1.0,
+                          initialPage: currentPage,
+                          enableInfiniteScroll: true,
+
+                          reverse: false,
+                          autoPlay: true,
+                          autoPlayInterval: Duration(seconds: 8),
+                          autoPlayAnimationDuration:
+                          Duration(milliseconds: 2000),
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enlargeCenterPage: true,
+                          //onPageChanged: callbackFunction,
+                          scrollDirection: Axis.horizontal,
+                        ),
+                        items: imgList.map((item) {
+                          return Container(
+                            margin: EdgeInsets.all(5.0),
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            height: MediaQuery.of(context).size.height,
+                            width: MediaQuery.of(context).size.width,
+                            child: CachedNetworkImage(
+                              imageUrl: item,
+                              placeholder: (context, url) =>
+                                  Center(child: CircularProgressIndicator()),
+                              fit: BoxFit.cover,
+                              errorWidget: (context, url, error) =>
+                                  Icon(Icons.error),
+                            ),
+                          );
+                        }).toList()),
+
+                    Positioned(
+                        top:15,
+                        left: 15,
+                        child: IconButton(
+                            onPressed: (){
+                              // Navigator.pop(context);
+                            },
+
+                            icon: Icon(Icons.arrow_back_ios,color: Colors.white,))),
+                    Positioned(
+                        bottom:40,
+                        left: 20,
+                        child:  Align(
+                          alignment: Alignment.center,
+                          child: new DotsIndicator(
+
+                            position: currentPage.toDouble(),
+                            dotsCount: imgList.length,
+                            decorator: DotsDecorator(
+
+                              activeColor: Colors.white, color: Colors.grey,
+                              activeSize: Size(10, 10),
+                              size: Size(6,6),
+                              spacing: EdgeInsets.symmetric(horizontal: 2),
+                              activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                            ),
+                     // numberOfDot: imgList.length,
+//                      position: currentIndexPage,
+//                      dotColor: Colors.black87,
+//                      dotActiveColor: Colors.amber
+//
+                          ),
+                        ),),
+                  ],
+                ),
               ),
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 0),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
 
-                            Text("Home & Living", style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 1.6 * SizeConfig.textMultiplier
-                            ),),    Text("\$120", style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 1.8 * SizeConfig.textMultiplier
-                            ),
 
-                            ),
-                          ],
+
+
+              Container(
+                height: 63 * SizeConfig.heightMultiplier,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20.0),
+                      topLeft: Radius.circular(20.0),
+                    )
+                ),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+
+                              // Text("Home & Living", style: TextStyle(
+                              //     color: Colors.grey,
+                              //     fontWeight: FontWeight.w500,
+                              //     fontSize: 1.6 * SizeConfig.textMultiplier
+                              // ),),
+
+                              Text("\$120", style: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 1.8 * SizeConfig.textMultiplier
+                              ),
+
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 0),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
 
-                            Text("Wooden Bar Stool", style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 2.6 * SizeConfig.textMultiplier
-                            ),),    Text("\$85", style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 2 * SizeConfig.textMultiplier
-                            ),
-
-                            ),
-                          ],
+                              Text("Wooden Bar Stool", style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: "workSans",
+                                  fontSize: 2.7 * SizeConfig.textMultiplier
+                              ),),    Text("\$85", style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: "workSans",
+                                  fontSize: 2 * SizeConfig.textMultiplier
+                              ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 3 * SizeConfig.heightMultiplier,),
+                        SizedBox(height: 3 * SizeConfig.heightMultiplier,),
 
-                     Center(
-                       child: Container(
-                         width: 44 * SizeConfig.heightMultiplier,
-                         decoration: BoxDecoration(
-                           color: grayColor,
-                           borderRadius: BorderRadius.all(Radius.circular(12))
-                         ),
-                         child: Padding(
-                           padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-                           child: Column(
-                             // mainAxisAlignment: MainAxisAlignment.start,
-                             crossAxisAlignment: CrossAxisAlignment.start,
-                             children: [
+                       Center(
+                         child: Container(
+                           width: 45 * SizeConfig.heightMultiplier,
+                           decoration: BoxDecoration(
+                             color: grayColor.withOpacity(0.4),
+                             borderRadius: BorderRadius.all(Radius.circular(12))
+                           ),
+                           child: Padding(
+                             padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                             child: Column(
+                               // mainAxisAlignment: MainAxisAlignment.start,
+                               crossAxisAlignment: CrossAxisAlignment.start,
+                               children: [
 
-                               Row(
-                                 children: [
-                                   GestureDetector(
-                                     onTap: (){
-                                       Navigator.of(context).push(
-                                           MaterialPageRoute(builder: (Context) => vendorProfile()));
-                                     },
-                                     child: MyCircleAvatar(
-                                       imgUrl: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg',
-                                     ),
-                                   ),
-                                   SizedBox(width: 1 * SizeConfig.heightMultiplier,),
-                                   Column(
-                                     crossAxisAlignment: CrossAxisAlignment.start,
-                                     children: [
-                                       Text("Made and sold by",style:TextStyle(
-                                         fontSize: 12,
-                                         fontWeight: FontWeight.w600,
-                                         color: Colors.grey
-                                       ),),
-                                       Text("Paul",style:TextStyle(
-                                         fontSize: 14,
-                                         fontWeight: FontWeight.w600,
-                                         color: Colors.grey
-                                       ),),
-                                     ],
-                                   )
-                                 ],
-                               ) ,
-
-
-                               Row(
-                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                 children: [
-
-                                   Column(
-                                     crossAxisAlignment: CrossAxisAlignment.start,
-                                     children: [
-                                       SmoothStarRating(
-                                         rating: 4,
-                                         isReadOnly: false,
-                                         size: 16,
-                                         color: Colors.yellow,
-
-                                         filledIconData: Icons.star,
-                                         halfFilledIconData: Icons.star_half,
-                                         defaultIconData: Icons.star_border,
-                                         starCount: 5,
-                                         allowHalfRating: true,
-                                         spacing: 2.0,
-                                         onRated: (value) {
-                                           print("rating value -> $value");
-                                           // print("rating value dd -> ${value.truncate()}");
-                                         },
+                                 Row(
+                                   children: [
+                                     GestureDetector(
+                                       onTap: (){
+                                         Navigator.of(context).push(
+                                             MaterialPageRoute(builder: (Context) => vendorProfile()));
+                                       },
+                                       child: MyCircleAvatar(
+                                         imgUrl: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg',
                                        ),
-                                       GestureDetector(
-                                         onTap: (){
-                                           Navigator.of(context).push(
-                                               MaterialPageRoute(builder: (Context) => Reviews()));
-
-                                         },
-                                         child: Text("View / Leave review",style:TextStyle(
+                                     ),
+                                     SizedBox(width: 1 * SizeConfig.heightMultiplier,),
+                                     Column(
+                                       crossAxisAlignment: CrossAxisAlignment.start,
+                                       children: [
+                                         Text("Made and sold by",style:TextStyle(
                                            fontSize: 12,
                                            fontWeight: FontWeight.w600,
                                            color: Colors.grey
                                          ),),
-                                       ),
-                                     ],
-                                   ),
+                                         Text("Paul",style:TextStyle(
+                                           fontSize: 14,
+                                           fontWeight: FontWeight.w600,
+                                           color: Colors.grey
+                                         ),),
+                                       ],
+                                     )
+                                   ],
+                                 ) ,
 
-                                   GestureDetector(
-                                     onTap: (){
-                                       Navigator.of(context).push(
-                                           MaterialPageRoute(builder: (Context) => itemPage()));
-                                     },
-                                     child: Row(
+
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                   children: [
+
+                                     Column(
+                                       crossAxisAlignment: CrossAxisAlignment.start,
                                        children: [
-                                         Container(
-                                           height: 40,
-                                             width: 40,
-                                           decoration: BoxDecoration(
-                                             borderRadius: BorderRadius.circular(6),
-                                             color: Colors.white,
-                                           ),
-                                         child: Center(child: Icon(Icons.message_outlined,color: Colors.blue,size: 16,)),
+                                         SmoothStarRating(
+                                           rating: 4,
+                                           isReadOnly: false,
+                                           size: 16,
+                                           color: Colors.yellow,
+
+                                           filledIconData: Icons.star,
+                                           halfFilledIconData: Icons.star_half,
+                                           defaultIconData: Icons.star_border,
+                                           starCount: 5,
+                                           allowHalfRating: true,
+                                           spacing: 2.0,
+                                           onRated: (value) {
+                                             print("rating value -> $value");
+                                             // print("rating value dd -> ${value.truncate()}");
+                                           },
                                          ),
-                                         SizedBox(width: 1 * SizeConfig.heightMultiplier,),
-                                         Container(
-                                           height: 40,
-                                             width: 40,
-                                           decoration: BoxDecoration(
-                                             borderRadius: BorderRadius.circular(6),
-                                             color: Colors.white,
-                                           ),
-                                         child: Center(child: Icon(Icons.favorite,color: Colors.red,size: 18,)),
+                                         GestureDetector(
+                                           onTap: (){
+                                             Navigator.of(context).push(
+                                                 MaterialPageRoute(builder: (Context) => Reviews()));
+
+                                           },
+                                           child: Text("View / Leave review",style:TextStyle(
+                                             fontSize: 12,
+                                             fontWeight: FontWeight.w600,
+                                             color: Colors.grey
+                                           ),),
                                          ),
                                        ],
                                      ),
-                                   ),
 
-                                 ],
-                               ),
+                                     GestureDetector(
+                                       onTap: (){
+                                         Navigator.of(context).push(
+                                             MaterialPageRoute(builder: (Context) => itemPage()));
+                                       },
+                                       child: Row(
+                                         children: [
+                                           Container(
+                                             height: 40,
+                                               width: 40,
+                                             decoration: BoxDecoration(
+                                               borderRadius: BorderRadius.circular(6),
+                                               color: Colors.white,
+                                             ),
+                                           child: Center(child: Image(image: AssetImage("images/chat.png",),height: 20,width: 20,)),
+                                           ),
+                                           SizedBox(width: 1 * SizeConfig.heightMultiplier,),
+                                           Container(
+                                             height: 40,
+                                               width: 40,
+                                             decoration: BoxDecoration(
+                                               borderRadius: BorderRadius.circular(6),
+                                               color: Colors.white,
+                                             ),
+                                           child: Center(child: Image(image: AssetImage("images/love.png",),height: 20,width: 20,)),
+                                           ),
+                                         ],
+                                       ),
+                                     ),
+
+                                   ],
+                                 ),
 
 
 
 
-                             ],
+                               ],
+                             ),
                            ),
                          ),
                        ),
-                     ),
 
-                      SizedBox(height: 1 * SizeConfig.heightMultiplier,),
-                      Text("This is a one line about this item",style:TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black
-                      ),),
-                      SizedBox(height: 1 * SizeConfig.heightMultiplier,),
+                        SizedBox(height: 1 * SizeConfig.heightMultiplier,),
+                        Text("This is a one line about this item",style:TextStyle(
+                            fontSize: 14,
+                            fontFamily: "workSans",
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff0000FF)
+                        ),),
+                        SizedBox(height: 1 * SizeConfig.heightMultiplier,),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 3),
 
-                  //main Card started
-                  child: Wrap(
-                    // crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    //main Card started
+                    child: Wrap(
+                      // crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
 
-                      Text("What is Lorem Ipsum Lorem Ipsum is simply dummy text of the "
-                          "printing and typesetting industry Lorem Ipsum has been the"
-                          "industry's standard dummy text ever since the 1500s ",
-                        style:TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black,
-                      ),
-                      ),
-
-
-
-                      ExpandedSection(
-                        expand: _isExpanded,
-                        child: Text("When an unknown printer took a galley of type and scrambled "
-                            "it to make a type",
+                        Text("What is Lorem Ipsum Lorem Ipsum is simply dummy text of the "
+                            "printing and typesetting industry Lorem Ipsum has been the"
+                            "industry's standard dummy text ever since the 1500s ",
                           style:TextStyle(
                             fontSize: 12,
+                              fontFamily: "workSans",
                             fontWeight: FontWeight.w500,
-                            color: Colors.black,
-                          ),),
-                      ),
-
-                      GestureDetector(
-                        onTap: _toogleExpand,
-                        child: Padding(
-                          padding:
-                          const EdgeInsets.only(top: 6.0, bottom: 8),
-                          child: Center(
-                              child: Text(
-                                  _isExpanded == false
-                                      ? "See More..."
-                                      : "Close.",
-                                  style: TextStyle(
-                                      fontSize: 12, color: basicColorShopper))),
+                              color: Color(0xff0000FF)
                         ),
-                      ),
-                    ],
+                        ),
+
+
+
+                        ExpandedSection(
+                          expand: _isExpanded,
+                          child: Text("When an unknown printer took a galley of type and scrambled "
+                              "it to make a type",
+                            style:TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                                color: Color(0xff0000FF)
+                            ),),
+                        ),
+
+                        GestureDetector(
+                          onTap: _toogleExpand,
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(top: 6.0, bottom: 8),
+                            child: Center(
+                                child: Text(
+                                    _isExpanded == false
+                                        ? "See More..."
+                                        : "See Less.",
+                                    style: TextStyle(
+                                        fontSize: 12, color: Colors.black))),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
 
+SizedBox(height: 20,),
 
-                      Text("Personalistaion options",
-                        style:TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: basicColorShopper,
-                        ),
-                      ),
-
-                      SizedBox(height: 2 * SizeConfig.heightMultiplier,),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Custom text",
-                            style:TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black,
-                            ),
-                          ),
-
-                          customtextField(),
-                        ],
-                      ),
-                      SizedBox(height: 2 * SizeConfig.heightMultiplier,),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Choices",
-                            style:TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black,
-                            ),
-                          ),
-
-                          Container(
-                            width: MediaQuery.of(context).size.width/2.2,
-                            decoration: BoxDecoration(
-
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.3),
-                                  spreadRadius: 0,
-                                  blurRadius: 2,
-                                  offset: Offset(0, 3), // changes position of shadow
-                                ),
-                              ],
-
-                              // border: Border.all(
-                              //   color: basicColor,
-                              // ),
-                              borderRadius: BorderRadius.all(Radius.circular(8)),
-                              color: Colors.white,
-                            ),
-
-                            child: DropdownButtonHideUnderline(
-                              child: Padding(
-                                padding: const EdgeInsets.only(left:18.0,right: 8),
-                                child: ButtonTheme(
-                                  child: DropdownButton<String>(
-                                    //hint: Text("Select Airport"),
-                                    items: options.map((String dropDownStringItem) {
-                                      return DropdownMenuItem<String>(
-                                        value: dropDownStringItem,
-                                        child: Text(dropDownStringItem,style:
-                                        TextStyle(color: basicColorShopper, letterSpacing: 1),),
-                                      );
-                                    }).toList(),
-                                    onChanged: (String newValueSelected) {
-                                      // Your code to execute, when a menu item is selected
-                                      // from drop down
-                                      setState(() {
-                                        _Selectedoptions = newValueSelected;
-                                      });
-                                      // Navigator.pushReplacement(
-                                      //     context,
-                                      //     PageTransition(
-                                      //       curve: Curves.bounceOut,
-                                      //       type: PageTransitionType.rotate,
-                                      //       alignment: Alignment.topCenter,
-                                      //       child: WelcomeScreen(),
-                                      //     ));
-                                    },
-                                    value: _Selectedoptions,
-                                  ),
+                        Padding(
+                          padding: const EdgeInsets.only(left:4.0, right: 4.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Brand",
+                                style:TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: "workSans",
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
                                 ),
                               ),
-                            ),
+                              Text("$brand",
+                                style:TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: "workSans",
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                              ),
+
+
+                            ],
                           ),
-                        ],
-                      ),
-
-                      SizedBox(height: 10 * SizeConfig.heightMultiplier,),
-
-                      Text("- Made by : Me",
-                        style:TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          color: basicColorShopper,
                         ),
-                      ),
-                      Text("- Made to order: No",
-                        style:TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          color: basicColorShopper,
+                        Divider(),
+                        Padding(
+                          padding: const EdgeInsets.only(left:4.0, right: 4.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Color",
+                                style:TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: "workSans",
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              Text("$color",
+                                style:TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: "workSans",
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                              ),
+
+
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 2 * SizeConfig.heightMultiplier,),
-                      Center(
-                        child: CustomerButton(
-                          text: Text("Love it! Add to basket",style: CustomTextStyle.normaltext3(context),),
-                            disbaleColor: basicColorShopper,
-                            onPressed: (){
-                              Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (Context) => basket()));
-                            }),
-                      )
-                    ],
+                        Divider(),
+                        Padding(
+                          padding: const EdgeInsets.only(left:4.0, right: 4.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Condition",
+                                style:TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: "workSans",
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              Text("$condition",
+                                style:TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: "workSans",
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                              ),
+
+
+                            ],
+                          ),
+                        ),
+                        Divider(),
+                        Padding(
+                          padding: const EdgeInsets.only(left:4.0, right: 4.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("size",
+                                style:TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: "workSans",
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              Text("$size",
+                                style:TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: "workSans",
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                              ),
+
+
+                            ],
+                          ),
+                        ),
+                        Divider(),
+                        Padding(
+                          padding: const EdgeInsets.only(left:4.0, right: 4.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Postage cost",
+                                style:TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: "workSans",
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              Text("$postageCost",
+                                style:TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: "workSans",
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black,
+                                ),
+                              ),
+
+
+                            ],
+                          ),
+                        ),
+                        Divider(),
+
+                        SizedBox(height: 2 * SizeConfig.heightMultiplier,),
+                        Center(
+                          child: CustomerButton(
+                            text: Text("Love it! Add to basket",style: CustomTextStyle.normaltext3(context),),
+                              disbaleColor: basicColorShopper,
+                              onPressed: (){
+                                Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (Context) => basket()));
+                              }),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
 
 
 
-          ],
+            ],
+          ),
         ),
-      ),
 
+      ),
     );
   }
 

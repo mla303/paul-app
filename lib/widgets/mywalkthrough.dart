@@ -77,7 +77,7 @@ class WalkthroughState extends State<myWalkthrough>
               child: new Text(
                 widget.title,
                 style: new TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 28.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),

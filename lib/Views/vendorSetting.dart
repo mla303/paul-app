@@ -1,5 +1,4 @@
 import 'package:checkbox_grouped/checkbox_grouped.dart';
-import 'package:dashed_container/dashed_container.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:paul_app/Views/vendorAccount.dart';
@@ -37,22 +36,22 @@ class _VendorSettingtState extends State<VendorSetting> {
           height: height,
           width: width,
           // color: Colors.red,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  height: height / 30,
-                ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(
+                    height: height / 30,
+                  ),
 
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: Container(
-                    height: height / 23,
-                    width: width / 2.5,
+                  Container(
+                    height: height / 20,
+                    width: width / 2.2,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(10),
                       color: basicColorShopper,
                     ),
                     child: Center(
@@ -65,71 +64,123 @@ class _VendorSettingtState extends State<VendorSetting> {
                       ),
                     ),
                   ),
-                ),
-
-                //Upload up to 6 photos here
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: Container(
+                  //SizedBox(height: height/70,),
+                  //Upload up to 6 photos here
+                  Container(
                     height: height / 30,
                     width: width / 3,
                     child: Center(
                       child: Text(
                         'Your Face & Banner',
                         style: TextStyle(
-                            color: Colors.black,
-                            fontSize: height / 49,
-                            fontWeight: FontWeight.w700),
+                            color: Colors.grey,
+                            fontSize: height / 60,
+                            fontWeight: FontWeight.w400),
                       ),
                     ),
                   ),
-                ),
-               SizedBox(height: height/70,),
-               Padding(
-                 padding: const EdgeInsets.only(left:10.0, right: 15.0),
-                 child: Row(children: [
-                   ImageUploadContainer(),
-                   SizedBox(width: width/60,),
-                   ImageUploadContainer(),
-                 ],),
-               ),
+                 SizedBox(height: height/70,),
+                 Row(children: [
+                   Container(
 
-                SizedBox(height: height/70,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: Container(
-                    // height: height / 25,
-                    width: width / 1.2,
+                     child: DottedBorder(
+                       color: basicColorShopper,//color of dotted/dash line
+                       strokeWidth: 2, //thickness of dash/dots
+                       dashPattern: [10,6],
+                       child: Container(
+                         height: height/10,
+                         width: width/4,
+                         child: Column(
+                           mainAxisAlignment: MainAxisAlignment.center,
+                           children: [
+                             Icon(Icons.camera_alt_outlined, size: height/40, color: basicColorShopper, ),
+                             SizedBox(
+                               height: height/70,
+                             ),
+                             Text(
+                               'Your Face',
+                               style: TextStyle(
+                                   color: Colors.black,
+                                   fontSize: height / 60,
+                                   fontWeight: FontWeight.w400),
+                             ),
+                         ],),
+                       ),
+                     ),
+                   //   decoration: BoxDecoration(
+                   //   color: Colors.grey,
+                   //   // image: DecorationImage(
+                   //   //   image: AssetImage(''),
+                   //   //   fit: BoxFit.fill,
+                   //   // )
+                   // ),
+                   ),
+                   SizedBox(width: width/50,),
+                   Container(
+
+                     child: DottedBorder(
+                       color: basicColorShopper,//color of dotted/dash line
+                       strokeWidth: 2, //thickness of dash/dots
+                       dashPattern: [10,6],
+                       child: Container(
+                         height: height/10,
+                         width: width/4,
+                         child: Column(
+                           mainAxisAlignment: MainAxisAlignment.center,
+                           children: [
+                             Icon(Icons.camera_alt_outlined, size: height/40, color: basicColorShopper, ),
+                             SizedBox(
+                               height: height/70,
+                             ),
+                             Text(
+                               'Banner',
+                               style: TextStyle(
+                                   color: Colors.black,
+                                   fontSize: height / 60,
+                                   fontWeight: FontWeight.w400),
+                             ),
+                           ],),
+                       ),
+                     ),
+                     //   decoration: BoxDecoration(
+                     //   color: Colors.grey,
+                     //   // image: DecorationImage(
+                     //   //   image: AssetImage(''),
+                     //   //   fit: BoxFit.fill,
+                     //   // )
+                     // ),
+                   ),
+                 ],),
+                  SizedBox(height: height/70,),
+                  Container(
+                    height: height / 30,
+                    width: width / 1.5,
                     child: Center(
                       child: Text(
                         'psssst... You do not have to show your face... you cold add a logo:) ',
                         style: TextStyle(
-                            color: Colors.black,
-                            fontSize: height / 55,
-                            fontWeight: FontWeight.w600),
+                            color: Colors.grey,
+                            fontSize: height / 70,
+                            fontWeight: FontWeight.w400),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: height / 70,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: largeTextField(
+                  SizedBox(
+                    height: height / 70,
+                  ),
+                  CustomTextField(
                     hinttext: "Your story... About you... Why do you do what you do?",
                     obscureText: false,
                     textInputType: TextInputType.text,
                   ),
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: Container(
-                    height: height / 25,
-                    width: width / 2.3,
+                  SizedBox(
+                    height: height / 70,
+                  ),
+                  Container(
+                    height: height / 30,
+                    width: width / 2.4,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(10),
                       color: basicColorShopper,
                     ),
                     child: Center(
@@ -142,30 +193,22 @@ class _VendorSettingtState extends State<VendorSetting> {
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: height / 70,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: Container(
-                   // height: height / 15,
-                    width: width / 1.2,
+
+                  Container(
+                    height: height / 15,
+                    width: width / 1.3,
                     child: Center(
                       child: Text(
                         'Your payments will be processed via our Friends at stripe, who process some of the Biggest companies in the world… Their fee is Also way lower, so you receive more of your Hard earned cash :)                                                      ',
                         style: TextStyle(
-                            color: Colors.black,
-                            fontSize: height / 55,
-                            fontWeight: FontWeight.w600),
+                            color: Colors.grey,
+                            fontSize: height / 70,
+                            fontWeight: FontWeight.w400),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: height/70,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: InkWell(
+                  SizedBox(height: height/70,),
+                  InkWell(
                     onTap: ()
                     {
                       // Navigator.pushNamed(context, "/forgetPassword");
@@ -181,23 +224,15 @@ class _VendorSettingtState extends State<VendorSetting> {
                               fontWeight: FontWeight.w400),
 
                         ),
-                        Icon(Icons.arrow_forward_ios, size: height/50, color: Colors.grey, )
+                        Icon(Icons.arrow_forward_ios, size: height/50, color: Colors.grey[450], )
                       ],),
                   ),
-                ),
-                SizedBox(height: height/70,),
-                Divider(
-                  color: Colors.grey,
-
-                ),
-                SizedBox(height: height/60,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: Container(
-                    height: height / 25,
+                  SizedBox(height: height/70,),
+                  Container(
+                    height: height / 30,
                     width: width / 3,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(10),
                       color: basicColorShopper,
                     ),
                     child: Center(
@@ -210,29 +245,23 @@ class _VendorSettingtState extends State<VendorSetting> {
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: height/70,),
+                  SizedBox(height: height/70,),
 
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: Container(
-                    //height: height / 15,
-                    width: width / 1.2,
+                  Container(
+                    height: height / 15,
+                    width: width / 1.5,
                     child: Center(
                       child: Text(
                         ' Below you will set a shop wide postage cost. This will set the same price across all of your Items)                                                      ',
                         style: TextStyle(
-                            color: Colors.black,
-                            fontSize: height / 55,
-                            fontWeight: FontWeight.w600),
+                            color: Colors.grey,
+                            fontSize: height / 70,
+                            fontWeight: FontWeight.w400),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: height/70,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: InkWell(
+                  SizedBox(height: height/70,),
+                  InkWell(
                     onTap: ()
                     {
                       // Navigator.pushNamed(context, "/forgetPassword");
@@ -248,52 +277,33 @@ class _VendorSettingtState extends State<VendorSetting> {
                               fontWeight: FontWeight.w400),
 
                         ),
-                        Icon(Icons.arrow_forward_ios, size: height/50, color: Colors.grey, )
+                        Icon(Icons.arrow_forward_ios, size: height/50, color: Colors.grey[450], )
                       ],),
                   ),
-                ),
-                SizedBox(height: height/70,),
-                Divider(
-                  color: Colors.grey,
-
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: CustomTextField(
+                  SizedBox(height: height/70,),
+                  CustomTextField(
                     hinttext: "1st item cost",
                     obscureText: false,
                     textInputType: TextInputType.text,
                   ),
-                ),
-                SizedBox(height: height/70,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-
-                  child: CustomTextField(
+                  SizedBox(height: height/70,),
+                  CustomTextField(
                     hinttext: "Every-item after the 1st will cost ",
                     obscureText: false,
                     textInputType: TextInputType.text,
                   ),
-                ),
-                SizedBox(height: height/70,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-
-                  child: CustomTextField(
+                  SizedBox(height: height/70,),
+                  CustomTextField(
                     hinttext: "Minimum order total for free postage ",
                     obscureText: false,
                     textInputType: TextInputType.text,
                   ),
-                ),
-                SizedBox(height: height/60,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-
-                  child: Container(
-                    height: height / 25,
+                  SizedBox(height: height/60,),
+                  Container(
+                    height: height / 30,
                     width: width / 4,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(10),
                       color: basicColorShopper,
                     ),
                     child: Center(
@@ -306,57 +316,40 @@ class _VendorSettingtState extends State<VendorSetting> {
                       ),
                     ),
                   ),
-                ),
 
-
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-
-                  child: Container(
+                  SizedBox(height: height/70,),
+                  Container(
                     height: height / 15,
                     width: width / 1.3,
                     child: Center(
                       child: Text(
-                        'These are important. e.g I send all items Royal Mail signed… & I offer 14 days to your return                                                      ',
+                        'These are important. e.g I send all items Royal Mail signed… & I offer 14 days to return                                                      ',
                         style: TextStyle(
-                            color: Colors.black,
-                            fontSize: height / 55,
-                            fontWeight: FontWeight.w600),
+                            color: Colors.grey,
+                            fontSize: height / 70,
+                            fontWeight: FontWeight.w400),
                       ),
                     ),
                   ),
-                ),
 
-                SizedBox(height: height/70,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-
-                  child: largeTextField(
+                  SizedBox(height: height/70,),
+                  CustomTextField(
                     hinttext: "Postage policy  ",
                     obscureText: false,
                     textInputType: TextInputType.text,
-
                   ),
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-
-                  child: largeTextField(
-                    hinttext: "Refund policy  ",
+                  SizedBox(height: height/60,),
+                  CustomTextField(
+                    hinttext: "Postage policy  ",
                     obscureText: false,
                     textInputType: TextInputType.text,
                   ),
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-
-                  child: Container(
-                    height: height / 27,
+                  SizedBox(height: height/60,),
+                  Container(
+                    height: height / 30,
                     width: width / 3.5,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(10),
                       color: basicColorShopper,
                     ),
                     child: Center(
@@ -369,11 +362,8 @@ class _VendorSettingtState extends State<VendorSetting> {
                       ),
                     ),
                   ),
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-                  child: SimpleGroupedCheckbox<int>(
+                  SizedBox(height: height/60,),
+                  SimpleGroupedCheckbox<int>(
                     controller: controller,
                     itemsTitle: ["Switch on" ,"Disable sales while away",],
                     values: [1,2],
@@ -383,22 +373,14 @@ class _VendorSettingtState extends State<VendorSetting> {
                     checkFirstElement: false,
 
                   ),
-                ),
-                SizedBox(height: height/60,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-
-                  child: CustomTextField(
+                  SizedBox(height: height/60,),
+                  CustomTextField(
                     hinttext: "Add an away message to inform your customers that you are away & when you are back ",
                     obscureText: false,
                     textInputType: TextInputType.text,
                   ),
-                ),
-                SizedBox(height: height/20,),
-                Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
-
-                  child: Center(
+                  SizedBox(height: height/20,),
+                  Center(
                     child: ShopperButton(
                       text: Text(
                         "Save all of that",
@@ -413,58 +395,10 @@ class _VendorSettingtState extends State<VendorSetting> {
                       disbaleColor: buttonColor2,
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-class ImageUploadContainer extends StatelessWidget {
-  ImageUploadContainer({this.onTap});
-  final Function onTap;
-
-  @override
-  Widget build(BuildContext context) {
-
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: GestureDetector(
-        onTap: onTap,
-        child: DashedContainer(
-          child: Container(
-
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.camera_alt_rounded,
-                  color: basicColorShopper,
-                  size: 18,
-                ),
-                Text(
-                  'Your Face',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: height / 60,
-                      fontWeight: FontWeight.w400),
-                ),
-              ],
-            ),
-            height: 70,
-            width: 70.0,
-            decoration:
-            BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
-          ),
-          dashColor: basicColorShopper,
-          borderRadius: 4.0,
-          dashedLength: 6.0,
-          blankLength: 5.0,
-          strokeWidth: 2.0,
         ),
       ),
     );
