@@ -32,7 +32,7 @@ class _orderPageState extends State<orderPage> {
 
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Color(0xfff7f7f7),
+     backgroundColor: Colors.white,
 
         appBar: customAppBar1("Orders"),
 

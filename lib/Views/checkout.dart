@@ -33,6 +33,7 @@ double orderPrice = 125445;
         // double orderPrice =
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0,
           centerTitle: true,

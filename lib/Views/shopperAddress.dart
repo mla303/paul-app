@@ -30,7 +30,7 @@ class _shopperAddresstState extends State<shopperAddress> {
     // double orderPrice =
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Color(0xfff7f7f7),
+        backgroundColor: Colors.white,
 
         appBar: customAppBar1("Shopper Adress"),
 

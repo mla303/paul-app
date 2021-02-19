@@ -36,9 +36,10 @@ class _AddProductState extends State<AddProduct> {
 
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Color(0xfff7f7f7),
+backgroundColor: Colors.white,
 
         appBar: AppBar(
+          elevation: 0,
           centerTitle: true,
           backgroundColor: Colors.white,
           title: Text('Your item', style: TextStyle(color: Colors.black), textAlign: TextAlign.center),

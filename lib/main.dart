@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DynamicItemFilter(),
+      home: splashScreen(),
       routes: routes,
     );
   }
