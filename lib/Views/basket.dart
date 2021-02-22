@@ -32,6 +32,7 @@ class _basketState extends State<basket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: customAppBar1("Sales Detail"),
       body: Container(
         child: Column(

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/AddProduct.dart';
+import 'package:paul_app/Views/ShopperSettings.dart';
+import 'package:paul_app/Views/dynamicItemFilter.dart';
 import 'package:paul_app/Views/paymentScreen.dart';
-import 'package:paul_app/Views/testPage.dart';
+import 'package:paul_app/Views/vendorAccount.dart';
+import 'package:paul_app/Views/vendorSetting.dart';
 import 'Views/allCategories.dart';
 import 'Views/bottomNavigation.dart';
 import 'Views/forgotPassword.dart';
@@ -32,7 +36,6 @@ var routes = <String, WidgetBuilder>{
   "/allCatorgry": (BuildContext context) => allCatorgies(),
   "/naviga": (BuildContext context) => bottomNavigation(),
   "/paymentScreen": (BuildContext context) => PaymentScreen(),
-  "/TestPage": (BuildContext context) => testPage(),
 
 };
 
@@ -45,7 +48,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        backgroundColor: Colors.white,
          fontFamily: 'workSans',
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,

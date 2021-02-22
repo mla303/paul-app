@@ -1,5 +1,6 @@
 
 import 'package:checkbox_grouped/checkbox_grouped.dart';
+import 'package:dashed_container/dashed_container.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:paul_app/Views/addProductDone.dart';
@@ -35,13 +36,13 @@ class _AddProductState extends State<AddProduct> {
 
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Color(0xfff7f7f7),
+backgroundColor: Colors.white,
 
         appBar: AppBar(
           elevation: 0,
           centerTitle: true,
           backgroundColor: Colors.white,
-          title: Text('Your items', style: TextStyle(color: Colors.black), textAlign: TextAlign.center),
+          title: Text('Your item', style: TextStyle(color: Colors.black), textAlign: TextAlign.center),
           iconTheme: IconThemeData(color:  Colors.black),
         ),
 
@@ -49,22 +50,22 @@ class _AddProductState extends State<AddProduct> {
           height: height,
           width: width,
           // color: Colors.red,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal:30,vertical: 15),
-            child: SingleChildScrollView(
-              child: Column(
+          child: SingleChildScrollView(
+            child: Column(
 
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
 
-                  SizedBox(height: height/30,),
+                SizedBox(height: height/30,),
 
-                  Container(height: height/30,
+                Padding(
+                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                  child: Container(height: height/27,
                     width: width/2.4,
 
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(5),
                       color: basicColorShopper,
 
                     ),
@@ -80,9 +81,13 @@ class _AddProductState extends State<AddProduct> {
                       ),
 
                     ), ),
-                  //SizedBox(height: height/70,),
-                  Container(height: height/30,
-                    width: width/2.1,
+                ),
+              //  SizedBox(height: height/80,),
+                //SizedBox(height: height/70,),
+                Padding(
+                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                  child: Container(height: height/30,
+                    width: width/2.3,
 
 
                     child:Center(
@@ -90,175 +95,107 @@ class _AddProductState extends State<AddProduct> {
                         'Upload up to 6 photos here',
                         style: TextStyle(
 
-                            color: Colors.grey,
-                            fontSize: height / 60,
-                            fontWeight: FontWeight.w400),
+                            color: Colors.black,
+                            fontSize: height / 55,
+                            fontWeight: FontWeight.w700),
 
                       ),
 
                     ), ),
-                  SizedBox(height: height/50,),
-                  Row(children: [
-                    Container(
+                ),
+                SizedBox(height: height/50,),
+                Padding(
+                  padding: const EdgeInsets.only(left:10.0, right: 5.0),
+                  child: Row(children: [
+                    ImageUploadContainer(),
+                    // SizedBox(width: width/80,),
+                    ImageUploadContainer(),
+                    // SizedBox(width: width/80,),
+                    ImageUploadContainer(),
 
-                      child: DottedBorder(
-                        color: basicColorShopper,//color of dotted/dash line
-                        strokeWidth: 1.5, //thickness of dash/dots
-                        dashPattern: [10,6],
-                        child: Container(
-                          height: height/10,
-                          width: width/4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.camera_alt_outlined, size: height/40, color: basicColorShopper, ),
-                              SizedBox(
-                                height: height/70,
-                              ),
-                              Text(
-                                'Add Product',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: height / 60,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],),
-                        ),
-                      ),
-                      //   decoration: BoxDecoration(
-                      //   color: Colors.grey,
-                      //   // image: DecorationImage(
-                      //   //   image: AssetImage(''),
-                      //   //   fit: BoxFit.fill,
-                      //   // )
-                      // ),
-                    ),
-                    SizedBox(width: width/50,),
-                    Container(
-
-                      child: DottedBorder(
-                        color: basicColorShopper,//color of dotted/dash line
-                        strokeWidth: 1.5, //thickness of dash/dots
-                        dashPattern: [10,6],
-                        child: Container(
-                          height: height/10,
-                          width: width/4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.camera_alt_outlined, size: height/40, color: basicColorShopper, ),
-                              SizedBox(
-                                height: height/70,
-                              ),
-                              Text(
-                                'Add Product',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: height / 60,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],),
-                        ),
-                      ),
-                      //   decoration: BoxDecoration(
-                      //   color: Colors.grey,
-                      //   // image: DecorationImage(
-                      //   //   image: AssetImage(''),
-                      //   //   fit: BoxFit.fill,
-                      //   // )
-                      // ),
-                    ),
-                    SizedBox(width: width/50,),
-                    Container(
-
-                      child: DottedBorder(
-                        color: basicColorShopper,//color of dotted/dash line
-                        strokeWidth: 1.5, //thickness of dash/dots
-                        dashPattern: [10,6],
-                        child: Container(
-                          height: height/10,
-                          width: width/4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.camera_alt_outlined, size: height/40, color: basicColorShopper, ),
-                              SizedBox(
-                                height: height/70,
-                              ),
-                              Text(
-                                'Add Product',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: height / 60,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],),
-                        ),
-                      ),
-                      //   decoration: BoxDecoration(
-                      //   color: Colors.grey,
-                      //   // image: DecorationImage(
-                      //   //   image: AssetImage(''),
-                      //   //   fit: BoxFit.fill,
-                      //   // )
-                      // ),
-                    ),
                   ],),
-                  SizedBox(height: height/80,),
-                  Container(height: height/30,
-                    width: width/1.5,
+                ),
+                SizedBox(height: height/80,),
+                Padding(
+                  padding: const EdgeInsets.only(left:18.0, right: 15.0),
+                  child: Container(height: height/30,
+                    width: width/1.4,
 
 
                     child:Text(
                       'Top tip! Try to take photos in natural day light ',
                       style: TextStyle(
 
-                          color: Colors.grey,
-                          fontSize: height / 70,
-                          fontWeight: FontWeight.w400),
+                          color: Colors.black,
+                          fontSize: height / 55,
+                          fontWeight: FontWeight.w600),
 
                     ), ),
-                  SizedBox(height: height/70,),
-                  CustomTextField
+                ),
+                SizedBox(height: height/70,),
+                Padding(
+                  padding: const EdgeInsets.only(left:18.0, right: 15.0),
+                  child: CustomTextField
                     (
                     hinttext: "Your item title:)",
                     obscureText: false,
                     textInputType: TextInputType.text,
                   ),
-                  SizedBox(height: height/70,),
-                  CustomTextField
+                ),
+                SizedBox(height: height/70,),
+                Padding(
+                  padding: const EdgeInsets.only(left:18.0, right: 15.0),
+                  child: CustomTextField
                     (
                     hinttext: "Add a one linear about your item",
                     obscureText: false,
                     textInputType: TextInputType.text,
                   ),
-                  SizedBox(height: height/70,),
-                  CustomTextField
+                ),
+                SizedBox(height: height/70,),
+                Padding(
+                  padding: const EdgeInsets.only(left:18.0, right: 45.0),
+                  child: largeTextField
                     (
                     hinttext: "& a full write up… Be sure to include All your great features here :)",
                     obscureText: false,
                     textInputType: TextInputType.text,
                   ),
-                  SizedBox(height: height/70,),
-                  CustomTextField
-                    (
-                    hinttext: "Your Price",
-                    obscureText: false,
-                    textInputType: TextInputType.text,
-                  ),
-                  SizedBox(height: height/70,),
-                  CustomTextField
-                    (
-                    hinttext: "Stock Quantity",
-                    obscureText: false,
-                    textInputType: TextInputType.text,
-                  ),
-                  SizedBox(height: height/70,),
-                  Container(height: height/35,
-                    width: width/2.1,
+                ),
+                Container(
+                  width: width/1.07,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                   Padding(
+                     padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                     child: smallTextField
+                       (
+                       hinttext: "Your Price",
+                       obscureText: false,
+                       textInputType: TextInputType.text,
+                     ),
+                   ),
+                   SizedBox(height: height/70,),
+                   Padding(
+                     padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                     child: smallTextField
+                       (
+                       hinttext: "Stock Quantity",
+                       obscureText: false,
+                       textInputType: TextInputType.text,
+                     ),
+                   ),
+               ],),
+                ),
+                SizedBox(height: height/50,),
+                Padding(
+                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                  child: Container(height: height/27,
+                    width: width/2.5,
 
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(5),
                       color: basicColorShopper,
 
                     ),
@@ -274,9 +211,12 @@ class _AddProductState extends State<AddProduct> {
                       ),
 
                     ), ),
-                 // SizedBox(height: height/70,),
-                  Container(height: height/30,
-                    width: width/2.3,
+                ),
+               // SizedBox(height: height/70,),
+                Padding(
+                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                  child: Container(height: height/30,
+                    width: width/2.5,
 
 
                     child:Center(
@@ -284,16 +224,19 @@ class _AddProductState extends State<AddProduct> {
                         'Select a main & then sub',
                         style: TextStyle(
 
-                            color: Colors.grey,
-                            fontSize: height / 60,
-                            fontWeight: FontWeight.w400),
+                            color: Colors.black,
+                            fontSize: height / 55,
+                            fontWeight: FontWeight.w700),
 
                       ),
 
                     ), ),
-                  SizedBox(height: height/60,),
-                  Container(child: Column(children: [
-                    InkWell(
+                ),
+                SizedBox(height: height/60,),
+                Container(child: Column(children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left:20.0, right: 15.0),
+                    child: InkWell(
                       onTap: ()
                       {
                         // Navigator.pushNamed(context, "/forgetPassword");
@@ -309,13 +252,16 @@ class _AddProductState extends State<AddProduct> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
+                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey, )
                         ],),
                     ),
-                    SizedBox(height: height/70,),
-                    Divider(color: Colors.grey,),
-                    SizedBox(height: height/70,),
-                    InkWell(
+                  ),
+                  SizedBox(height: height/70,),
+                  Divider(color: Colors.grey,),
+                  SizedBox(height: height/70,),
+                  Padding(
+                    padding: const EdgeInsets.only(left:20.0, right: 15.0),
+                    child: InkWell(
                       onTap: ()
                       {
                         // Navigator.pushNamed(context, "/forgetPassword");
@@ -331,18 +277,21 @@ class _AddProductState extends State<AddProduct> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
+                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey, )
                         ],),
                     ),
-                    SizedBox(height: height/70,),
-                    Divider(color: Colors.grey,),
-                  ],),),
-                  SizedBox(height: height/50,),
-                  Container(height: height/35,
-                    width: width/3.4,
+                  ),
+                  SizedBox(height: height/70,),
+                  Divider(color: Colors.grey,),
+                ],),),
+                SizedBox(height: height/50,),
+                Padding(
+                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                  child: Container(height: height/27,
+                    width: width/3.5,
 
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(5),
                       color: basicColorShopper,
 
                     ),
@@ -358,8 +307,11 @@ class _AddProductState extends State<AddProduct> {
                       ),
 
                     ), ),
-                  Container(height: height/30,
-                    width: width/2.3,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                  child: Container(height: height/30,
+                    width: width/2.5,
 
 
                     child:Center(
@@ -367,17 +319,20 @@ class _AddProductState extends State<AddProduct> {
                         'Select a main & then sub',
                         style: TextStyle(
 
-                            color: Colors.grey,
-                            fontSize: height / 60,
-                            fontWeight: FontWeight.w400),
+                            color: Colors.black,
+                            fontSize: height / 55,
+                            fontWeight: FontWeight.w700),
 
                       ),
 
                     ), ),
+                ),
 
-                  SizedBox(height: height/70,),
-                  Container(child: Column(children: [
-                    InkWell(
+                SizedBox(height: height/70,),
+                Container(child: Column(children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left:20.0, right: 15.0),
+                    child: InkWell(
                       onTap: ()
                       {
                         // Navigator.pushNamed(context, "/forgetPassword");
@@ -393,13 +348,16 @@ class _AddProductState extends State<AddProduct> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
+                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey,  )
                         ],),
                     ),
-                    SizedBox(height: height/70,),
-                    Divider(color: Colors.grey,),
-                    SizedBox(height: height/70,),
-                    InkWell(
+                  ),
+                  SizedBox(height: height/70,),
+                  Divider(color: Colors.grey,),
+                  SizedBox(height: height/70,),
+                  Padding(
+                    padding: const EdgeInsets.only(left:20.0, right: 15.0),
+                    child: InkWell(
                       onTap: ()
                       {
                         // Navigator.pushNamed(context, "/forgetPassword");
@@ -415,13 +373,16 @@ class _AddProductState extends State<AddProduct> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
+                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey,  )
                         ],),
                     ),
-                    SizedBox(height: height/70,),
-                    Divider(color: Colors.grey,),
-                    SizedBox(height: height/70,),
-                    InkWell(
+                  ),
+                  SizedBox(height: height/70,),
+                  Divider(color: Colors.grey,),
+                  SizedBox(height: height/70,),
+                  Padding(
+                    padding: const EdgeInsets.only(left:20.0, right: 15.0),
+                    child: InkWell(
                       onTap: ()
                       {
                         // Navigator.pushNamed(context, "/forgetPassword");
@@ -437,13 +398,16 @@ class _AddProductState extends State<AddProduct> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
+                          Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey,  )
                         ],),
                     ),
-                    SizedBox(height: height/70,),
-                    Divider(color: Colors.grey,),
-                    SizedBox(height: height/70,),
-                    InkWell(
+                  ),
+                  SizedBox(height: height/70,),
+                  Divider(color: Colors.grey,),
+                  SizedBox(height: height/70,),
+                  Padding(
+                    padding: const EdgeInsets.only(left:20.0, right: 15.0),
+                    child: InkWell(
                       onTap: ()
                       {
                         // Navigator.pushNamed(context, "/forgetPassword");
@@ -459,38 +423,29 @@ class _AddProductState extends State<AddProduct> {
                                 fontWeight: FontWeight.w400),
 
                           ),
-                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey[450], )
+                          Icon(Icons.arrow_forward_ios, size: height/40, color: Colors.grey, )
                         ],),
                     ),
-                    SizedBox(height: height/70,),
-                    Divider(color: Colors.grey,),
-                    SizedBox(height: height/70,),
-                  ],),),
-
-
-
-                  Container(child: Column(children: [
-
-
-
-
-                  ],),),
-                  SizedBox(height: height/25,),
-                  Center(
-                    child: ShopperButton(
-                      text: Text("List item",
-                        style: CustomTextStyle.buttontitle(context),),
-                      onPressed: (){
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (Context) => addProductDone()));
-                      },
-                      color: basicColorShopper,
-                      focusColor: buttonColor2,
-                      disbaleColor: buttonColor2,
-                    ),
                   ),
-                ],
-              ),
+                  SizedBox(height: height/70,),
+                  Divider(color: Colors.grey,),
+                  SizedBox(height: height/70,),
+                ],),),
+                SizedBox(height: height/20,),
+                Center(
+                  child: ShopperButton(
+                    text: Text("List item",
+                      style: CustomTextStyle.buttontitle(context),),
+                    onPressed: (){
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (Context) => addProductDone()));
+                    },
+                    color: basicColorShopper,
+                    focusColor: buttonColor2,
+                    disbaleColor: buttonColor2,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -499,4 +454,53 @@ class _AddProductState extends State<AddProduct> {
     );
   }
 
+}
+
+class ImageUploadContainer extends StatelessWidget {
+  ImageUploadContainer({this.onTap});
+  final Function onTap;
+
+  @override
+  Widget build(BuildContext context) {
+
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: onTap,
+        child: DashedContainer(
+          child: Container(
+
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.camera_alt_rounded,
+                  color: basicColorShopper,
+                  size: 18,
+                ),
+                Text(
+                  'Add Product',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: height / 60,
+                      fontWeight: FontWeight.w400),
+                ),
+              ],
+            ),
+            height: 70,
+            width: 80.0,
+            decoration:
+            BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
+          ),
+          dashColor: basicColorShopper,
+          borderRadius: 4.0,
+          dashedLength: 6.0,
+          blankLength: 5.0,
+          strokeWidth: 2.0,
+        ),
+      ),
+    );
+  }
 }

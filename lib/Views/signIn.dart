@@ -37,7 +37,7 @@ class _logInState extends State<SignInScreen> {
 
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Color(0xfff7f7f7),
+        backgroundColor: Color(0xffffffff),
 
           // appBar: customAppBar1("Sign In"),
 
