@@ -60,9 +60,9 @@ backgroundColor: Colors.white,
                 SizedBox(height: height/30,),
 
                 Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                  padding: const EdgeInsets.only(left:15.0, right: 15.0, bottom: 1),
                   child: Container(height: height/27,
-                    width: width/2.4,
+                    width: width/2.25,
 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
@@ -82,12 +82,14 @@ backgroundColor: Colors.white,
 
                     ), ),
                 ),
-              //  SizedBox(height: height/80,),
+                //SizedBox(height: height/90,),
                 //SizedBox(height: height/70,),
                 Padding(
-                  padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                  padding: const EdgeInsets.only(left:10.0, right: 15.0),
                   child: Container(height: height/30,
-                    width: width/2.3,
+                    width: width/1.9,
+                  //  color: Colors.red,
+
 
 
                     child:Center(
@@ -95,15 +97,16 @@ backgroundColor: Colors.white,
                         'Upload up to 6 photos here',
                         style: TextStyle(
 
-                            color: Colors.black,
+                            color: Color(0xff666666),
                             fontSize: height / 55,
+                          //  fontFamily: 'workSans',
                             fontWeight: FontWeight.w700),
 
                       ),
 
                     ), ),
                 ),
-                SizedBox(height: height/50,),
+                //SizedBox(height: height/100,),
                 Padding(
                   padding: const EdgeInsets.only(left:10.0, right: 5.0),
                   child: Row(children: [
@@ -119,14 +122,14 @@ backgroundColor: Colors.white,
                 Padding(
                   padding: const EdgeInsets.only(left:18.0, right: 15.0),
                   child: Container(height: height/30,
-                    width: width/1.4,
+                    width: width/1.2,
 
 
                     child:Text(
                       'Top tip! Try to take photos in natural day light ',
                       style: TextStyle(
 
-                          color: Colors.black,
+                          color: Color(0xff8A8A8F),
                           fontSize: height / 55,
                           fontWeight: FontWeight.w600),
 
@@ -154,7 +157,7 @@ backgroundColor: Colors.white,
                 ),
                 SizedBox(height: height/70,),
                 Padding(
-                  padding: const EdgeInsets.only(left:18.0, right: 45.0),
+                  padding: const EdgeInsets.only(left:18.0, right: 40.0),
                   child: largeTextField
                     (
                     hinttext: "& a full write up… Be sure to include All your great features here :)",
@@ -162,13 +165,14 @@ backgroundColor: Colors.white,
                     textInputType: TextInputType.text,
                   ),
                 ),
+                SizedBox(height: height/70,),
                 Container(
                   width: width/1.07,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                    Padding(
-                     padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                     padding: const EdgeInsets.only(left:15.0, right: 0.0),
                      child: smallTextField
                        (
                        hinttext: "Your Price",
@@ -176,9 +180,9 @@ backgroundColor: Colors.white,
                        textInputType: TextInputType.text,
                      ),
                    ),
-                   SizedBox(height: height/70,),
+                  // SizedBox(height: height/70,),
                    Padding(
-                     padding: const EdgeInsets.only(left:15.0, right: 15.0),
+                     padding: const EdgeInsets.only(left:0.0, right: 15.0),
                      child: smallTextField
                        (
                        hinttext: "Stock Quantity",
@@ -192,7 +196,7 @@ backgroundColor: Colors.white,
                 Padding(
                   padding: const EdgeInsets.only(left:15.0, right: 15.0),
                   child: Container(height: height/27,
-                    width: width/2.5,
+                    width: width/2.2,
 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
@@ -213,10 +217,11 @@ backgroundColor: Colors.white,
                     ), ),
                 ),
                // SizedBox(height: height/70,),
+                //SizedBox(height: height/90,),
                 Padding(
                   padding: const EdgeInsets.only(left:15.0, right: 15.0),
                   child: Container(height: height/30,
-                    width: width/2.5,
+                    width: width/2.1,
 
 
                     child:Center(
@@ -224,7 +229,7 @@ backgroundColor: Colors.white,
                         'Select a main & then sub',
                         style: TextStyle(
 
-                            color: Colors.black,
+                            color: Color(0xff666666),
                             fontSize: height / 55,
                             fontWeight: FontWeight.w700),
 
@@ -257,7 +262,7 @@ backgroundColor: Colors.white,
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                   SizedBox(height: height/70,),
                   Padding(
                     padding: const EdgeInsets.only(left:20.0, right: 15.0),
@@ -282,13 +287,13 @@ backgroundColor: Colors.white,
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                 ],),),
                 SizedBox(height: height/50,),
                 Padding(
                   padding: const EdgeInsets.only(left:15.0, right: 15.0),
                   child: Container(height: height/27,
-                    width: width/3.5,
+                    width: width/3.4,
 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
@@ -311,7 +316,7 @@ backgroundColor: Colors.white,
                 Padding(
                   padding: const EdgeInsets.only(left:15.0, right: 15.0),
                   child: Container(height: height/30,
-                    width: width/2.5,
+                    width: width/2.2,
 
 
                     child:Center(
@@ -319,7 +324,7 @@ backgroundColor: Colors.white,
                         'Select a main & then sub',
                         style: TextStyle(
 
-                            color: Colors.black,
+                            color:  Color(0xff666666),
                             fontSize: height / 55,
                             fontWeight: FontWeight.w700),
 
@@ -353,7 +358,7 @@ backgroundColor: Colors.white,
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                   SizedBox(height: height/70,),
                   Padding(
                     padding: const EdgeInsets.only(left:20.0, right: 15.0),
@@ -378,7 +383,7 @@ backgroundColor: Colors.white,
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                   SizedBox(height: height/70,),
                   Padding(
                     padding: const EdgeInsets.only(left:20.0, right: 15.0),
@@ -403,7 +408,7 @@ backgroundColor: Colors.white,
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                   SizedBox(height: height/70,),
                   Padding(
                     padding: const EdgeInsets.only(left:20.0, right: 15.0),
@@ -428,7 +433,7 @@ backgroundColor: Colors.white,
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                   SizedBox(height: height/70,),
                 ],),),
                 SizedBox(height: height/20,),
@@ -478,26 +483,26 @@ class ImageUploadContainer extends StatelessWidget {
                 Icon(
                   Icons.camera_alt_rounded,
                   color: basicColorShopper,
-                  size: 18,
+                  size: height/50,
                 ),
                 Text(
                   'Add Product',
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: height / 60,
+                      fontSize: height / 80,
                       fontWeight: FontWeight.w400),
                 ),
               ],
             ),
-            height: 70,
-            width: 80.0,
+            height: height/12,
+            width:width/5,
             decoration:
             BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
           ),
           dashColor: basicColorShopper,
-          borderRadius: 4.0,
+          borderRadius: 5.0,
           dashedLength: 6.0,
-          blankLength: 5.0,
+          blankLength: 7.0,
           strokeWidth: 2.0,
         ),
       ),

@@ -32,191 +32,236 @@ class _shopperAddresstState extends State<shopperAddress> {
       child: Scaffold(
         backgroundColor: Colors.white,
 
-        appBar: customAppBar1("Shopper Adress"),
+        appBar: customAppBar1(""),
 
-        body: Container(
-          // color: whiteColor,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal:30,vertical: 15),
+        body: SingleChildScrollView(
+          child: Container(
+            // color: whiteColor,
             child: Column(
 
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Expanded(
-                  flex: 0,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height:20,),
-                      Container(
-                          width:width/1.4,
-                          child: Text("Billing Address", style: CustomTextStyle.normaltext3(context))),
-                      SizedBox(height:10,),
-
-
-                    ],
-                  ),
+                SizedBox(height:height/50),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: Container(
+                      width:width/1.4,
+                      child: Text("Billing Address", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: height/25), )),
                 ),
 
 
-                SizedBox(height: 15,),
+              SizedBox(height: height/50,),
 
-                Expanded(
-                  flex: 2,
-                  child: SingleChildScrollView(
-                    child: Column(
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "First name",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+
+                SizedBox(height: height/80,),
+                //password textfield
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "Last name",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+
+                Padding(
+                  padding: const EdgeInsets.only(left:20.0, right: 20.0, top: 5, bottom: 5),
+                  child: InkWell(
+                    onTap: ()
+                    {
+                      // Navigator.pushNamed(context, "/forgetPassword");
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Wrap(
-                          direction: Axis.vertical,
-                          spacing: 8,
-                          // // alignment: WrapAlignment.center,
-                          // crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left:10.0),
+                          child: Text(
+                            'Country',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: height / 35,
+                                fontWeight: FontWeight.w400),
 
-
-                            //email textfield
-                            CustomTextField
-                              (
-                              hinttext: "First name",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-
-                            const SizedBox(height: 6,),
-                            //password textfield
-                            CustomTextField
-                              (
-                              hinttext: "Last name",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-
-                            Text("Country", style: TextStyle(color: Colors.black, fontSize: height/60, fontWeight: FontWeight.w500)),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "Building Number & Road",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "Town & City",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "Country",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "Town / City",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "E-mail Address",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                            Text("Postage to Different Address", style: TextStyle(color: Colors.black, fontSize: height/60, fontWeight: FontWeight.w500)),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "First name",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "Last name",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                            Text("Country", style: TextStyle(color: Colors.black, fontSize: height/60, fontWeight: FontWeight.w500)),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "Building Number & Address",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-
-                            CustomTextField
-                              (
-                              hinttext: "Town & City",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "Country",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "Town / City",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                            CustomTextField
-                              (
-                              hinttext: "E-mail Address",
-                              obscureText: false,
-                              textInputType: TextInputType.emailAddress,
-                            ),
-                            const SizedBox(height: 6,),
-                          ],
+                          ),
                         ),
+                        Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey,  )
+                      ],),
+                  ),
+                ),
+                const SizedBox(height: 6,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "Building Number & Road",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "Town & City",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "Country",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "Town / City",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "E-mail Address",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Padding(
+                  padding: const EdgeInsets.only(left:30.0, top:10  , bottom: 10),
+                  child: Text(
+                    'Postage Address',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: height / 35,
+                        fontWeight: FontWeight.w400),
 
+                  ),
+                ),
 
+                SizedBox(height: height/80,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "First name",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "Last name",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Padding(
+                  padding: const EdgeInsets.only(left:20.0, right: 20.0, top: 5, bottom: 5),
+                  child: InkWell(
+                    onTap: ()
+                    {
+                      // Navigator.pushNamed(context, "/forgetPassword");
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left:10.0),
+                          child: Text(
+                            'Country',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: height / 35,
+                                fontWeight: FontWeight.w400),
 
-
-                        SizedBox(height: 16,),
-                        ShopperButton(
-                          text: Text("Save all of this",
-                            style: CustomTextStyle.buttontitle(context),),
-                          onPressed: (){
-                            Navigator.pushNamed(context, "/dynamicItemFilter");
-                          },
-                          color: basicColorShopper,
-                          focusColor: buttonColor2,
-                          disbaleColor: buttonColor2,
+                          ),
                         ),
-                        //login button
+                        Icon(Icons.arrow_forward_ios, size: height/40,  color: Colors.grey,  )
+                      ],),
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "Building Number & Address",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+SizedBox(height: height/70,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "Town & City",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "Country",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "Town / City",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
+                Center(
+                  child: CustomTextField
+                    (
+                    hinttext: "E-mail Address",
+                    obscureText: false,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                ),
+                SizedBox(height: height/80,),
 
 
 
 
-                        //login button
-
-
-
-
-
-
-
-
-
-                      ],
-                    ),
+                SizedBox(height: height/30,),
+                Center (
+                  child: ShopperButton(
+                    text: Text("Save all of this",
+                      style: CustomTextStyle.buttontitle(context),),
+                    onPressed: (){
+                      Navigator.pushNamed(context, "/dynamicItemFilter");
+                    },
+                    color: basicColorShopper,
+                    focusColor: buttonColor2,
+                    disbaleColor: buttonColor2,
                   ),
                 ),
 

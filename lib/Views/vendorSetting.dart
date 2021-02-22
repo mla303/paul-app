@@ -30,7 +30,7 @@ class _VendorSettingtState extends State<VendorSetting> {
           elevation: 0,
           centerTitle: true,
           backgroundColor: Colors.white,
-          title: Text('Shopper setting', style: TextStyle(color: Colors.black,), textAlign: TextAlign.center),
+          title: Text('Shop settings', style: TextStyle(color: Colors.black,), textAlign: TextAlign.center),
           iconTheme: IconThemeData(color: Colors.black),
         ),
 
@@ -73,19 +73,19 @@ class _VendorSettingtState extends State<VendorSetting> {
                   padding: const EdgeInsets.only(left:15.0, right: 15.0),
                   child: Container(
                     height: height / 30,
-                    width: width / 3,
+                    width: width / 2.4,
                     child: Center(
                       child: Text(
                         'Your Face & Banner',
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Color(0xff666666),
                             fontSize: height / 49,
                             fontWeight: FontWeight.w700),
                       ),
                     ),
                   ),
                 ),
-               SizedBox(height: height/70,),
+               //SizedBox(height: height/70,),
                Padding(
                  padding: const EdgeInsets.only(left:10.0, right: 15.0),
                  child: Row(children: [
@@ -105,7 +105,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                       child: Text(
                         'psssst... You do not have to show your face... you cold add a logo:) ',
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Color(0xff8A8A8F),
                             fontSize: height / 55,
                             fontWeight: FontWeight.w600),
                       ),
@@ -123,7 +123,9 @@ class _VendorSettingtState extends State<VendorSetting> {
                     textInputType: TextInputType.text,
                   ),
                 ),
-
+                SizedBox(
+                  height: height / 70,
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left:15.0, right: 15.0),
                   child: Container(
@@ -156,7 +158,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                       child: Text(
                         'Your payments will be processed via our Friends at stripe, who process some of the Biggest companies in the world… Their fee is Also way lower, so you receive more of your Hard earned cash :)                                                      ',
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Color(0xff666666),
                             fontSize: height / 55,
                             fontWeight: FontWeight.w600),
                       ),
@@ -187,10 +189,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                   ),
                 ),
                 SizedBox(height: height/70,),
-                Divider(
-                  color: Colors.grey,
-
-                ),
+                Divider(color: Color(0xff707070), thickness: 0.2,),
                 SizedBox(height: height/60,),
                 Padding(
                   padding: const EdgeInsets.only(left:15.0, right: 15.0),
@@ -223,7 +222,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                       child: Text(
                         ' Below you will set a shop wide postage cost. This will set the same price across all of your Items)                                                      ',
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Color(0xff666666),
                             fontSize: height / 55,
                             fontWeight: FontWeight.w600),
                       ),
@@ -320,7 +319,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                       child: Text(
                         'These are important. e.g I send all items Royal Mail signed… & I offer 14 days to your return                                                      ',
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Color(0xff666666),
                             fontSize: height / 55,
                             fontWeight: FontWeight.w600),
                       ),
@@ -339,7 +338,7 @@ class _VendorSettingtState extends State<VendorSetting> {
 
                   ),
                 ),
-
+                SizedBox(height: height/70,),
                 Padding(
                   padding: const EdgeInsets.only(left:15.0, right: 15.0),
 
@@ -349,7 +348,7 @@ class _VendorSettingtState extends State<VendorSetting> {
                     textInputType: TextInputType.text,
                   ),
                 ),
-
+                SizedBox(height: height/70,),
                 Padding(
                   padding: const EdgeInsets.only(left:15.0, right: 15.0),
 
@@ -445,7 +444,7 @@ class ImageUploadContainer extends StatelessWidget {
                 Icon(
                   Icons.camera_alt_rounded,
                   color: basicColorShopper,
-                  size: 18,
+                  size: height/60,
                 ),
                 Text(
                   'Your Face',
@@ -456,7 +455,7 @@ class ImageUploadContainer extends StatelessWidget {
                 ),
               ],
             ),
-            height: 70,
+            height: height/15,
             width: 70.0,
             decoration:
             BoxDecoration(borderRadius: BorderRadius.circular(20.0)),

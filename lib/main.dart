@@ -3,6 +3,7 @@ import 'package:paul_app/Views/AddProduct.dart';
 import 'package:paul_app/Views/ShopperSettings.dart';
 import 'package:paul_app/Views/dynamicItemFilter.dart';
 import 'package:paul_app/Views/paymentScreen.dart';
+import 'package:paul_app/Views/shopperAddress.dart';
 import 'package:paul_app/Views/vendorAccount.dart';
 import 'package:paul_app/Views/vendorSetting.dart';
 import 'Views/allCategories.dart';

@@ -37,7 +37,7 @@ class CustomTextField extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return
       Container(
-      width: width/1.2,
+      width: width/1.11,
       child: TextFormField(
         style: TextStyle(
             color: blackColor,
@@ -50,7 +50,7 @@ class CustomTextField extends StatelessWidget {
         onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
         cursorColor: blackColor,
         decoration: new InputDecoration(
-            contentPadding: new EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+            contentPadding: new EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
 
             suffixIcon: iconButton,
 
@@ -118,8 +118,9 @@ class largeTextField extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return
       Container(
-      width: width/1.1,
-      height: height/5,
+
+      width: width/1.05,
+      // height: height/5,
       child: TextFormField(
         style: TextStyle(
             color: blackColor,

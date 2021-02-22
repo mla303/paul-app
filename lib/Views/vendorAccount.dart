@@ -74,7 +74,7 @@ class _VendorAccountState extends State<VendorAccount> {
                 Padding(
                   padding: const EdgeInsets.only(left:15.0, right: 0),
                   child: Container(height: height/20,
-                    width: width/2.5,
+                    width: width/2.3,
 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
@@ -121,7 +121,7 @@ class _VendorAccountState extends State<VendorAccount> {
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                   SizedBox(height: height/70,),
                   Padding(
                     padding: const EdgeInsets.only(left:15.0, right: 15),
@@ -146,7 +146,7 @@ class _VendorAccountState extends State<VendorAccount> {
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                   SizedBox(height: height/70,),
                   Padding(
                     padding: const EdgeInsets.only(left:15.0, right: 15),
@@ -172,7 +172,7 @@ class _VendorAccountState extends State<VendorAccount> {
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                   SizedBox(height: height/70,),
                   Padding(
                     padding: const EdgeInsets.only(left:15.0, right: 15),
@@ -198,7 +198,7 @@ class _VendorAccountState extends State<VendorAccount> {
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                 ],),),
                 SizedBox(height: height/50,),
                 Padding(
@@ -249,7 +249,7 @@ class _VendorAccountState extends State<VendorAccount> {
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                   SizedBox(height: height/70,),
                   Padding(
                     padding: const EdgeInsets.only(left:15.0, right: 15),
@@ -275,15 +275,15 @@ class _VendorAccountState extends State<VendorAccount> {
                     ),
                   ),
                   SizedBox(height: height/70,),
-                  Divider(color: Colors.grey,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                   SizedBox(height: height/70,),
                   Padding(
                     padding: const EdgeInsets.only(left:15.0, right: 15),
                     child: InkWell(
                       onTap: ()
                       {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (Context) => following()));
+                        // Navigator.of(context).push(
+                        //     MaterialPageRoute(builder: (Context) => follo wing()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -300,8 +300,10 @@ class _VendorAccountState extends State<VendorAccount> {
                         ],),
                     ),
                   ),
-
-
+                  SizedBox(height: height/70,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
+                  SizedBox(height: height/15,),
+                  Divider(color: Color(0xff707070), thickness: 0.2,),
                 ],),),
 
 
