@@ -184,6 +184,37 @@ List recentViewList = [
 ];
 
 
+
+// ***********************************************
+
+
+List wishItemList = [
+
+  itemDetail(
+    name:"Jewelry",
+    img: "images/163.png",
+    type: "Pink Rose",
+    price: "\$220",
+    iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
+  ),
+
+  itemDetail(
+    name:"Rings",
+      img: "images/163.png",
+    type: "Pure Gold",
+    price: "\$420",
+    iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
+  ),
+  itemDetail(
+    name:"Toys",
+      img: "images/163.png",
+    type: "Cloths Toys",
+    price: "\$120",
+    iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
+  ),
+];
+
+
 // ***********************************************************
 
 
@@ -531,7 +562,7 @@ List SalesDetailList = [
 
   purchaseDetail(
       name:"Bracelets",
-      img: "images/jewellary.png",
+      img: "images/64.png",
       price: "400 ",
       num: 2
   ),

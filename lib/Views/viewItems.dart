@@ -161,29 +161,44 @@ void _onPageChanged(int page) {
 
                             icon: Icon(Icons.arrow_back_ios,color: Colors.white,))),
                     Positioned(
-                        bottom:40,
-                        left: 20,
-                        child:  Align(
-                          alignment: Alignment.center,
-                          child: new DotsIndicator(
+                      bottom:40,
+                      left: 20,
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: new DotsIndicator(
 
-                            position: currentPage.toDouble(),
-                            dotsCount: imgList.length,
-                            decorator: DotsDecorator(
+                          position: currentPage.toDouble(),
+                          dotsCount: imgList.length,
+                          decorator: DotsDecorator(
 
-                              activeColor: Colors.white, color: Colors.grey,
-                              activeSize: Size(10, 10),
-                              size: Size(6,6),
-                              spacing: EdgeInsets.symmetric(horizontal: 2),
-                              activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-                            ),
-                     // numberOfDot: imgList.length,
+                            activeColor: Colors.white, color: Colors.grey,
+                            activeSize: Size(10, 10),
+                            size: Size(6,6),
+                            spacing: EdgeInsets.symmetric(horizontal: 2),
+                            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                       // numberOfDot: imgList.length,
 //                      position: currentIndexPage,
 //                      dotColor: Colors.black87,
 //                      dotActiveColor: Colors.amber
 //
-                          ),
-                        ),),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom:40,
+                      right: 20,
+                      child: new  Container(
+                        decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.all(Radius.circular(12))
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 4),
+                          child: Text("On sale",style: TextStyle(color: Colors.white,fontSize: 10),),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -388,7 +403,7 @@ void _onPageChanged(int page) {
                             fontSize: 14,
                             fontFamily: "workSans",
                             fontWeight: FontWeight.w600,
-                            color: Color(0xff0000FF)
+                            color: Colors.black
                         ),),
                         SizedBox(height: 1 * SizeConfig.heightMultiplier,),
 
@@ -407,7 +422,7 @@ void _onPageChanged(int page) {
                             fontSize: 12,
                               fontFamily: "workSans",
                             fontWeight: FontWeight.w500,
-                              color: Color(0xff0000FF)
+                              color: Colors.black
                         ),
                         ),
 
@@ -420,7 +435,7 @@ void _onPageChanged(int page) {
                             style:TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
-                                color: Color(0xff0000FF)
+                                color: Colors.black
                             ),),
                         ),
 

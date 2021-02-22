@@ -138,11 +138,11 @@ class _purchaseDetialState extends State<purchaseDetial> {
                       SizedBox(height: 6,),
                       Text(
                         "Item Cost: \$ $itemCost",
-                        style: CustomTextStyle.normaltext1(context),
+                        style: CustomTextStyle.normaltext5(context),
                       ),
                       Text(
                         "Postage cost: Free Postage",
-                        style: CustomTextStyle.normaltext2(context),
+                        style: CustomTextStyle.normaltext5(context),
                       ),
 
                       Divider(),
@@ -154,12 +154,12 @@ class _purchaseDetialState extends State<purchaseDetial> {
                       SizedBox(height: 6,),
                       Text(
                         "$orderDate",
-                        style: CustomTextStyle.normaltext1(context),
+                        style: CustomTextStyle.normaltext5(context),
                       ),
 
                       Text(
                         "$orderTime",
-                        style: CustomTextStyle.normaltext1(context),
+                        style: CustomTextStyle.normaltext5(context),
                       ),
 
 
@@ -172,7 +172,7 @@ class _purchaseDetialState extends State<purchaseDetial> {
                       SizedBox(height: 6,),
                       Text(
                         "$oderAddress",
-                        style: CustomTextStyle.normaltext1(context),
+                        style: CustomTextStyle.normaltext5(context),
                       ),
                       Divider(),
                     ],

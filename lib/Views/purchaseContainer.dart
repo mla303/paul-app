@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/purchaseDetail.dart';
 import 'package:paul_app/widgets/Lists.dart';
 import 'package:paul_app/widgets/colors.dart';
 
@@ -17,6 +18,8 @@ class purchaseContainer extends StatelessWidget {
           return GestureDetector(
             onTap: ()
             {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (Context) => purchaseDetial()));
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 6),

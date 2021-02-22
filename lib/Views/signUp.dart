@@ -43,7 +43,7 @@ bool checkedValue = false;
         // appBar: customAppBar1("Sign In"),
 
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal:30,vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal:20,vertical: 15),
           child: SingleChildScrollView(
             child: Column(
 
@@ -126,6 +126,11 @@ bool checkedValue = false;
                       CheckboxListTile(
                         title: Text("I agree to the Term of Services"),
                         value: checkedValue,
+                        dense: true,
+                        isThreeLine: false,
+                        tristate: true,
+
+                        contentPadding: EdgeInsets.symmetric(horizontal: 0),
                         onChanged: (newValue) {
                           checkedValue= newValue;
                         },
@@ -150,8 +155,19 @@ bool checkedValue = false;
                         },
                         child: Align(
                           alignment: Alignment.center,
-                          child: Text("Have an account? Sign in",
-                              style: TextStyle(color: Colors.black)),
+                          child: RichText(
+
+                            text: new TextSpan(
+
+                              text: 'Have an account? ',
+                              style: TextStyle(color: Colors.grey, fontFamily: "workSans",fontSize: 15),
+                              children: <TextSpan>[
+                                new TextSpan(
+                                    text: 'Sign In',
+                                    style: new TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontFamily: "workSans",)),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
 

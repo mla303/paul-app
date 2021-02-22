@@ -70,7 +70,7 @@ class _itemPageState extends State<itemPage> {
 
                                   children: <Widget>[
                                     Icon(Icons.sort,size: 20,color: Colors.grey,),
-                                    Text("Sort",style: CustomTextStyle.normaltext1(context),)
+                                    Text("Sort",style: CustomTextStyle.normaltext5(context),)
                                   ],
                                 ),
                                 ),
@@ -94,7 +94,7 @@ class _itemPageState extends State<itemPage> {
                                   alignment: WrapAlignment.center,
                                   children: <Widget>[
                                     Icon(Icons.filter_alt_rounded,size: 20,color: Colors.grey,),
-                                    Text("Narrow that down",style: CustomTextStyle.normaltext1(context),)
+                                    Text("Narrow that down",style: CustomTextStyle.normaltext5(context),)
                                   ],
                                 ),
                                 ),

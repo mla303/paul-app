@@ -112,6 +112,7 @@ class _messagesState extends State<messages> {
                               ],
                             ),
                           ),
+
                           title: Text(
                             "${friendsList[i]['username']}",
                             style: Theme.of(context).textTheme.title,
@@ -128,56 +129,7 @@ class _messagesState extends State<messages> {
                                 .subtitle
                                 .apply(color: Colors.black54),
                           ),
-                          trailing: Container(
-                            width: 60,
-                            // height: 80,
-                            child: Column(
-                              // crossAxisAlignment: CrossAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              // runAlignment: WrapAlignment.start,
-                              // direction: Axis.horizontal,
-                              // // spacing: ,
-                              // alignment: WrapAlignment.start,
-                              children: <Widget>[
-                                Wrap(
-                                  // mainAxisSize: MainAxisSize.min,
-                                  direction: Axis.horizontal,
-                                  crossAxisAlignment: WrapCrossAlignment.center,
-                                  children: <Widget>[
-                                    friendsList[i]['seen']
-                                        ? Icon(
-                                      Icons.check,
-                                      size: 15,
-                                    )
-                                        : Container(),
-                                    Text("${friendsList[i]['lastMsgTime']}",style: TextStyle(fontSize: 8),),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 5.0,
-                                ),
-                                friendsList[i]['hasUnSeenMsgs']
-                                    ? Container(
-                                  alignment: Alignment.center,
-                                  height: 18,
-                                  width: 18,
-                                  decoration: BoxDecoration(
-                                    color: myGreen,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Text(
-                                    "${friendsList[i]['unseenCount']}",
-                                    style: TextStyle(color: Colors.white,fontSize: 12),
-                                  ),
-                                )
-                                    : Container(
-                                  // height: 20,
-                                  // width: 20,
-                                ),
-                              ],
-                            ),
-                          ),
+
                         ),
                         Divider()
                       ],

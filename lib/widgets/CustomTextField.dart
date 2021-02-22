@@ -50,7 +50,7 @@ class CustomTextField extends StatelessWidget {
         onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
         cursorColor: blackColor,
         decoration: new InputDecoration(
-            contentPadding: new EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+            contentPadding: new EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
 
             suffixIcon: iconButton,
 
@@ -119,7 +119,7 @@ class largeTextField extends StatelessWidget {
     return
       Container(
       width: width/1.1,
-      height: height/5,
+      // height: height/5,
       child: TextFormField(
         style: TextStyle(
             color: blackColor,

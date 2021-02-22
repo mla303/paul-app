@@ -103,7 +103,7 @@ class _homePageState extends State<homePage> {
 
                         Container(
                             width:width/1.1,
-                            child: Text("Your Club Home", style: CustomTextStyle.headig(context))),
+                            child: Text("Your club home", style: CustomTextStyle.headig(context))),
 
                       ],
                     ),
@@ -143,6 +143,7 @@ class _homePageState extends State<homePage> {
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 16,
+                                              fontFamily: "workSans",
                                               fontWeight: FontWeight.w500),
                                         ),
                                         InkWell(
@@ -159,6 +160,7 @@ class _homePageState extends State<homePage> {
                                                 style: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 12,
+                                                    fontFamily: "workSans",
                                                     fontWeight: FontWeight.w500),
                                               ),
                                               const SizedBox(width: 3,),
@@ -233,6 +235,7 @@ class _homePageState extends State<homePage> {
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 16,
+                                        fontFamily: "workSans",
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ),
@@ -317,6 +320,7 @@ class _homePageState extends State<homePage> {
                                                       child: Text(
                                                         latestItemList[index].name,
                                                         style: TextStyle(
+                                                            fontFamily: "workSans",
                                                             color: Colors.grey,
                                                             fontSize: height / 60,
                                                             fontWeight: FontWeight.w500),
@@ -331,7 +335,8 @@ class _homePageState extends State<homePage> {
                                                         style: TextStyle(
                                                             color: Colors.black,
                                                             fontSize: height / 56,
-                                                            fontWeight: FontWeight.w300),
+                                                            fontFamily: "workSans",
+                                                            fontWeight: FontWeight.w400),
                                                       ),
                                                     ),
                                                     Padding(
@@ -340,6 +345,7 @@ class _homePageState extends State<homePage> {
                                                       child: Text(
                                                         latestItemList[index].price,
                                                         style: TextStyle(
+                                                            fontFamily: "workSans",
                                                             color: Colors.grey,
                                                             fontSize: height /60,
                                                             fontWeight: FontWeight.w600),
@@ -373,6 +379,7 @@ class _homePageState extends State<homePage> {
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 16,
+                                        fontFamily: "workSans",
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ),
@@ -457,6 +464,7 @@ class _homePageState extends State<homePage> {
                                                       child: Text(
                                                         latestItemList[index].name,
                                                         style: TextStyle(
+                                                            fontFamily: "workSans",
                                                             color: Colors.grey,
                                                             fontSize: height / 60,
                                                             fontWeight: FontWeight.w500),
@@ -471,7 +479,8 @@ class _homePageState extends State<homePage> {
                                                         style: TextStyle(
                                                             color: Colors.black,
                                                             fontSize: height / 56,
-                                                            fontWeight: FontWeight.w300),
+                                                            fontFamily: "workSans",
+                                                            fontWeight: FontWeight.w400),
                                                       ),
                                                     ),
                                                     Padding(
@@ -480,6 +489,7 @@ class _homePageState extends State<homePage> {
                                                       child: Text(
                                                         latestItemList[index].price,
                                                         style: TextStyle(
+                                                            fontFamily: "workSans",
                                                             color: Colors.grey,
                                                             fontSize: height /60,
                                                             fontWeight: FontWeight.w600),

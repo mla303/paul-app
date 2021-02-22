@@ -76,7 +76,7 @@ class _logInState extends State<SignInScreen> {
                         children: [
                           Wrap(
                             direction: Axis.vertical,
-                            spacing: 8,
+                            spacing: 4,
                             // // alignment: WrapAlignment.center,
                             // crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -90,7 +90,7 @@ class _logInState extends State<SignInScreen> {
                                textInputType: TextInputType.emailAddress,
                              ),
 
-                              const SizedBox(height: 6,),
+                              const SizedBox(height: 0,),
                               //password textfield
                               CustomTextField
                                 (

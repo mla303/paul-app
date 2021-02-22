@@ -54,7 +54,7 @@ class _followingState extends State<following> {
                 ),
                 Expanded(
                   flex: 2,
-                  child: ListView.builder(
+                  child: ListView.separated(
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: followingList.length,
                     itemBuilder: (context, index) {
@@ -97,7 +97,11 @@ class _followingState extends State<following> {
                         ),
                       );
                     },
-//
+separatorBuilder: (BuildContext context, int index) {
+                                        return Divider(
+                                          height: 5,
+                                        );
+                                      }
                   ),
                 ),
               ],

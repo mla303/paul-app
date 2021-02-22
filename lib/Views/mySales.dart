@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/purchaseDetail.dart';
+import 'package:paul_app/Views/salesDetail.dart';
 import 'package:paul_app/widgets/Lists.dart';
 import 'package:paul_app/widgets/colors.dart';
 
@@ -17,9 +19,11 @@ class mySalesContainer extends StatelessWidget {
           return GestureDetector(
             onTap: ()
             {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (Context) => salesDetial()));
             },
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -87,7 +91,7 @@ class mySalesContainer extends StatelessWidget {
         },
         separatorBuilder: (BuildContext context, int index) {
           return Divider(
-            thickness: 0.3,
+            height: 5,
           );
         }
     );

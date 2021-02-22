@@ -14,7 +14,7 @@ class ShopperButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width/1.3,
+      width: MediaQuery.of(context).size.width/1.2,
       height: MediaQuery.of(context).size.height/16,
       child: RaisedButton(
         elevation: 0,
@@ -50,7 +50,7 @@ class CustomerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width/1.3,
+      width: MediaQuery.of(context).size.width/1.2,
       height: MediaQuery.of(context).size.height/16,
       child: RaisedButton(
         elevation: 0,
@@ -84,7 +84,7 @@ class NextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width/1.3,
+      width: MediaQuery.of(context).size.width/1.2,
       height: MediaQuery.of(context).size.height/16,
       child: RaisedButton(
         elevation: 0,
@@ -165,6 +165,7 @@ class checkoutButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width/1.2,
       height: MediaQuery.of(context).size.height/16,
       child: RaisedButton(
+        elevation: 0,
         focusColor: focusColor,
         disabledColor: disbaleColor,
         shape: RoundedRectangleBorder(
