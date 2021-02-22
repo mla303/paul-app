@@ -150,18 +150,24 @@ class _itemPageState extends State<itemPage> {
                                       children: <Widget>[
 
                                         Container(
-
+                                          height: MediaQuery.of(context).size.height *
+                                              0.22,
+                                          width: MediaQuery.of(context).size.width,
                                           decoration: BoxDecoration(
                                             color: Colors.grey[100],
-                                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                                            borderRadius: BorderRadius.all(Radius.circular(12)),
+                                            image: DecorationImage(
+                                              image: AssetImage(recentViewList[index].img,),
+                                              fit: BoxFit.cover,
+                                            )
                                           ),
-                                          child: Image.asset(
-                                            latestItemList[index].img,
-                                            height: MediaQuery.of(context).size.height *
-                                                0.18,
-                                            width: MediaQuery.of(context).size.width,
-                                            fit: BoxFit.cover,
-                                          ),
+                                          // child: Image.asset(
+                                          //   recentViewList[index].img,
+                                          //   height: MediaQuery.of(context).size.height *
+                                          //       0.18,
+                                          //   width: MediaQuery.of(context).size.width,
+                                          //   fit: BoxFit.cover,
+                                          // ),
                                         ),
                                         Positioned(
                                           right: 5,

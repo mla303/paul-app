@@ -28,7 +28,7 @@ class CustomTextStyle {
   static TextStyle headig(BuildContext context) {
     return TextStyle(
         color: blackColor,
-        fontSize: MediaQuery.of(context).size.height / 20,
+        fontSize: MediaQuery.of(context).size.height / 26,
         fontWeight: FontWeight.w600);
   }
 
@@ -43,6 +43,19 @@ class CustomTextStyle {
     return TextStyle(
         color: basicColorShopper,
         fontSize: MediaQuery.of(context).size.height / 45,
+        fontWeight: FontWeight.w400);
+  }
+
+  static TextStyle Listtext1(BuildContext context) {
+    return TextStyle(
+        color: Colors.black,
+        fontSize: MediaQuery.of(context).size.height / 52,
+        fontWeight: FontWeight.w400);
+  }
+  static TextStyle Listtext2(BuildContext context) {
+    return TextStyle(
+        color: Colors.grey,
+        fontSize: MediaQuery.of(context).size.height / 56,
         fontWeight: FontWeight.w400);
   }
   static TextStyle normaltext2(BuildContext context) {

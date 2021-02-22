@@ -3,6 +3,7 @@ import 'package:paul_app/widgets/Lists.dart';
 import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/mycircleavatar.dart';
+import 'package:paul_app/widgets/styles.dart';
 
 import 'chatScreen.dart';
 
@@ -26,135 +27,165 @@ class _messagesState extends State<messages> {
 
   @override
   Widget build(BuildContext context) {
-
+    double width = MediaQuery.of(context).size.width;
 
 
     return Scaffold(
       backgroundColor: Colors.white,
 
-      appBar: customAppBar1("Messages"),
+      appBar: emptyAppBar("Messages"),
 
         body: SafeArea(
-          child: ListView.builder(
-            itemCount: friendsList.length,
-            itemBuilder: (ctx, i) {
-              return Column(
-                children: <Widget>[
-                  ListTile(
-                    isThreeLine: true,
-                    onLongPress: () {},
-                    onTap: () =>   Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ChatScreen()),
-                    ),
-                    leading: Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
-                        image: DecorationImage(
-                          image: NetworkImage(friendsList[i]['imgUrl']),
-                          fit: BoxFit.cover
-                        ),
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 3,
+          child: Column(
+            children: [
+              Expanded(
+                flex: 0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(0.0),
+                      child: Container(
+                        width: width / 1.2,
+                        child: Text("All of your messages",
+                          style: CustomTextStyle.headig(context),
+                          textAlign: TextAlign.start,
                         ),
                       ),
-                      child: Stack(
-                        children: <Widget>[
+                    ),
+                  ],
+                ),
+              ),
 
-                          friendsList[i]['isOnline']
-                              ? Align(
-                            alignment: Alignment.topRight,
-                            child: Container(
-                              height: 15,
-                              width: 15,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.white,
-                                  width: 3,
-                                ),
-                                shape: BoxShape.circle,
-                                color: online,
+              SizedBox(height: 5,),
+
+
+              Expanded(
+                flex: 2,
+                child: ListView.builder(
+                  itemCount: friendsList.length,
+                  itemBuilder: (ctx, i) {
+                    return Column(
+                      children: <Widget>[
+                        ListTile(
+                          isThreeLine: true,
+                          onLongPress: () {},
+                          onTap: () =>   Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ChatScreen()),
+                          ),
+                          leading: Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(8)),
+                              image: DecorationImage(
+                                image: NetworkImage(friendsList[i]['imgUrl']),
+                                fit: BoxFit.cover
+                              ),
+                              border: Border.all(
+                                color: Colors.white,
+                                width: 3,
                               ),
                             ),
-                          )
-                              : Container(),
-                        ],
-                      ),
-                    ),
-                    title: Text(
-                      "${friendsList[i]['username']}",
-                      style: Theme.of(context).textTheme.title,
-                    ),
-                    subtitle: Text(
-                      "${friendsList[i]['lastMsg']}",
-                      style: !friendsList[i]['seen']
-                          ? Theme.of(context)
-                          .textTheme
-                          .subtitle
-                          .apply(color: Colors.black87)
-                          : Theme.of(context)
-                          .textTheme
-                          .subtitle
-                          .apply(color: Colors.black54),
-                    ),
-                    trailing: Container(
-                      width: 60,
-                      // height: 80,
-                      child: Column(
-                        // crossAxisAlignment: CrossAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        // runAlignment: WrapAlignment.start,
-                        // direction: Axis.horizontal,
-                        // // spacing: ,
-                        // alignment: WrapAlignment.start,
-                        children: <Widget>[
-                          Wrap(
-                            // mainAxisSize: MainAxisSize.min,
-                            direction: Axis.horizontal,
-                            crossAxisAlignment: WrapCrossAlignment.center,
-                            children: <Widget>[
-                              friendsList[i]['seen']
-                                  ? Icon(
-                                Icons.check,
-                                size: 15,
-                              )
-                                  : Container(),
-                              Text("${friendsList[i]['lastMsgTime']}",style: TextStyle(fontSize: 8),),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 5.0,
-                          ),
-                          friendsList[i]['hasUnSeenMsgs']
-                              ? Container(
-                            alignment: Alignment.center,
-                            height: 18,
-                            width: 18,
-                            decoration: BoxDecoration(
-                              color: myGreen,
-                              shape: BoxShape.circle,
+                            child: Stack(
+                              children: <Widget>[
+
+                                friendsList[i]['isOnline']
+                                    ? Align(
+                                  alignment: Alignment.topRight,
+                                  child: Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.white,
+                                        width: 3,
+                                      ),
+                                      shape: BoxShape.circle,
+                                      color: online,
+                                    ),
+                                  ),
+                                )
+                                    : Container(),
+                              ],
                             ),
-                            child: Text(
-                              "${friendsList[i]['unseenCount']}",
-                              style: TextStyle(color: Colors.white,fontSize: 12),
-                            ),
-                          )
-                              : Container(
-                            // height: 20,
-                            // width: 20,
                           ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Divider()
-                ],
-              );
-            },
+                          title: Text(
+                            "${friendsList[i]['username']}",
+                            style: Theme.of(context).textTheme.title,
+                          ),
+                          subtitle: Text(
+                            "${friendsList[i]['lastMsg']}",
+                            style: !friendsList[i]['seen']
+                                ? Theme.of(context)
+                                .textTheme
+                                .subtitle
+                                .apply(color: Colors.black87)
+                                : Theme.of(context)
+                                .textTheme
+                                .subtitle
+                                .apply(color: Colors.black54),
+                          ),
+                          trailing: Container(
+                            width: 60,
+                            // height: 80,
+                            child: Column(
+                              // crossAxisAlignment: CrossAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              // runAlignment: WrapAlignment.start,
+                              // direction: Axis.horizontal,
+                              // // spacing: ,
+                              // alignment: WrapAlignment.start,
+                              children: <Widget>[
+                                Wrap(
+                                  // mainAxisSize: MainAxisSize.min,
+                                  direction: Axis.horizontal,
+                                  crossAxisAlignment: WrapCrossAlignment.center,
+                                  children: <Widget>[
+                                    friendsList[i]['seen']
+                                        ? Icon(
+                                      Icons.check,
+                                      size: 15,
+                                    )
+                                        : Container(),
+                                    Text("${friendsList[i]['lastMsgTime']}",style: TextStyle(fontSize: 8),),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 5.0,
+                                ),
+                                friendsList[i]['hasUnSeenMsgs']
+                                    ? Container(
+                                  alignment: Alignment.center,
+                                  height: 18,
+                                  width: 18,
+                                  decoration: BoxDecoration(
+                                    color: myGreen,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Text(
+                                    "${friendsList[i]['unseenCount']}",
+                                    style: TextStyle(color: Colors.white,fontSize: 12),
+                                  ),
+                                )
+                                    : Container(
+                                  // height: 20,
+                                  // width: 20,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Divider()
+                      ],
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
         ),
 

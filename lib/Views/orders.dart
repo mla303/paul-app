@@ -20,8 +20,8 @@ class orderPage extends StatefulWidget {
 
 class _orderPageState extends State<orderPage> {
 
-
-
+  String textPurchase = "Your purchases";
+  String textSales = "Your Sales";
 
 
   @override
@@ -32,9 +32,9 @@ class _orderPageState extends State<orderPage> {
 
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Color(0xfff7f7f7),
+        backgroundColor: Colors.white,
 
-        appBar: customAppBar1("Orders"),
+        appBar: emptyAppBar("Orders"),
 
 
         body: Container(
@@ -55,8 +55,8 @@ class _orderPageState extends State<orderPage> {
                             width: width / 1.2,
                             child: Text(
                                 tabBarlabel() == "Purchases"
-                                            ? "Your purchases"
-                            : "Your Sales",
+                                            ? textPurchase
+                                            : textSales,
                                 style: CustomTextStyle.headig(context))),
                       ),
                     ],

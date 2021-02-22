@@ -57,7 +57,7 @@ List latestItemList = [
 
   itemDetail(
     name:"Jewelry",
-    img: "images/jewellary.png",
+    img: "images/122.png",
     type: "Pink Rose",
     price: "\$220",
     iconss: Icon(Icons.favorite_border,color: Colors.red,size: 14,)
@@ -65,14 +65,14 @@ List latestItemList = [
 
   itemDetail(
     name:"Rings",
-    img: "images/rings.png",
+    img: "images/122.png",
     type: "Pure Gold",
     price: "\$420",
     iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
   ),
   itemDetail(
     name:"Toys",
-    img: "images/toys.png",
+    img: "images/122.png",
     type: "Cloths Toys",
     price: "\$120",
     iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
@@ -161,7 +161,7 @@ List recentViewList = [
 
   itemDetail(
     name:"Jewelry",
-    img: "images/jewellary.png",
+    img: "images/163.png",
     type: "Pink Rose",
     price: "\$220",
     iconss: Icon(Icons.favorite_border,color: Colors.red,size: 14,)
@@ -169,14 +169,14 @@ List recentViewList = [
 
   itemDetail(
     name:"Rings",
-    img: "images/rings.png",
+      img: "images/163.png",
     type: "Pure Gold",
     price: "\$420",
     iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
   ),
   itemDetail(
     name:"Toys",
-    img: "images/toys.png",
+      img: "images/163.png",
     type: "Cloths Toys",
     price: "\$120",
     iconss: Icon(Icons.favorite,color: Colors.red,size: 14,)
@@ -222,12 +222,28 @@ List CatogeryList = [
       img: "images/rings.jpg",
       Titems: "200 ",
   ),
-  //
-  // CatorgeryDetail(
-  //     name:"Foods",
-  //     img: "images/foods.jpg",
-  //     Titems: "500 ",
-  // ),
+  CatorgeryDetail(
+      name:"Jewelry",
+      img: "images/jewellary.jpg",
+      Titems: "493 ",
+  ),
+
+  CatorgeryDetail(
+      name:"Toys",
+      img: "images/toys.jpg",
+      Titems: "300 ",
+  ),
+
+  CatorgeryDetail(
+      name:"Rings",
+      img: "images/rings.jpg",
+      Titems: "200 ",
+  ),
+  CatorgeryDetail(
+    name:"Jewelry",
+    img: "images/jewellary.jpg",
+    Titems: "493 ",
+  ),
 
 ];
 
@@ -242,13 +258,13 @@ List PurchasesList = [
 
   itemDetail(
       name:"Bracelets",
-      img: "images/jewellary.png",
+      img: "images/64.png",
       price: "400 ",
     type: "Signet Cuff Bracelet"
   ),
   itemDetail(
       name:"Toys",
-      img: "images/toys.png",
+      img: "images/64.png",
       price: "200 ",
     type: "Cloths Toys"
   ),
@@ -263,19 +279,19 @@ List mySalesList = [
 
   itemDetail(
       name:"Bracelets",
-      img: "images/jewellary.png",
+      img: "images/64.png",
       price: "400 ",
     type: "Signet Cuff Bracelet"
   ),
   itemDetail(
       name:"Toys",
-      img: "images/toys.png",
+      img: "images/64.png",
       price: "200 ",
     type: "Cloths Toys"
   ),
   itemDetail(
       name:"Rings",
-      img: "images/rings.png",
+      img: "images/64.png",
       price: "120 ",
     type: "Real Gold"
   ),
@@ -455,15 +471,15 @@ List followingList = [
   followingDetails(
     title: "Little Fancy",
     city: "Morocco",
-    profile: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg',
+    profile: 'images/45Circle.png',
     followType: "Following"
   ),
 
   followingDetails(
     title: "Marry Fino",
     city: "New York",
-    profile: 'https://cdn.pixabay.com/photo/2019/11/03/20/11/portrait-4599553_960_720.jpg',
-    followType: "Fallow"
+      profile: 'images/45Circle.png',
+    followType: "Follow"
   ),
 
 
@@ -498,13 +514,13 @@ List PurchasesDetailList = [
 
   purchaseDetail(
       name:"Bracelets",
-      img: "images/jewellary.png",
+      img: "images/64.png",
       price: "400 ",
       num: 2
   ),
   purchaseDetail(
       name:"Toys",
-      img: "images/toys.png",
+      img: "images/64.png",
       price: "200 ",
       num: 1
   ),

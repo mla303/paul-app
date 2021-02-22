@@ -45,45 +45,75 @@ class notificationState extends State<notification> {
 
        appBar: customAppBar1("Notification"),
 
-        body: Scrollbar(
-          thickness: 2,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0,vertical: 20),
-            child: ListView.separated(
+        body: Column(
+          children: [
 
-              itemCount: listdata.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20,),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: width/1.4,
-                        child: Text(
-                            listdata[index].message,
-                            style: CustomTextStyle.normaltext1(context),
-
+            Expanded(
+              flex: 0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child: Container(
+                        width: width / 1.2,
+                        child: Text("Your Notification",
+                            style: CustomTextStyle.headig(context),
+                        textAlign: TextAlign.start,
                         ),
-                      ),
-
-                      NotificationCircleAvatar(
-                        imgUrl: listdata[index].imageUrl,
-                      ),
-
-                    ],
+                    ),
                   ),
-                );
-              },
-                separatorBuilder: (BuildContext context, int index) {
-                  return Divider(
-                    height: 20,
-                    thickness: 1,
-                    // width: 6,
-                  );
-                }
+                ],
+              ),
             ),
-          ),
+
+            SizedBox(height: 5,),
+
+            Expanded(
+              flex: 2,
+              child: Scrollbar(
+                thickness: 2,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 0,vertical: 20),
+                  child: ListView.separated(
+
+                    itemCount: listdata.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20,),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: width/1.4,
+                              child: Text(
+                                  listdata[index].message,
+                                  style: CustomTextStyle.normaltext1(context),
+
+                              ),
+                            ),
+
+                            NotificationCircleAvatar(
+                              imgUrl: listdata[index].imageUrl,
+                            ),
+
+                          ],
+                        ),
+                      );
+                    },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return Divider(
+                          height: 20,
+                          thickness: 1,
+                          // width: 6,
+                        );
+                      }
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

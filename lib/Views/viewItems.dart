@@ -156,7 +156,7 @@ void _onPageChanged(int page) {
                         left: 15,
                         child: IconButton(
                             onPressed: (){
-                              // Navigator.pop(context);
+                              // Navigator.pushReplacement(context, "/naviga");
                             },
 
                             icon: Icon(Icons.arrow_back_ios,color: Colors.white,))),
@@ -221,6 +221,7 @@ void _onPageChanged(int page) {
                               // ),),
 
                               Text("\$120", style: TextStyle(
+                                decoration: TextDecoration.lineThrough,
                                   color: Colors.grey,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 1.8 * SizeConfig.textMultiplier
@@ -244,9 +245,9 @@ void _onPageChanged(int page) {
                                   fontSize: 2.7 * SizeConfig.textMultiplier
                               ),),    Text("\$85", style: TextStyle(
                                   color: Colors.black,
-                                  fontWeight: FontWeight.w400,
+                                  fontWeight: FontWeight.w300,
                                   fontFamily: "workSans",
-                                  fontSize: 2 * SizeConfig.textMultiplier
+                                  fontSize: 2.5 * SizeConfig.textMultiplier
                               ),
                               ),
                             ],
@@ -291,7 +292,7 @@ void _onPageChanged(int page) {
                                          Text("Paul",style:TextStyle(
                                            fontSize: 14,
                                            fontWeight: FontWeight.w600,
-                                           color: Colors.grey
+                                           color: Colors.black
                                          ),),
                                        ],
                                      )
@@ -329,7 +330,7 @@ void _onPageChanged(int page) {
                                                  MaterialPageRoute(builder: (Context) => Reviews()));
 
                                            },
-                                           child: Text("View / Leave review",style:TextStyle(
+                                           child: Text("View / leave review",style:TextStyle(
                                              fontSize: 12,
                                              fontWeight: FontWeight.w600,
                                              color: Colors.grey
@@ -350,6 +351,7 @@ void _onPageChanged(int page) {
                                                width: 40,
                                              decoration: BoxDecoration(
                                                borderRadius: BorderRadius.circular(6),
+                                               border: Border.all(color: Colors.grey.withOpacity(0.4)),
                                                color: Colors.white,
                                              ),
                                            child: Center(child: Image(image: AssetImage("images/chat.png",),height: 20,width: 20,)),
@@ -360,6 +362,7 @@ void _onPageChanged(int page) {
                                                width: 40,
                                              decoration: BoxDecoration(
                                                borderRadius: BorderRadius.circular(6),
+                                               border: Border.all(color: Colors.grey.withOpacity(0.4)),
                                                color: Colors.white,
                                              ),
                                            child: Center(child: Image(image: AssetImage("images/love.png",),height: 20,width: 20,)),

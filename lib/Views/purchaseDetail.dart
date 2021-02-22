@@ -18,7 +18,10 @@ class _purchaseDetialState extends State<purchaseDetial> {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: customAppBar1("Purchaces Detail"),
       body: Container(
         child: Column(
@@ -46,8 +49,8 @@ class _purchaseDetialState extends State<purchaseDetial> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                height: 100.0,
-                                width: 120.0,
+                                height: height/12,
+                                width: width/6,
                                 decoration: BoxDecoration(
                                   // color: Colors.red,
                                     image: DecorationImage(
@@ -68,19 +71,19 @@ class _purchaseDetialState extends State<purchaseDetial> {
                                       PurchasesDetailList[index].name,
                                       style: TextStyle(
                                           color: Colors.black,
-                                          fontSize: MediaQuery.of(context).size.height / 56,
+                                          fontSize: MediaQuery.of(context).size.height / 54,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
 
                                   Padding(
                                     padding:
-                                    const EdgeInsets.only(left: 8.0, top: 5),
+                                    const EdgeInsets.only(left: 8.0, top: 2),
                                     child: Text(
                                       "\$" +
                                           PurchasesDetailList[index].price,
                                       style: TextStyle(
-                                          color: basicColorShopper,
+                                          color: Colors.grey,
                                           fontSize: MediaQuery.of(context).size.height / 60,
                                           fontWeight: FontWeight.w600),
                                     ),

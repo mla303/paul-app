@@ -7,6 +7,7 @@ class mySalesContainer extends StatelessWidget {
   Widget build(BuildContext context) {
 
     double height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return ListView.separated(
         itemCount: mySalesList.length,
         shrinkWrap: true,
@@ -18,23 +19,23 @@ class mySalesContainer extends StatelessWidget {
             {
             },
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 6,vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 6),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
 
 
                   Container(
-                    height: 100.0,
-                    width: 120.0,
+                    height: height/12,
+                    width: width/6,
                     decoration: BoxDecoration(
                       // color: Colors.red,
-                      image: DecorationImage(
-                        image: AssetImage(
-                          mySalesList[index].img,
-                        ),
-                        fit: BoxFit.fill,
-                      )
+                        image: DecorationImage(
+                          image: AssetImage(
+                            mySalesList[index].img,
+                          ),
+                          fit: BoxFit.fill,
+                        )
                     ),
                   ),
 
@@ -45,23 +46,23 @@ class mySalesContainer extends StatelessWidget {
                     children: [
                       Padding(
                         padding:
-                        const EdgeInsets.only(left: 8.0, top: 6),
+                        const EdgeInsets.only(left: 8.0, top: 0),
                         child: Text(
                           mySalesList[index].name,
                           style: TextStyle(
-                              color: Colors.black,
-                              fontSize: height / 56,
+                              color: Colors.grey,
+                              fontSize: height / 60,
                               fontWeight: FontWeight.w500),
                         ),
                       ),
                       Padding(
                         padding:
-                        const EdgeInsets.only(left: 8.0, top: 0),
+                        const EdgeInsets.only(left: 8.0, top: 5),
                         child: Text(
                           mySalesList[index].type,
                           style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: height / 66,
+                              color: Colors.black,
+                              fontSize: height / 56,
                               fontWeight: FontWeight.w400),
                         ),
                       ),
@@ -72,7 +73,7 @@ class mySalesContainer extends StatelessWidget {
                           "\$" +
                               mySalesList[index].price,
                           style: TextStyle(
-                              color: basicColorShopper,
+                              color: Colors.grey,
                               fontSize: height / 60,
                               fontWeight: FontWeight.w600),
                         ),
