@@ -16,7 +16,7 @@ class itemConatiner extends StatelessWidget {
       child: GridView.count(
         crossAxisCount: 2,
 
-        childAspectRatio: (3 / 3),
+        childAspectRatio: (2 / 3),
         controller: new ScrollController(keepScrollOffset: false),
         shrinkWrap: true,
         scrollDirection: Axis.vertical,
@@ -26,96 +26,101 @@ class itemConatiner extends StatelessWidget {
               return GestureDetector(
                 onTap: () {},
 
-                child: Card(
-                  elevation: 0,
-                  shadowColor: Colors.grey,
-                  color: Colors.grey[200],
-                  shape: RoundedRectangleBorder(
-                    borderRadius:
-                    BorderRadius.circular(12.0),
-                    // side: BorderSide(width: 1,color: Colors.grey[200])
-                  ),
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(12),
-                            topRight: Radius.circular(12),
-                          ),
-                          image: DecorationImage(
-                            image: AssetImage(recentViewList[index].img)
-                          )
-                        ),
+                child: Container(
+                  // height: MediaQuery.of(context).size.height * 0.16,
+                  width: MediaQuery.of(context).size.width / 3,
 
+                  // decoration: ,
+                  child: Card(
+                    elevation: 0,
+                    shadowColor: Colors.white,
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                      // side: BorderSide(width: 1,color: Colors.grey[200])
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
 
-                        // child: Image.asset(recentViewList[index].img,
-                        //   height: MediaQuery.of(context).size.height * 0.14,
-                        //   width: MediaQuery.of(context).size.width,
-                        //   fit: BoxFit.cover,
-                        // ),
-                      ),
+                        Stack(
+                          children: <Widget>[
 
-
-                      Positioned(
-                        right: 5,
-                        top: 5,
-                        child: Container(
-                            height: 25,
-                            width: 25,
-                            decoration: new BoxDecoration(
-                              shape: BoxShape.circle,// You can use like this way or like the below line
-                              color: Colors.white,
+                            Container(
+                          height: MediaQuery.of(context).size.height * 0.22,
+                          width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[100],
+                                borderRadius: BorderRadius.all(Radius.circular(12)),
+                                image: DecorationImage(
+                                  image: AssetImage( recentViewList[index].img,),
+                                  fit: BoxFit.cover,
+                                )
+                              ),
+                              // child: Image.asset(
+                              //   recentViewList[index].img,
+                              //   height: MediaQuery.of(context).size.height *
+                              //       0.22,
+                              //   width: MediaQuery.of(context).size.width,
+                              //   fit: BoxFit.cover,
+                              // ),
                             ),
-                            child: latestItemList[index].iconss),
+                            Positioned(
+                              right: 5,
+                              top: 5,
+                              child: Container(
 
-                      ),
+                                  height: 25,
+                                  width: 25,
+                                  decoration: new BoxDecoration(
+                                    shape: BoxShape.circle,// You can use like this way or like the below line
+                                    color: Colors.white,
+                                  ),
+                                  child: recentViewList[index].iconss),
 
+                            )
 
-
-                      Positioned(
-                        bottom: 31,
-                        left:10,
-                        child: Text(
-                          recentViewList[index].name,
-                          style: TextStyle(
-                            fontFamily: "workSans",
-                              color: Colors.grey,
-                              fontSize: height / 50,
-                              fontWeight:
-                              FontWeight.w500),
+                          ],
                         ),
-                      ),
 
-                      Positioned(
-                        bottom: 16,
-                        left:10,
-                        child: Text(
-                          recentViewList[index].type,
-                          style: TextStyle(
-                              fontFamily: "workSans",
-                              color: Colors.black,
-                              fontSize: height / 56,
-                              fontWeight:
-                              FontWeight.w500),
-                        ),
-                      ),
 
-                      Positioned(
-                        bottom:4,
-                        left:10,
-                        child: Text(
-                          recentViewList[index].price ,
-                          style: TextStyle(
-                              fontFamily: "workSans",
-                              color:
-                              Colors.grey,
-                              fontSize: height / 66,
-                              fontWeight:
-                              FontWeight.w400),
+
+                        Padding(
+                          padding:
+                          const EdgeInsets.only(left: 8.0, top: 6),
+                          child: Text(
+                            recentViewList[index].name,
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: height / 60,
+                                fontWeight: FontWeight.w500),
+                          ),
                         ),
-                      ),
-                    ],
+
+                        Padding(
+                          padding:
+                          const EdgeInsets.only(left: 8.0, top: 0),
+                          child: Text(
+                            recentViewList[index].type,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: height / 56,
+                                fontWeight: FontWeight.w300),
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                          const EdgeInsets.only(left: 8.0, top: 0),
+                          child: Text(
+                            recentViewList[index].price,
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: height /60,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );

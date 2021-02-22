@@ -21,7 +21,10 @@ class _salesDetialState extends State<salesDetial> {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: customAppBar1("Sales Detail"),
       body: Container(
         child: Column(
@@ -37,83 +40,113 @@ class _salesDetialState extends State<salesDetial> {
                     onTap: ()
                     {
                     },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 6),
-                      child: Row(
+                    child: Container(
+                      color: Colors.grey.shade100,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 6),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
 
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
 
 
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                height: 100.0,
-                                width: 120.0,
-                                decoration: BoxDecoration(
-                                  // color: Colors.red,
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                        SalesDetailList[index].img,
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: height/12,
+                                      width: width/6,
+                                      decoration: BoxDecoration(
+                                        // color: Colors.red,
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                              SalesDetailList[index].img,
+                                            ),
+                                            fit: BoxFit.fill,
+                                          )
                                       ),
-                                      fit: BoxFit.fill,
-                                    )
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                          const EdgeInsets.only(left: 8.0, top: 6),
+                                          child: Text(
+                                            SalesDetailList[index].name,
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: MediaQuery.of(context).size.height / 54,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ),
+
+                                        Padding(
+                                          padding:
+                                          const EdgeInsets.only(left: 8.0, top: 2),
+                                          child: Text(
+                                            "\$" +
+                                                SalesDetailList[index].price,
+                                            style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: MediaQuery.of(context).size.height / 60,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        ),
+
+                                      ],
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
+
+                                Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                                      border: Border.all(color: basicColorShopper)
+                                  ),
+                                  child: Padding(
                                     padding:
-                                    const EdgeInsets.only(left: 8.0, top: 6),
-                                    child: Text(
-                                      SalesDetailList[index].name,
+                                    const EdgeInsets.all(10),
+                                    child: Text( "x" +
+                                        SalesDetailList[index].num.toString(),
                                       style: TextStyle(
                                           color: Colors.black,
-                                          fontSize: MediaQuery.of(context).size.height / 56,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-
-                                  Padding(
-                                    padding:
-                                    const EdgeInsets.only(left: 8.0, top: 5),
-                                    child: Text(
-                                      "\$" +
-                                          SalesDetailList[index].price,
-                                      style: TextStyle(
-                                          color: basicColorShopper,
                                           fontSize: MediaQuery.of(context).size.height / 60,
-                                          fontWeight: FontWeight.w600),
+                                          fontWeight: FontWeight.w400),
                                     ),
                                   ),
-                                ],
-                              ),
-                            ],
-                          ),
-
-
-
-
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(8)),
-                                border: Border.all(color: basicColorShopper)
+                                ),
+                              ],
                             ),
-                            child: Padding(
+
+                            SizedBox(height: 10,),
+                            Padding(
                               padding:
-                              const EdgeInsets.all(10),
-                              child: Text( "x" +
-                                  SalesDetailList[index].num.toString(),
+                              const EdgeInsets.only(left: 0.0, top: 6),
+                              child: Text(
+                                "Custom text:",
                                 style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: MediaQuery.of(context).size.height / 60,
-                                    fontWeight: FontWeight.w400),
+                                    fontSize: MediaQuery.of(context).size.height / 54,
+                                    fontWeight: FontWeight.w500),
                               ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(left: 0.0, top: 6),
+                              child: Text(
+                                "Choices:",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: MediaQuery.of(context).size.height / 54,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   );
@@ -139,11 +172,11 @@ class _salesDetialState extends State<salesDetial> {
                       SizedBox(height: 6,),
                       Text(
                         "$orderDate",
-                        style: CustomTextStyle.normaltext1(context),
+                        style: CustomTextStyle.normaltext5(context),
                       ),
                       Text(
                         "$orderTime",
-                        style: CustomTextStyle.normaltext1(context),
+                        style: CustomTextStyle.normaltext5(context),
                       ),
                       Divider(),
                       Text(
@@ -153,24 +186,28 @@ class _salesDetialState extends State<salesDetial> {
                       SizedBox(height: 6,),
                       Text(
                         "$oderAddress",
-                        style: CustomTextStyle.normaltext1(context),
+                        style: CustomTextStyle.normaltext5(context),
                       ),
                       Divider(),
                       Text(
-                        "Order detail",
+                        "Order total",
                         style: CustomTextStyle.normaltext2(context),
                       ),
                       SizedBox(height: 6,),
+                      Text(
+                        "\$85",
+                        style: CustomTextStyle.normaltext5(context),
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             "Signet Cuff Bracelet x 1",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                           Text(
                             "$itemprice",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                         ],
                       ),
@@ -179,11 +216,11 @@ class _salesDetialState extends State<salesDetial> {
                         children: [
                           Text(
                             "Postage",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                           Text(
                             "$postagePrice",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                         ],
                       ),
@@ -193,11 +230,11 @@ class _salesDetialState extends State<salesDetial> {
                         children: [
                           Text(
                             "Total",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                           Text(
                             "$total",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                         ],
                       ),

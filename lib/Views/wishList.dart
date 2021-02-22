@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:paul_app/widgets/CustomButton.dart';
-import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/Lists.dart';
 import 'package:paul_app/widgets/appBar.dart';
-import 'package:paul_app/widgets/colors.dart';
-import 'package:paul_app/widgets/search_bar.dart';
 import 'package:paul_app/widgets/styles.dart';
+
 
 class wishList extends StatefulWidget {
   @override
@@ -22,7 +19,7 @@ class _wishListState extends State<wishList> {
 
     return SafeArea(
       child: Scaffold(
-      backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
 
         appBar: customAppBar1(""),
 
@@ -44,9 +41,15 @@ class _wishListState extends State<wishList> {
                             style: CustomTextStyle.headig(context))),
                   ),
                 ),
+
+
+
                 SizedBox(
                   height: 15,
                 ),
+
+
+
                 Expanded(
                   flex: 2,
                   child: SingleChildScrollView(
@@ -59,100 +62,103 @@ class _wishListState extends State<wishList> {
                       child: GridView.count(
                         crossAxisCount: 2,
 
-                        childAspectRatio: (3 / 3),
+                        childAspectRatio: (2 / 3),
                         controller: new ScrollController(keepScrollOffset: false),
                         shrinkWrap: true,
                         scrollDirection: Axis.vertical,
                         children: List.generate(
-                            recentViewList.length,
+                            wishItemList.length,
                             (index) {
                           return GestureDetector(
                             onTap: () {},
 
                             child: Card(
                               elevation: 0,
-                              shadowColor: Colors.grey,
-                              color: Colors.grey[200],
+                              shadowColor: Colors.white,
+                              color: Colors.white,
                               shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12.0),
                                 // side: BorderSide(width: 1,color: Colors.grey[200])
                               ),
-                              child: Stack(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.black,
-                                        borderRadius: BorderRadius.all(Radius.circular(8)),
-                                        image: DecorationImage(
-                                            image: AssetImage(CatogeryList[index].img,),
-                                            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.9), BlendMode.dstATop),
-                                            fit: BoxFit.cover
-                                        )
-                                    ),
-                                    // child: Image.asset(CatogeryList[index].img,
-                                    //   // height: MediaQuery.of(context).size.height * 0.14,
-                                    //   width: MediaQuery.of(context).size.width,
-                                    //   fit: BoxFit.cover,
-                                    // ),
-                                  ),
-                                  Positioned(
-                                    right: 5,
-                                    top: 5,
-                                    child: Container(
 
-                                        height: 25,
-                                        width: 25,
-                                        decoration: new BoxDecoration(
-                                          shape: BoxShape.circle,// You can use like this way or like the below line
-                                          color: Colors.white,
+                                  Stack(
+                                    children: <Widget>[
+
+                                      Container(
+                                        height: MediaQuery.of(context).size.height *
+                                            0.22,
+                                        width: MediaQuery.of(context).size.width,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey[100],
+                                            borderRadius: BorderRadius.all(Radius.circular(12)),
+                                            image: DecorationImage(
+                                              image: AssetImage(wishItemList[index].img,),
+                                              fit: BoxFit.cover,
+                                            )
                                         ),
-                                        child: recentViewList[index].iconss),
+                                        // child: Image.asset(
+                                        //   recentViewList[index].img,
+                                        //   height: MediaQuery.of(context).size.height *
+                                        //       0.18,
+                                        //   width: MediaQuery.of(context).size.width,
+                                        //   fit: BoxFit.cover,
+                                        // ),
+                                      ),
+                                      Positioned(
+                                        right: 5,
+                                        top: 5,
+                                        child: Container(
 
+                                            height: 25,
+                                            width: 25,
+                                            decoration: new BoxDecoration(
+                                              shape: BoxShape.circle,// You can use like this way or like the below line
+                                              color: Colors.white,
+                                            ),
+                                            child: wishItemList[index].iconss),
+
+                                      )
+
+                                    ],
                                   ),
 
 
 
-
-
-
-                                  Positioned(
-                                    bottom: 31,
-                                    left:10,
+                                  Padding(
+                                    padding:
+                                    const EdgeInsets.only(left: 8.0, top: 6),
                                     child: Text(
-                                      recentViewList[index].name,
+                                      wishItemList[index].name,
                                       style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: height / 50,
-                                          fontWeight:
-                                              FontWeight.w500),
+                                          color: Colors.grey,
+                                          fontSize: height / 60,
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ),
 
-                                  Positioned(
-                                    bottom: 16,
-                                    left:10,
+                                  Padding(
+                                    padding:
+                                    const EdgeInsets.only(left: 8.0, top: 0),
                                     child: Text(
-                                      recentViewList[index].type,
+                                      wishItemList[index].type,
                                       style: TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontSize: height / 56,
-                                          fontWeight:
-                                              FontWeight.w400),
+                                          fontWeight: FontWeight.w400),
                                     ),
                                   ),
-
-                                  Positioned(
-                                    bottom:4,
-                                    left:10,
+                                  Padding(
+                                    padding:
+                                    const EdgeInsets.only(left: 8.0, top: 0),
                                     child: Text(
-                                        recentViewList[index].price ,
+                                      wishItemList[index].price,
                                       style: TextStyle(
-                                          color:
-                                              Colors.white,
-                                          fontSize: height / 66,
-                                          fontWeight:
-                                              FontWeight.w300),
+                                          color: Colors.grey,
+                                          fontSize: height /60,
+                                          fontWeight: FontWeight.w600),
                                     ),
                                   ),
                                 ],

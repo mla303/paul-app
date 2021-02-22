@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paul_app/Views/search.dart';
 import 'package:paul_app/widgets/colors.dart';
 
 class searchBar extends StatelessWidget {
@@ -26,7 +27,12 @@ class searchBar extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   IconButton(
-                      icon: Icon(Icons.search,color: Colors.grey,), onPressed: () {}),
+                      icon: Icon(Icons.search,color: Colors.grey,), onPressed: () {
+
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (Context) => searchPage()));
+
+                  }),
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(

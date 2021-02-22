@@ -17,6 +17,12 @@ class allCatorgies extends StatefulWidget {
 class _allCatorgiesState extends State<allCatorgies> {
 
   @override
+  void setState(fn) {
+    // TODO: implement setState
+    super.setState(fn);
+  }
+
+  @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

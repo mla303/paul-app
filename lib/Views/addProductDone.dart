@@ -36,6 +36,7 @@ class _AddProductDoneState extends State<addProductDone> {
                     'Congratulations',
                     style: TextStyle(
                         color: Colors.white,
+                        fontFamily: "workSans",
                         fontSize: height / 25,
                         fontWeight: FontWeight.w400),
                   ),
@@ -45,24 +46,18 @@ class _AddProductDoneState extends State<addProductDone> {
                   'Done & dusted :)',
                   style: TextStyle(
                       color: Colors.white,
+                      fontFamily: "workSans",
                       fontSize: height / 40,
                       fontWeight: FontWeight.w500),
 
                 ),
-                SizedBox(height: height/60,),
-                Text(
-                  'Something else here',
-                  style: TextStyle(
-                      color: Colors.black54,
-                      fontSize: height / 50,
-                      fontWeight: FontWeight.w400),
 
-                ),
                 SizedBox(height: height/10,),
                 ShopperButton(
                   text: Text("I'm finished here...",
                     style: CustomTextStyle.buttonTextWhite(context),),
-                  onPressed: (){
+                  onPressed: ()
+                  {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (Context) => bottomNavigation()));
                   },
@@ -74,7 +69,8 @@ class _AddProductDoneState extends State<addProductDone> {
                 ShopperButton(
                   text: Text("Add another:)",
                     style: CustomTextStyle.buttontitle1(context),),
-                  onPressed: (){
+                  onPressed: ()
+                  {
                     Navigator.pushNamed(context, "/addProductDone");
                   },
                   focusColor: Colors.white,

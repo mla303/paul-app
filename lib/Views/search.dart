@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:paul_app/Views/purchaseContainer.dart';
 import 'package:paul_app/widgets/Lists.dart';
+import 'package:paul_app/widgets/appBar.dart';
 import 'package:paul_app/widgets/colors.dart';
 import 'package:paul_app/widgets/search_bar.dart';
 import 'package:paul_app/widgets/styles.dart';
@@ -38,9 +38,9 @@ class _searchPageState extends State<searchPage> {
 
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Color(0xfff7f7f7),
+        backgroundColor: Colors.white,
 
-          // appBar: customAppBar1("Sign In"),
+          appBar: customAppBar1("Sign In"),
 
         body: Container(
           // color: whiteColor,

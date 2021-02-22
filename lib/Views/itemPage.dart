@@ -70,7 +70,7 @@ class _itemPageState extends State<itemPage> {
 
                                   children: <Widget>[
                                     Icon(Icons.sort,size: 20,color: Colors.grey,),
-                                    Text("Sort",style: CustomTextStyle.normaltext1(context),)
+                                    Text("Sort",style: CustomTextStyle.normaltext5(context),)
                                   ],
                                 ),
                                 ),
@@ -94,7 +94,7 @@ class _itemPageState extends State<itemPage> {
                                   alignment: WrapAlignment.center,
                                   children: <Widget>[
                                     Icon(Icons.filter_alt_rounded,size: 20,color: Colors.grey,),
-                                    Text("Narrow that down",style: CustomTextStyle.normaltext1(context),)
+                                    Text("Narrow that down",style: CustomTextStyle.normaltext5(context),)
                                   ],
                                 ),
                                 ),
@@ -150,18 +150,24 @@ class _itemPageState extends State<itemPage> {
                                       children: <Widget>[
 
                                         Container(
-
+                                          height: MediaQuery.of(context).size.height *
+                                              0.22,
+                                          width: MediaQuery.of(context).size.width,
                                           decoration: BoxDecoration(
                                             color: Colors.grey[100],
-                                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                                            borderRadius: BorderRadius.all(Radius.circular(12)),
+                                            image: DecorationImage(
+                                              image: AssetImage(recentViewList[index].img,),
+                                              fit: BoxFit.cover,
+                                            )
                                           ),
-                                          child: Image.asset(
-                                            latestItemList[index].img,
-                                            height: MediaQuery.of(context).size.height *
-                                                0.18,
-                                            width: MediaQuery.of(context).size.width,
-                                            fit: BoxFit.cover,
-                                          ),
+                                          // child: Image.asset(
+                                          //   recentViewList[index].img,
+                                          //   height: MediaQuery.of(context).size.height *
+                                          //       0.18,
+                                          //   width: MediaQuery.of(context).size.width,
+                                          //   fit: BoxFit.cover,
+                                          // ),
                                         ),
                                         Positioned(
                                           right: 5,

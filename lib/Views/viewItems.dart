@@ -156,34 +156,49 @@ void _onPageChanged(int page) {
                         left: 15,
                         child: IconButton(
                             onPressed: (){
-                              // Navigator.pop(context);
+                              // Navigator.pushReplacement(context, "/naviga");
                             },
 
                             icon: Icon(Icons.arrow_back_ios,color: Colors.white,))),
                     Positioned(
-                        bottom:40,
-                        left: 20,
-                        child:  Align(
-                          alignment: Alignment.center,
-                          child: new DotsIndicator(
+                      bottom:40,
+                      left: 20,
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: new DotsIndicator(
 
-                            position: currentPage.toDouble(),
-                            dotsCount: imgList.length,
-                            decorator: DotsDecorator(
+                          position: currentPage.toDouble(),
+                          dotsCount: imgList.length,
+                          decorator: DotsDecorator(
 
-                              activeColor: Colors.white, color: Colors.grey,
-                              activeSize: Size(10, 10),
-                              size: Size(6,6),
-                              spacing: EdgeInsets.symmetric(horizontal: 2),
-                              activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-                            ),
-                     // numberOfDot: imgList.length,
+                            activeColor: Colors.white, color: Colors.grey,
+                            activeSize: Size(10, 10),
+                            size: Size(6,6),
+                            spacing: EdgeInsets.symmetric(horizontal: 2),
+                            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                       // numberOfDot: imgList.length,
 //                      position: currentIndexPage,
 //                      dotColor: Colors.black87,
 //                      dotActiveColor: Colors.amber
 //
-                          ),
-                        ),),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom:40,
+                      right: 20,
+                      child: new  Container(
+                        decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.all(Radius.circular(12))
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 4),
+                          child: Text("On sale",style: TextStyle(color: Colors.white,fontSize: 10),),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -221,6 +236,7 @@ void _onPageChanged(int page) {
                               // ),),
 
                               Text("\$120", style: TextStyle(
+                                decoration: TextDecoration.lineThrough,
                                   color: Colors.grey,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 1.8 * SizeConfig.textMultiplier
@@ -244,9 +260,9 @@ void _onPageChanged(int page) {
                                   fontSize: 2.7 * SizeConfig.textMultiplier
                               ),),    Text("\$85", style: TextStyle(
                                   color: Colors.black,
-                                  fontWeight: FontWeight.w400,
+                                  fontWeight: FontWeight.w300,
                                   fontFamily: "workSans",
-                                  fontSize: 2 * SizeConfig.textMultiplier
+                                  fontSize: 2.5 * SizeConfig.textMultiplier
                               ),
                               ),
                             ],
@@ -291,7 +307,7 @@ void _onPageChanged(int page) {
                                          Text("Paul",style:TextStyle(
                                            fontSize: 14,
                                            fontWeight: FontWeight.w600,
-                                           color: Colors.grey
+                                           color: Colors.black
                                          ),),
                                        ],
                                      )
@@ -329,7 +345,7 @@ void _onPageChanged(int page) {
                                                  MaterialPageRoute(builder: (Context) => Reviews()));
 
                                            },
-                                           child: Text("View / Leave review",style:TextStyle(
+                                           child: Text("View / leave review",style:TextStyle(
                                              fontSize: 12,
                                              fontWeight: FontWeight.w600,
                                              color: Colors.grey
@@ -350,6 +366,7 @@ void _onPageChanged(int page) {
                                                width: 40,
                                              decoration: BoxDecoration(
                                                borderRadius: BorderRadius.circular(6),
+                                               border: Border.all(color: Colors.grey.withOpacity(0.4)),
                                                color: Colors.white,
                                              ),
                                            child: Center(child: Image(image: AssetImage("images/chat.png",),height: 20,width: 20,)),
@@ -360,6 +377,7 @@ void _onPageChanged(int page) {
                                                width: 40,
                                              decoration: BoxDecoration(
                                                borderRadius: BorderRadius.circular(6),
+                                               border: Border.all(color: Colors.grey.withOpacity(0.4)),
                                                color: Colors.white,
                                              ),
                                            child: Center(child: Image(image: AssetImage("images/love.png",),height: 20,width: 20,)),
@@ -385,7 +403,7 @@ void _onPageChanged(int page) {
                             fontSize: 14,
                             fontFamily: "workSans",
                             fontWeight: FontWeight.w600,
-                            color: Color(0xff0000FF)
+                            color: Colors.black
                         ),),
                         SizedBox(height: 1 * SizeConfig.heightMultiplier,),
 
@@ -404,7 +422,7 @@ void _onPageChanged(int page) {
                             fontSize: 12,
                               fontFamily: "workSans",
                             fontWeight: FontWeight.w500,
-                              color: Color(0xff0000FF)
+                              color: Colors.black
                         ),
                         ),
 
@@ -417,7 +435,7 @@ void _onPageChanged(int page) {
                             style:TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
-                                color: Color(0xff0000FF)
+                                color: Colors.black
                             ),),
                         ),
 

@@ -179,12 +179,12 @@ class _ProfileFirstState extends State<ProfileFirst> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 3 * SizeConfig.heightMultiplier,),
+                  SizedBox(height: 1 * SizeConfig.heightMultiplier,),
 
                   Container(
                     // color: Colors.redAccent,
                     // padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 0.0),
-                    height: 55 * SizeConfig.heightMultiplier,
+                    height: 60 * SizeConfig.heightMultiplier,
                     width: SizeConfig._screenWidth,
 
                     child: DefaultTabController(

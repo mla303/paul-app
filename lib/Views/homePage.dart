@@ -62,7 +62,7 @@ class _homePageState extends State<homePage> {
                             SizedBox(width:6,),
 
                             searchBar(),
-
+                            SizedBox(width:6,),
                             //notification icon with badge
                             GestureDetector(
                               onTap: (){
@@ -103,14 +103,14 @@ class _homePageState extends State<homePage> {
 
                         Container(
                             width:width/1.1,
-                            child: Text("Your Club Home", style: CustomTextStyle.headig(context))),
+                            child: Text("Your club home", style: CustomTextStyle.headig(context))),
 
                       ],
                     ),
                   ),
 
 
-                  SizedBox(height: 15,),
+                  SizedBox(height: 5,),
 
                   Expanded(
                     flex: 2,
@@ -122,7 +122,7 @@ class _homePageState extends State<homePage> {
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             child: Wrap(
                               direction: Axis.vertical,
-                              spacing: 8,
+                              spacing: 2,
                               // // alignment: WrapAlignment.center,
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -143,6 +143,7 @@ class _homePageState extends State<homePage> {
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 16,
+                                              fontFamily: "workSans",
                                               fontWeight: FontWeight.w500),
                                         ),
                                         InkWell(
@@ -159,6 +160,7 @@ class _homePageState extends State<homePage> {
                                                 style: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 12,
+                                                    fontFamily: "workSans",
                                                     fontWeight: FontWeight.w500),
                                               ),
                                               const SizedBox(width: 3,),
@@ -174,8 +176,8 @@ class _homePageState extends State<homePage> {
                                 Container(
                                   // color: Colors.redAccent,
                                   padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0.0),
-                                  height: MediaQuery.of(context).size.height /14,
-                                  width: width,
+                                  height: MediaQuery.of(context).size.height /16,
+                                  width: width/1.1,
 
                                   child: ListView.separated(
                                       itemCount: categoryList.length,
@@ -194,8 +196,8 @@ class _homePageState extends State<homePage> {
                                                 color: basicColorShopper,
                                                 borderRadius: BorderRadius.circular(10)
                                               ),
-                                              height: height/20,
-                                              width: width/3.6,
+                                              // height: height/20,
+                                              width: width/3,
                                               child: Center(
                                                 child: RichText(
                                                   textAlign: TextAlign.center,
@@ -233,15 +235,16 @@ class _homePageState extends State<homePage> {
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 16,
+                                        fontFamily: "workSans",
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ),
 
                                 Container(
                // color: Colors.redAccent,
-                                  padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 0.0),
+                                  padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0.0),
                                   height: MediaQuery.of(context).size.height * 0.24,
-                                  width: width,
+                                  width: width/1.1,
 
                                   child: ListView.separated(
                                       itemCount: latestItemList.length,
@@ -256,10 +259,10 @@ class _homePageState extends State<homePage> {
                                                 MaterialPageRoute(builder: (Context) => viewItems()));
                                           },
                                           child: Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4),
+                                            padding: const EdgeInsets.symmetric(horizontal: 0),
                                             child: Container(
                                               // height: MediaQuery.of(context).size.height * 0.16,
-                                              width: MediaQuery.of(context).size.width / 2.4,
+                                              width: MediaQuery.of(context).size.width / 3,
 
                                               // decoration: ,
                                               child: Card(
@@ -317,6 +320,7 @@ class _homePageState extends State<homePage> {
                                                       child: Text(
                                                         latestItemList[index].name,
                                                         style: TextStyle(
+                                                            fontFamily: "workSans",
                                                             color: Colors.grey,
                                                             fontSize: height / 60,
                                                             fontWeight: FontWeight.w500),
@@ -331,6 +335,7 @@ class _homePageState extends State<homePage> {
                                                         style: TextStyle(
                                                             color: Colors.black,
                                                             fontSize: height / 56,
+                                                            fontFamily: "workSans",
                                                             fontWeight: FontWeight.w400),
                                                       ),
                                                     ),
@@ -340,6 +345,7 @@ class _homePageState extends State<homePage> {
                                                       child: Text(
                                                         latestItemList[index].price,
                                                         style: TextStyle(
+                                                            fontFamily: "workSans",
                                                             color: Colors.grey,
                                                             fontSize: height /60,
                                                             fontWeight: FontWeight.w600),
@@ -354,7 +360,7 @@ class _homePageState extends State<homePage> {
                                       },
                                       separatorBuilder: (BuildContext context, int index) {
                                         return SizedBox(
-                                          width: 3,
+                                          width: 5,
                                         );
                                       }
                                   ),
@@ -373,18 +379,19 @@ class _homePageState extends State<homePage> {
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 16,
+                                        fontFamily: "workSans",
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ),
 
                                 Container(
                                   // color: Colors.redAccent,
-                                  padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 0.0),
+                                  padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0.0),
                                   height: MediaQuery.of(context).size.height * 0.24,
-                                  width: width,
+                                  width: width/1.1,
 
                                   child: ListView.separated(
-                                      itemCount: recentViewList.length,
+                                      itemCount: latestItemList.length,
                                       shrinkWrap: true,
                                       // physics: ClampingScrollPhysics(),
                                       scrollDirection: Axis.horizontal,
@@ -396,10 +403,10 @@ class _homePageState extends State<homePage> {
                                                 MaterialPageRoute(builder: (Context) => viewItems()));
                                           },
                                           child: Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 4),
+                                            padding: const EdgeInsets.symmetric(horizontal: 0),
                                             child: Container(
                                               // height: MediaQuery.of(context).size.height * 0.16,
-                                              width: MediaQuery.of(context).size.width / 2.4,
+                                              width: MediaQuery.of(context).size.width / 3,
 
                                               // decoration: ,
                                               child: Card(
@@ -424,7 +431,7 @@ class _homePageState extends State<homePage> {
                                                             borderRadius: BorderRadius.all(Radius.circular(5)),
                                                           ),
                                                           child: Image.asset(
-                                                            recentViewList[index].img,
+                                                            latestItemList[index].img,
                                                             height: MediaQuery.of(context).size.height *
                                                                 0.15,
                                                             width: MediaQuery.of(context).size.width,
@@ -442,7 +449,7 @@ class _homePageState extends State<homePage> {
                                                                 shape: BoxShape.circle,// You can use like this way or like the below line
                                                                 color: Colors.white,
                                                               ),
-                                                              child: recentViewList[index].iconss),
+                                                              child: latestItemList[index].iconss),
 
                                                         )
 
@@ -455,8 +462,9 @@ class _homePageState extends State<homePage> {
                                                       padding:
                                                       const EdgeInsets.only(left: 8.0, top: 6),
                                                       child: Text(
-                                                        recentViewList[index].name,
+                                                        latestItemList[index].name,
                                                         style: TextStyle(
+                                                            fontFamily: "workSans",
                                                             color: Colors.grey,
                                                             fontSize: height / 60,
                                                             fontWeight: FontWeight.w500),
@@ -467,10 +475,11 @@ class _homePageState extends State<homePage> {
                                                       padding:
                                                       const EdgeInsets.only(left: 8.0, top: 0),
                                                       child: Text(
-                                                        recentViewList[index].type,
+                                                        latestItemList[index].type,
                                                         style: TextStyle(
                                                             color: Colors.black,
                                                             fontSize: height / 56,
+                                                            fontFamily: "workSans",
                                                             fontWeight: FontWeight.w400),
                                                       ),
                                                     ),
@@ -478,8 +487,9 @@ class _homePageState extends State<homePage> {
                                                       padding:
                                                       const EdgeInsets.only(left: 8.0, top: 0),
                                                       child: Text(
-                                                        recentViewList[index].price,
+                                                        latestItemList[index].price,
                                                         style: TextStyle(
+                                                            fontFamily: "workSans",
                                                             color: Colors.grey,
                                                             fontSize: height /60,
                                                             fontWeight: FontWeight.w600),
@@ -494,7 +504,7 @@ class _homePageState extends State<homePage> {
                                       },
                                       separatorBuilder: (BuildContext context, int index) {
                                         return SizedBox(
-                                          width: 3,
+                                          width: 5,
                                         );
                                       }
                                   ),

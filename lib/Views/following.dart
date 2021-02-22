@@ -40,9 +40,9 @@ class _followingState extends State<following> {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(left: 3),
                         child: Container(
-                            width: width / 1.2,
+                            width: width / 1.1,
                             child: Text("Fave Shops",
                                 style: CustomTextStyle.headig(context))),
                       ),
@@ -54,7 +54,7 @@ class _followingState extends State<following> {
                 ),
                 Expanded(
                   flex: 2,
-                  child: ListView.builder(
+                  child: ListView.separated(
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: followingList.length,
                     itemBuilder: (context, index) {
@@ -73,16 +73,16 @@ class _followingState extends State<following> {
                           ),
                           title:  Text(
                               followingList[index].title,
-                              style: CustomTextStyle.normaltext1(context)
+                              style: CustomTextStyle.Listtext1(context)
                           ),
                           subtitle: Text(
                               followingList[index].city,
-                              style: CustomTextStyle.normaltext4(context)
+                              style: CustomTextStyle.Listtext2(context)
                           ),
                           trailing: followButton(
                               colors: followingList[index].followType == "Follow"
                                   ? basicColorShopper
-                                  : grayColor,
+                                  : Colors.grey,
                             onPressed: (){
                               setState(() {
                                 followingList[index].followType == "Following"
@@ -97,7 +97,11 @@ class _followingState extends State<following> {
                         ),
                       );
                     },
-//
+separatorBuilder: (BuildContext context, int index) {
+                                        return Divider(
+                                          height: 5,
+                                        );
+                                      }
                   ),
                 ),
               ],

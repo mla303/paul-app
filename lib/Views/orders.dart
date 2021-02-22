@@ -20,8 +20,15 @@ class orderPage extends StatefulWidget {
 
 class _orderPageState extends State<orderPage> {
 
+  String textPurchase = "Your purchases";
+  String textSales = "Your Sales";
 
 
+  @override
+  void setState(fn) {
+    // TODO: implement setState
+    super.setState(fn);
+  }
 
 
   @override
@@ -32,9 +39,9 @@ class _orderPageState extends State<orderPage> {
 
     return SafeArea(
       child: Scaffold(
-     backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
 
-        appBar: customAppBar1("Orders"),
+        appBar: emptyAppBar("Orders"),
 
 
         body: Container(
@@ -54,9 +61,7 @@ class _orderPageState extends State<orderPage> {
                         child: Container(
                             width: width / 1.2,
                             child: Text(
-                                tabBarlabel() == "Purchases"
-                                            ? "Your purchases"
-                            : "Your Sales",
+                               "Orders",
                                 style: CustomTextStyle.headig(context))),
                       ),
                     ],
@@ -86,22 +91,10 @@ class _orderPageState extends State<orderPage> {
                               child: TabBarView(
                                 children: <Widget>[
 
-                                    GestureDetector(
-                                        onTap: ()
-                                        {
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(builder: (Context) => purchaseDetial()));
+                                  purchaseContainer(),
+                                    mySalesContainer(),
 
-                                        },
-                                        child: purchaseContainer()),
 
-                                  GestureDetector( onTap: ()
-                                  {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(builder: (Context) => salesDetial()));
-
-                                  },
-                                      child: mySalesContainer()),
 
                                 ],
                               ),

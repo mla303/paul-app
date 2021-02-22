@@ -127,11 +127,11 @@ SizedBox(height: height/60,),
 
 
                   Center(
-                    child: CustomTextField
+                    child: largeTextField
                       (
-                      hinttext: "Write a Comment",
+                      hinttext: "Write Comments",
                       obscureText: false,
-                      textInputType: TextInputType.emailAddress,
+                      textInputType: TextInputType.text,
                     ),
                   ),
 

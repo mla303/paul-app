@@ -6,6 +6,7 @@ import 'package:paul_app/Views/following.dart';
 import 'package:paul_app/Views/orders.dart';
 import 'package:paul_app/Views/vendorSetting.dart';
 import 'package:paul_app/Views/wishList.dart';
+import 'package:paul_app/Views/yourItem.dart';
 import 'package:paul_app/widgets/CustomButton.dart';
 import 'package:paul_app/widgets/CustomTextField.dart';
 import 'package:paul_app/widgets/colors.dart';
@@ -128,7 +129,8 @@ class _VendorAccountState extends State<VendorAccount> {
                     child: InkWell(
                       onTap: ()
                       {
-                        // Navigator.pushNamed(context, "/forgetPassword");
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (Context) => yourItems()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

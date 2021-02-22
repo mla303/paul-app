@@ -36,6 +36,7 @@ class _DoneState extends State<Done> {
                     'Bingo',
                     style: TextStyle(
                         color: Colors.white,
+                        fontFamily: "workSans",
                         fontSize: height / 15,
                         fontWeight: FontWeight.w400),
                   ),
@@ -45,16 +46,18 @@ class _DoneState extends State<Done> {
                   'Thank You For Shopping With Us',
                   style: TextStyle(
                       color: Colors.white,
+                      fontFamily: "workSans",
                       fontSize: height / 40,
                       fontWeight: FontWeight.w500),
 
                 ),
-                SizedBox(height: height/60,),
+                SizedBox(height: height/80,),
                 Text(
                   'Something else here',
                   style: TextStyle(
                       color: Colors.black54,
                       fontSize: height / 50,
+                      fontFamily: "workSans",
                       fontWeight: FontWeight.w400),
 
                 ),

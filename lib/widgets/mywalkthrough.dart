@@ -58,6 +58,7 @@ class WalkthroughState extends State<myWalkthrough>
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
 
             // Transform(
@@ -77,9 +78,10 @@ class WalkthroughState extends State<myWalkthrough>
               child: new Text(
                 widget.title,
                 style: new TextStyle(
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w500,
                     color: Colors.white),
+                textAlign: TextAlign.center,
               ),
             ),
 

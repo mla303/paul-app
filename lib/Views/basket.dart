@@ -56,7 +56,7 @@ class _basketState extends State<basket> {
                       SizedBox(height: 6,),
                       Text(
                         "$itemprice",
-                        style: CustomTextStyle.normaltext2(context),
+                        style: CustomTextStyle.normaltext5(context),
                       ),
                       SizedBox(height: 6,),
                       Row(
@@ -64,11 +64,11 @@ class _basketState extends State<basket> {
                         children: [
                           Text(
                             "Rings x2",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                           Text(
                             "$itemprice",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                         ],
                       ),
@@ -77,11 +77,11 @@ class _basketState extends State<basket> {
                         children: [
                           Text(
                             "Toys x1",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                           Text(
                             "$postagePrice",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                         ],
                       ),
@@ -91,11 +91,11 @@ class _basketState extends State<basket> {
                         children: [
                           Text(
                             "Total",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                           Text(
                             "$total",
-                            style: CustomTextStyle.normaltext2(context),
+                            style: CustomTextStyle.normaltext5(context),
                           ),
                         ],
                       ),

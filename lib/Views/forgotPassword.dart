@@ -61,12 +61,12 @@ class _forgotPasswordState extends State<forgotPassword> {
                 Center(
                   child: Expanded(
                     flex: 0,
-                    child: Text("You silly Billy...", style: CustomTextStyle.normaltext3(context)),
+                    child: Text("You silly Billy...", style: TextStyle(color: Colors.black,fontFamily: "workSans",fontSize: 20)),
                   ),
                 ),
 
 
-                SizedBox(height: 15,),
+                SizedBox(height: 30,),
 
                 Expanded(
                   flex: 2,
@@ -75,12 +75,12 @@ class _forgotPasswordState extends State<forgotPassword> {
                       children: [
                         Wrap(
                           direction: Axis.vertical,
-                          spacing: 8,
+                          spacing: 6,
                           // // alignment: WrapAlignment.center,
                           // crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
 
-
+                            SizedBox(height: 25,),
                             //email textfield
                             CustomTextField
                               (
